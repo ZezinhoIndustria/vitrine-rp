@@ -5,83 +5,130 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <title>Bills Burguer Gourmet | Ribeirão Preto</title>
-<meta name="description" content="Hambúrguer gourmet no trailer da Praça Tancredo Neves, em Ribeirão Preto. Pedidos pelo WhatsApp (16) 99421-7040.">
+<meta name="description" content="Hambúrguer gourmet no trailer da Praça Tancredo Neves, em Ribeirão Preto. Faça o pedido pelo site e mande pronto no WhatsApp (16) 99421-7040.">
 <meta name="theme-color" content="#0E0B12">
 <link rel="preload" href="fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="img/saiyajin-640.webp" imagesrcset="img/saiyajin-640.webp 640w, img/saiyajin-1200.webp 1086w" imagesizes="100vw" fetchpriority="high">
 <style>
 @font-face{font-family:"Anton";src:url(fonts/anton.woff2) format("woff2");font-weight:400;font-display:swap}
-:root{--noite:#0E0B12;--noite-2:#17121D;--creme:#F6EEE3;--creme-2:#CFC4B6;--lampada:#FFB547;--roxo:#9B5CF0;--roxo-claro:#C9A8FF;--display:"Anton",Impact,sans-serif;--texto:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+:root{--noite:#0E0B12;--noite-2:#17121D;--noite-3:#221A2B;--creme:#F6EEE3;--creme-2:#CFC4B6;--lampada:#FFB547;--roxo:#9B5CF0;--roxo-esc:#8A49E6;--roxo-claro:#C9A8FF;--display:"Anton",Impact,sans-serif;--texto:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scrollbar-color:var(--roxo) var(--noite)}
 body{background:var(--noite);color:var(--creme);font:400 1.0625rem/1.6 var(--texto);-webkit-font-smoothing:antialiased}
 ::selection{background:var(--lampada);color:var(--noite)}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
-a:focus-visible{outline:3px solid var(--lampada);outline-offset:4px;border-radius:6px}
-.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
-h1,h2{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:.92;text-wrap:balance}
+:focus-visible{outline:3px solid var(--lampada);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:.95;text-wrap:balance}
 svg.i{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-
-/* Topo: o trailer à noite */
-.topo{position:relative;min-height:100svh;display:grid;align-items:end;overflow:hidden;isolation:isolate}
-.topo picture,.topo picture img{position:absolute;inset:0;width:100%;height:100%}
-.topo picture img{object-fit:cover;object-position:0% 30%;animation:acende 1.6s cubic-bezier(.16,1,.3,1) both}
-.topo::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,rgba(14,11,18,.15) 0%,rgba(14,11,18,0) 30%,rgba(14,11,18,.75) 62%,var(--noite) 92%)}
-.topo .conteudo{position:relative;z-index:1;padding-block:0 clamp(32px,7vh,72px)}
-@keyframes acende{from{filter:blur(14px) brightness(.35);transform:scale(1.06)}to{filter:none;transform:none}}
-.marca{font-size:clamp(4.2rem,22vw,6rem);color:var(--creme)}
-.marca span{display:block;font-size:.5em;color:var(--lampada);letter-spacing:.04em;margin-top:.12em}
-.chamada{max-width:30ch;margin-top:18px;font-size:clamp(1.125rem,2.2vw,1.35rem);line-height:1.45;color:var(--creme)}
-.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px;border-radius:999px;font-weight:700;font-size:1.0625rem;text-decoration:none;transition:transform .2s cubic-bezier(.16,1,.3,1),background-color .2s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border:0;border-radius:999px;font:700 1.0625rem var(--texto);text-decoration:none;cursor:pointer;transition:transform .2s var(--ease),background-color .2s}
 .btn:active{transform:scale(.97)}
-.btn-zap{background:var(--roxo);color:#fff;box-shadow:0 10px 30px -8px rgba(155,92,240,.6)}
-.btn-zap:hover{background:#8A49E6}
-.btn-ir{background:rgba(246,238,227,.1);color:var(--creme);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.btn-ir:hover{background:rgba(246,238,227,.18)}
+.btn-roxo{background:var(--roxo);color:#fff;box-shadow:0 12px 30px -10px rgba(155,92,240,.65)}
+.btn-roxo:hover{background:var(--roxo-esc)}
+.btn-vidro{background:rgba(246,238,227,.1);color:var(--creme);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.btn-vidro:hover{background:rgba(246,238,227,.18)}
+
+/* Topo: as lâmpadas do trailer acendem */
+.topo{position:relative;min-height:100svh;display:grid;align-items:end;overflow:hidden;isolation:isolate}
+.topo .foto-topo,.topo .foto-topo img{position:absolute;inset:0;width:100%;height:100%}
+.topo .foto-topo img{object-fit:cover;object-position:0% 30%;animation:acende 1.6s var(--ease) both}
+.topo::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,rgba(14,11,18,.2) 0%,rgba(14,11,18,0) 28%,rgba(14,11,18,.78) 60%,var(--noite) 92%)}
+@keyframes acende{from{filter:blur(14px) brightness(.3);transform:scale(1.06)}to{filter:none;transform:none}}
+.varal{position:absolute;z-index:1;top:0;left:0;width:100%;height:90px;pointer-events:none}
+.varal svg{width:100%;height:100%;overflow:visible}
+.varal .fio{fill:none;stroke:rgba(246,238,227,.22);stroke-width:1.2}
+.varal .lamp{fill:var(--lampada);filter:drop-shadow(0 0 6px rgba(255,181,71,.9)) drop-shadow(0 0 16px rgba(255,181,71,.5));opacity:0;animation:liga .5s var(--ease) forwards,pisca 4s 2s ease-in-out infinite}
+@keyframes liga{to{opacity:1}}
+@keyframes pisca{0%,100%{opacity:1}50%{opacity:.72}}
+.topo .conteudo{position:relative;z-index:2;padding-block:120px clamp(36px,7vh,72px)}
+.marca{font-size:clamp(4.2rem,22vw,6rem)}
+.marca span{display:block;font-size:.5em;color:var(--lampada);letter-spacing:.04em;margin-top:.12em}
+.chamada{max-width:32ch;margin-top:18px;font-size:clamp(1.125rem,2.2vw,1.35rem);line-height:1.45}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 .provas{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:24px;font-size:.95rem;color:var(--creme-2)}
 .provas span{display:inline-flex;align-items:center;gap:8px}
 .provas .estrela{color:var(--lampada)}
 .provas .estrela svg{fill:currentColor}
 
-/* Lanche */
-.lanche{padding-block:clamp(72px,12vw,140px)}
-.lanche .grade{display:grid;gap:36px;align-items:center}
-.lanche h2{font-size:clamp(2.75rem,9vw,5rem)}
-.lanche h2 em{font-style:normal;color:var(--lampada)}
-.lanche p{margin-top:18px;max-width:40ch;color:var(--creme-2);font-size:1.125rem}
-.foto{border-radius:16px;overflow:hidden;background:var(--noite-2);box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+/* Destaque */
+.destaque{position:relative;padding-block:clamp(80px,12vw,150px);overflow:hidden}
+.destaque .grade{display:grid;gap:40px;align-items:center}
+.destaque .rotulo{display:inline-block;background:var(--lampada);color:var(--noite);font-weight:800;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:6px 14px}
+.destaque h2{font-size:clamp(3.4rem,15vw,6rem);margin-top:18px;color:var(--creme)}
+.destaque h2 em{font-style:normal;color:var(--lampada);display:block}
+.destaque p{margin-top:18px;max-width:40ch;color:var(--creme-2);font-size:1.125rem}
+.destaque .acoes{align-items:center}
+.contador{display:none;align-items:center;gap:8px;color:var(--lampada);font-weight:700}
+.tem .contador{display:inline-flex}
+.foto{border-radius:18px;overflow:hidden;background:var(--noite-2);box-shadow:0 30px 60px -30px rgba(0,0,0,.85)}
+.destaque .foto{transform:rotate(-2deg)}
 
-/* Trailer */
-.trailer{background:var(--noite-2);padding-block:clamp(72px,12vw,140px)}
-.trailer .grade{display:grid;gap:36px;align-items:center}
-.trailer h2{font-size:clamp(2.75rem,9vw,5rem)}
-.trailer address{font-style:normal;margin-top:18px;font-size:1.125rem;color:var(--creme-2);max-width:36ch}
-.trailer address strong{display:block;color:var(--creme);font-size:1.25rem}
-.trailer .btn{margin-top:26px}
+/* Personagens */
+.personagens{background:var(--noite-2);padding-block:clamp(72px,11vw,130px)}
+.cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px 40px;margin-bottom:36px}
+.cab h2{font-size:clamp(2.6rem,8vw,4.6rem)}
+.cab p{max-width:40ch;color:var(--creme-2)}
+.mosaico{display:grid;gap:16px}
+.mosaico figure{border-radius:18px;overflow:hidden;background:var(--noite-3)}
+.mosaico img{width:100%;height:100%;object-fit:cover}
 
 /* Pedido */
-.pedido{padding-block:clamp(80px,14vw,160px);text-align:center}
-.pedido h2{font-size:clamp(3rem,11vw,6rem)}
-.pedido p{margin:16px auto 0;max-width:34ch;color:var(--creme-2);font-size:1.125rem}
-.numero{display:inline-block;margin-top:28px;font-family:var(--display);font-size:clamp(2.25rem,8vw,4rem);letter-spacing:.02em;color:var(--roxo-claro);text-decoration:none;font-variant-numeric:tabular-nums}
+.pedido{padding-block:clamp(80px,12vw,150px)}
+.pedido .grade{display:grid;gap:40px;align-items:start}
+.grade>*{min-width:0}
+.pedido h2{font-size:clamp(2.6rem,8vw,4.2rem)}
+.pedido .lado p{margin-top:16px;color:var(--creme-2);max-width:36ch;font-size:1.125rem}
+.numero{display:inline-block;margin-top:22px;font-family:var(--display);font-size:clamp(2rem,7vw,3.2rem);letter-spacing:.02em;color:var(--roxo-claro);text-decoration:none;font-variant-numeric:tabular-nums}
 .numero:hover{color:var(--lampada)}
-.pedido .acoes{justify-content:center}
+form.caixa{background:var(--noite-2);border-radius:22px;padding:clamp(22px,4vw,36px);display:grid;gap:18px;box-shadow:0 30px 60px -36px rgba(0,0,0,.9)}
+.linha-item{display:flex;align-items:center;gap:14px;background:var(--noite-3);border-radius:14px;padding:10px}
+.linha-item img{width:72px;height:72px;object-fit:cover;border-radius:10px;flex:none}
+.linha-item div{flex:1}
+.linha-item b{font-family:var(--display);font-weight:400;font-size:1.35rem;text-transform:uppercase;letter-spacing:.02em}
+.linha-item small{display:block;color:var(--creme-2)}
+.qtd{display:flex;align-items:center;gap:6px}
+.qtd button{width:40px;height:40px;border-radius:50%;border:0;background:#33284A;color:#fff;font:700 1.25rem/1 var(--texto);cursor:pointer;display:grid;place-items:center;transition:background-color .2s,transform .15s}
+.qtd button.mais{background:var(--roxo)}
+.qtd button:hover{background:var(--roxo-esc)}
+.qtd button:active{transform:scale(.92)}
+.qtd output{min-width:1.6em;text-align:center;font-weight:800;font-variant-numeric:tabular-nums}
+.campo{display:grid;gap:6px}
+.campo label,.campo legend{font-weight:700;font-size:.95rem}
+.campo input,.campo textarea{font:1rem var(--texto);color:var(--creme);background:var(--noite);border:1px solid #3A2F45;border-radius:12px;padding:12px 14px;width:100%}
+.campo input::placeholder,.campo textarea::placeholder{color:#8F8399}
+.campo textarea{min-height:76px;resize:vertical}
+fieldset.campo{border:0;padding:0}
+.opcoes{display:flex;gap:10px;flex-wrap:wrap}
+.opcoes label{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;background:var(--noite);border:1px solid #3A2F45;border-radius:999px;padding:10px 16px;font-weight:600;cursor:pointer}
+.opcoes input{accent-color:var(--roxo)}
+.aviso{font-size:.88rem;color:var(--creme-2)}
+.erro{color:#FF9C8F;font-size:.92rem;font-weight:600}
+.erro:empty{display:none}
 
-footer{padding-block:32px calc(32px + env(safe-area-inset-bottom));color:#9A8F84;font-size:.875rem}
+/* Onde */
+.onde{background:var(--noite-2);padding-block:clamp(72px,11vw,130px)}
+.onde .grade{display:grid;gap:36px;align-items:center}
+.onde h2{font-size:clamp(2.8rem,9vw,5rem)}
+.onde address{font-style:normal;margin-top:18px;font-size:1.125rem;color:var(--creme-2)}
+.onde address strong{display:block;color:var(--creme);font-size:1.25rem}
+.onde .btn{margin-top:26px}
+
+footer{padding-block:30px calc(30px + env(safe-area-inset-bottom));color:#9A8F84;font-size:.875rem}
 footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 
-@media (min-width:860px){
+@media (min-width:900px){
   .topo{align-items:center}
-  .topo picture img{object-position:70% 40%}
-  .topo::after{background:linear-gradient(90deg,var(--noite) 0%,rgba(14,11,18,.85) 32%,rgba(14,11,18,.1) 62%),linear-gradient(0deg,var(--noite) 0%,rgba(14,11,18,0) 25%)}
-  .topo .conteudo{padding-block:0}
-  .lanche .grade{grid-template-columns:1.05fr .95fr;gap:72px}
-  .trailer .grade{grid-template-columns:.9fr 1.1fr;gap:72px}
-  .trailer .foto{order:-1}
+  .topo .foto-topo img{object-position:70% 40%}
+  .topo::after{background:linear-gradient(90deg,var(--noite) 0%,rgba(14,11,18,.85) 32%,rgba(14,11,18,.08) 64%),linear-gradient(0deg,var(--noite) 0%,rgba(14,11,18,0) 25%)}
+  .destaque .grade{grid-template-columns:1fr 1fr;gap:80px}
+  .mosaico{grid-template-columns:1.2fr 1fr;grid-template-rows:1fr 1fr;height:640px}
+  .mosaico figure:first-child{grid-row:span 2}
+  .pedido .grade{grid-template-columns:.9fr 1.1fr;gap:72px}
+  .onde .grade{grid-template-columns:.9fr 1.1fr;gap:72px}
+  .onde .foto{order:-1}
 }
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.varal .lamp{opacity:1}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -89,18 +136,25 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   <symbol id="i-zap" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
   <symbol id="i-pino" viewBox="0 0 24 24"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
   <symbol id="i-estrela" viewBox="0 0 24 24"><path d="M11.5 2.3a.5.5 0 0 1 1 0l2.3 4.7a2.1 2.1 0 0 0 1.6 1.2l5.2.7a.5.5 0 0 1 .3.9l-3.7 3.7a2.1 2.1 0 0 0-.6 1.8l.9 5.2a.5.5 0 0 1-.8.5l-4.6-2.4a2.1 2.1 0 0 0-2 0L6.4 21a.5.5 0 0 1-.8-.5l.9-5.2a2.1 2.1 0 0 0-.6-1.8L2.2 9.8a.5.5 0 0 1 .3-.9l5.1-.7a2.1 2.1 0 0 0 1.6-1.2z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
 </svg>
 
 <header class="topo">
-  <picture>
+  <div class="foto-topo">
     <img src="img/saiyajin-640.webp" srcset="img/saiyajin-640.webp 640w, img/saiyajin-1200.webp 1086w" sizes="100vw" width="1086" height="1448" fetchpriority="high" alt="Lanche Super Saiyajin 3 do Bills Burguer, com duas carnes, queijo derretido e um Goku no palito, à noite na praça">
-  </picture>
+  </div>
+  <div class="varal" aria-hidden="true">
+    <svg id="varal" viewBox="0 0 1000 90">
+      <path class="fio" d="M0 18 Q125 70 250 30 T500 34 T750 28 T1000 22"/>
+      <g id="lampadas"></g>
+    </svg>
+  </div>
   <div class="wrap conteudo">
     <h1 class="marca">Bills <span>Burguer Gourmet</span></h1>
     <p class="chamada">Hambúrguer gourmet no trailer da Praça Tancredo Neves, em Ribeirão Preto.</p>
     <div class="acoes">
-      <a class="btn btn-zap" href="https://wa.me/5516994217040?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido." target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>Pedir pelo WhatsApp</a>
-      <a class="btn btn-ir" href="#trailer"><svg class="i" aria-hidden="true"><use href="#i-pino"/></svg>Onde fica</a>
+      <a class="btn btn-roxo" href="#pedido">Fazer meu pedido</a>
+      <a class="btn btn-vidro" href="#onde"><svg class="i" aria-hidden="true"><use href="#i-pino"/></svg>Onde fica</a>
     </div>
     <p class="provas">
       <span class="estrela"><svg class="i" aria-hidden="true"><use href="#i-estrela"/></svg>5,0 no Google</span>
@@ -110,41 +164,72 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 </header>
 
 <main>
-  <section class="lanche" aria-labelledby="t-lanche">
+  <section class="destaque" aria-labelledby="t-destaque">
     <div class="wrap grade">
       <div>
-        <h2 id="t-lanche">Lanche com <em>personagem</em> no palito</h2>
-        <p>Pão dourado na chapa, carne alta e queijo derretendo. Cada lanche da foto chegou com um herói de anime espetado em cima.</p>
+        <span class="rotulo">O lanche do Goku</span>
+        <h2 id="t-destaque">Super <em>Saiyajin 3</em></h2>
+        <p>Duas carnes, queijo derretido e molho, no pão dourado na chapa. Chega com o Goku espetado em cima.</p>
+        <div class="acoes">
+          <button class="btn btn-roxo" type="button" id="add-destaque">Adicionar ao pedido</button>
+          <span class="contador" aria-live="polite"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span id="msg-destaque"></span></span>
+        </div>
       </div>
       <div class="foto">
-        <img src="img/lanche-duplo-640.webp" srcset="img/lanche-duplo-640.webp 640w, img/lanche-duplo-1200.webp 1122w" sizes="(min-width:860px) 520px, 100vw" width="1122" height="1402" loading="lazy" decoding="async" alt="Hambúrguer com rúcula, tomate e carne, com palito de Dragon Ball, servido na bandeja e segurado com luvas pretas">
+        <img src="img/ss3-close-640.webp" srcset="img/ss3-close-640.webp 640w, img/ss3-close-1086.webp 1086w" sizes="(min-width:900px) 540px, 90vw" width="1086" height="860" loading="lazy" decoding="async" alt="Super Saiyajin 3 de perto: duas carnes, cheddar derretido e molho, com o nome do lanche escrito embaixo">
       </div>
     </div>
   </section>
 
-  <section class="trailer" id="trailer" aria-labelledby="t-trailer">
-    <div class="wrap grade">
-      <div>
-        <h2 id="t-trailer">O trailer fica na praça</h2>
-        <address>
-          <strong>Praça Tancredo Neves</strong>
-          Ribeirão Preto, SP, 14071-009
-        </address>
-        <a class="btn btn-ir" href="https://www.google.com/maps/place/?q=place_id:ChIJmdgVw1mVuZQRNB4iQXASs_0" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-pino"/></svg>Como chegar</a>
-      </div>
-      <div class="foto">
-        <img src="img/trailer-640.webp" srcset="img/trailer-640.webp 640w, img/trailer-1200.webp 1086w" sizes="(min-width:860px) 560px, 100vw" width="1086" height="1448" loading="lazy" decoding="async" alt="Trailer preto do Bills Burguer aberto à noite, com luzes penduradas e o desenho de um personagem roxo segurando um hambúrguer">
-      </div>
-    </div>
-  </section>
-
-  <section class="pedido" aria-labelledby="t-pedido">
+  <section class="personagens" aria-labelledby="t-personagens">
     <div class="wrap">
-      <h2 id="t-pedido">Bateu a fome?</h2>
-      <p>Horários, cardápio e pedidos direto com o Bills pelo WhatsApp.</p>
-      <a class="numero" href="https://wa.me/5516994217040?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido." target="_blank" rel="noopener">(16) 99421-7040</a>
-      <div class="acoes">
-        <a class="btn btn-zap" href="https://wa.me/5516994217040?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido." target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>Chamar no WhatsApp</a>
+      <div class="cab">
+        <h2 id="t-personagens">Cada lanche com um personagem</h2>
+        <p>Pão na chapa, carne alta e um herói de anime no palito. As fotos são do próprio Bills.</p>
+      </div>
+      <div class="mosaico">
+        <figure><img src="img/trailer-640.webp" srcset="img/trailer-640.webp 640w, img/trailer-1200.webp 1086w" sizes="(min-width:900px) 620px, 90vw" width="1086" height="1448" loading="lazy" decoding="async" alt="Trailer preto do Bills Burguer aberto à noite, com luzes penduradas e o desenho de um personagem roxo segurando um hambúrguer"></figure>
+        <figure><img src="img/bandeja-640.webp" srcset="img/bandeja-640.webp 640w, img/bandeja-1100.webp 1100w" sizes="(min-width:900px) 520px, 90vw" width="1100" height="686" loading="lazy" decoding="async" alt="Hambúrguer com rúcula, tomate e carne sobre papel na bandeja, com palito de Dragon Ball"></figure>
+        <figure><img src="img/na-mao-640.webp" srcset="img/na-mao-640.webp 640w, img/na-mao-1100.webp 1100w" sizes="(min-width:900px) 520px, 90vw" width="1100" height="686" loading="lazy" decoding="async" alt="Mãos com luvas pretas segurando o hambúrguer à noite na praça"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="pedido" id="pedido" aria-labelledby="t-pedido">
+    <div class="wrap grade">
+      <div class="lado">
+        <h2 id="t-pedido">Monte o pedido e mande no WhatsApp</h2>
+        <p>Escolha aqui e o pedido abre pronto no WhatsApp do Bills. Valor, horário e entrega são confirmados por lá.</p>
+        <a class="numero" href="https://wa.me/5516994217040" data-ev="whatsapp" target="_blank" rel="noopener">(16) 99421-7040</a>
+      </div>
+      <form class="caixa" id="form-pedido" novalidate>
+        <div class="linha-item">
+          <img src="img/ss3-close-640.webp" width="72" height="72" loading="lazy" decoding="async" alt="">
+          <div><b>Super Saiyajin 3</b><small>Duas carnes e queijo</small></div>
+          <div class="qtd"><button type="button" class="menos" aria-label="Tirar um Super Saiyajin 3">&minus;</button><output id="q-ss3" aria-live="polite">0</output><button type="button" class="mais" aria-label="Adicionar um Super Saiyajin 3">+</button></div>
+        </div>
+        <div class="campo"><label for="f-outros">Outros lanches, bebidas ou adicionais</label><textarea id="f-outros" name="outros" placeholder="Escreva o que mais você quer"></textarea></div>
+        <div class="campo"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" autocomplete="name"></div>
+        <fieldset class="campo"><legend>Como prefere receber?</legend>
+          <div class="opcoes"><label><input type="radio" name="receber" value="Retirar no trailer" checked> Retirar no trailer</label><label><input type="radio" name="receber" value="Entrega"> Entrega</label></div>
+        </fieldset>
+        <div class="campo" id="campo-end" hidden><label for="f-end">Endereço de entrega</label><input id="f-end" name="endereco" autocomplete="street-address" placeholder="Rua, número e bairro"></div>
+        <p class="erro" id="erro" role="alert"></p>
+        <button class="btn btn-roxo" type="submit"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>Enviar pedido no WhatsApp</button>
+        <p class="aviso">O Bills confirma no WhatsApp se a entrega chega no seu endereço.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="onde" id="onde" aria-labelledby="t-onde">
+    <div class="wrap grade">
+      <div>
+        <h2 id="t-onde">O trailer fica na praça</h2>
+        <address><strong>Praça Tancredo Neves</strong>Ribeirão Preto, SP, 14071-009</address>
+        <a class="btn btn-vidro" href="https://www.google.com/maps/place/?q=place_id:ChIJmdgVw1mVuZQRNB4iQXASs_0" data-ev="rota" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-pino"/></svg>Como chegar</a>
+      </div>
+      <div class="foto">
+        <img src="img/na-mao-640.webp" srcset="img/na-mao-640.webp 640w, img/na-mao-1100.webp 1100w" sizes="(min-width:900px) 600px, 90vw" width="1100" height="686" loading="lazy" decoding="async" alt="Hambúrguer do Bills seguro com luvas pretas, com a praça iluminada ao fundo">
       </div>
     </div>
   </section>
@@ -156,5 +241,50 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <span>Site de demonstração feito pela Lince Digital</span>
   </div>
 </footer>
+
+<script>
+(function(){
+  var NUM = '5516994217040', SLUG = 'bills-burguer-gourmet', LOJA = 'Bills Burguer';
+  var ev = function(e){ if (/github\.io$|\.com\.br$/.test(location.hostname)) { var i = new Image(); i.src = 'https://n8n-felc.srv2128402.hstgr.cloud/webhook/lince-sites-evento?s=' + SLUG + '&e=' + e + '&t=' + Date.now(); } };
+  ev('visita');
+  document.querySelectorAll('[data-ev]').forEach(function(a){ a.addEventListener('click', function(){ ev(a.dataset.ev); }); });
+
+  // Lâmpadas do varal, acendendo uma a uma
+  var sv = document.getElementById('varal'), W = Math.max(320, sv.clientWidth), s = W / 1000;
+  sv.setAttribute('viewBox', '0 0 ' + W + ' 90');
+  var fio = document.querySelector('.varal .fio');
+  fio.setAttribute('d', 'M0 18 Q' + 125 * s + ' 70 ' + 250 * s + ' 30 T' + 500 * s + ' 34 T' + 750 * s + ' 28 T' + W + ' 22');
+  var g = document.getElementById('lampadas'), n = Math.round(Math.min(18, Math.max(8, W / 70))), L = fio.getTotalLength();
+  for (var k = 0; k < n; k++) {
+    var p = fio.getPointAtLength(L * (k + .5) / n), c = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
+    c.setAttribute('cx', p.x); c.setAttribute('cy', p.y + 7); c.setAttribute('rx', 4.5); c.setAttribute('ry', 6);
+    c.setAttribute('class', 'lamp'); c.style.animationDelay = (0.25 + k * 0.09) + 's, ' + (2 + (k % 5) * 0.6) + 's';
+    g.appendChild(c);
+  }
+
+  var qtd = 0, out = document.getElementById('q-ss3'), destaque = document.querySelector('.destaque'), msg = document.getElementById('msg-destaque');
+  function muda(d){ qtd = Math.max(0, qtd + d); out.textContent = qtd; destaque.classList.toggle('tem', qtd > 0); msg.textContent = qtd + ' no pedido'; }
+  document.querySelector('#form-pedido .mais').addEventListener('click', function(){ muda(1); });
+  document.querySelector('#form-pedido .menos').addEventListener('click', function(){ muda(-1); });
+  document.getElementById('add-destaque').addEventListener('click', function(){ muda(1); });
+
+  var form = document.getElementById('form-pedido'), campoEnd = document.getElementById('campo-end'), erro = document.getElementById('erro');
+  form.addEventListener('change', function(){ campoEnd.hidden = form.receber.value !== 'Entrega'; });
+  form.addEventListener('submit', function(e){
+    e.preventDefault(); erro.textContent = '';
+    var outros = form.outros.value.trim();
+    if (!qtd && !outros) { erro.textContent = 'Escolha o Super Saiyajin 3 ou escreva o que você quer.'; return; }
+    if (!form.nome.value.trim()) { erro.textContent = 'Escreva seu nome para o Bills saber de quem é o pedido.'; form.nome.focus(); return; }
+    if (form.receber.value === 'Entrega' && !form.endereco.value.trim()) { erro.textContent = 'Escreva o endereço de entrega.'; form.endereco.focus(); return; }
+    var t = 'Olá, ' + LOJA + '! Quero fazer um pedido pelo site:\n';
+    if (qtd) t += '\n' + qtd + 'x Super Saiyajin 3';
+    if (outros) t += '\n' + outros;
+    t += '\n\nNome: ' + form.nome.value.trim() + '\n' + form.receber.value;
+    if (form.receber.value === 'Entrega') t += ': ' + form.endereco.value.trim();
+    ev('pedido');
+    window.open('https://wa.me/' + NUM + '?text=' + encodeURIComponent(t), '_blank', 'noopener');
+  });
+})();
+</script>
 </body>
 </html>
