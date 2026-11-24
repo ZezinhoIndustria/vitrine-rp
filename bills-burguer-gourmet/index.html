@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Bills Burguer Gourmet | Ribeirão Preto</title>
+<meta name="description" content="Hambúrguer gourmet no trailer da Praça Tancredo Neves, em Ribeirão Preto. Pedidos pelo WhatsApp (16) 99421-7040.">
+<meta name="theme-color" content="#0E0B12">
+<link rel="preload" href="fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/saiyajin-640.webp" imagesrcset="img/saiyajin-640.webp 640w, img/saiyajin-1200.webp 1086w" imagesizes="100vw" fetchpriority="high">
+<style>
+@font-face{font-family:"Anton";src:url(fonts/anton.woff2) format("woff2");font-weight:400;font-display:swap}
+:root{--noite:#0E0B12;--noite-2:#17121D;--creme:#F6EEE3;--creme-2:#CFC4B6;--lampada:#FFB547;--roxo:#9B5CF0;--roxo-claro:#C9A8FF;--display:"Anton",Impact,sans-serif;--texto:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scrollbar-color:var(--roxo) var(--noite)}
+body{background:var(--noite);color:var(--creme);font:400 1.0625rem/1.6 var(--texto);-webkit-font-smoothing:antialiased}
+::selection{background:var(--lampada);color:var(--noite)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--lampada);outline-offset:4px;border-radius:6px}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+h1,h2{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:.92;text-wrap:balance}
+svg.i{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* Topo: o trailer à noite */
+.topo{position:relative;min-height:100svh;display:grid;align-items:end;overflow:hidden;isolation:isolate}
+.topo picture,.topo picture img{position:absolute;inset:0;width:100%;height:100%}
+.topo picture img{object-fit:cover;object-position:0% 30%;animation:acende 1.6s cubic-bezier(.16,1,.3,1) both}
+.topo::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,rgba(14,11,18,.15) 0%,rgba(14,11,18,0) 30%,rgba(14,11,18,.75) 62%,var(--noite) 92%)}
+.topo .conteudo{position:relative;z-index:1;padding-block:0 clamp(32px,7vh,72px)}
+@keyframes acende{from{filter:blur(14px) brightness(.35);transform:scale(1.06)}to{filter:none;transform:none}}
+.marca{font-size:clamp(4.2rem,22vw,6rem);color:var(--creme)}
+.marca span{display:block;font-size:.5em;color:var(--lampada);letter-spacing:.04em;margin-top:.12em}
+.chamada{max-width:30ch;margin-top:18px;font-size:clamp(1.125rem,2.2vw,1.35rem);line-height:1.45;color:var(--creme)}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px;border-radius:999px;font-weight:700;font-size:1.0625rem;text-decoration:none;transition:transform .2s cubic-bezier(.16,1,.3,1),background-color .2s}
+.btn:active{transform:scale(.97)}
+.btn-zap{background:var(--roxo);color:#fff;box-shadow:0 10px 30px -8px rgba(155,92,240,.6)}
+.btn-zap:hover{background:#8A49E6}
+.btn-ir{background:rgba(246,238,227,.1);color:var(--creme);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.btn-ir:hover{background:rgba(246,238,227,.18)}
+.provas{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:24px;font-size:.95rem;color:var(--creme-2)}
+.provas span{display:inline-flex;align-items:center;gap:8px}
+.provas .estrela{color:var(--lampada)}
+.provas .estrela svg{fill:currentColor}
+
+/* Lanche */
+.lanche{padding-block:clamp(72px,12vw,140px)}
+.lanche .grade{display:grid;gap:36px;align-items:center}
+.lanche h2{font-size:clamp(2.75rem,9vw,5rem)}
+.lanche h2 em{font-style:normal;color:var(--lampada)}
+.lanche p{margin-top:18px;max-width:40ch;color:var(--creme-2);font-size:1.125rem}
+.foto{border-radius:16px;overflow:hidden;background:var(--noite-2);box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+
+/* Trailer */
+.trailer{background:var(--noite-2);padding-block:clamp(72px,12vw,140px)}
+.trailer .grade{display:grid;gap:36px;align-items:center}
+.trailer h2{font-size:clamp(2.75rem,9vw,5rem)}
+.trailer address{font-style:normal;margin-top:18px;font-size:1.125rem;color:var(--creme-2);max-width:36ch}
+.trailer address strong{display:block;color:var(--creme);font-size:1.25rem}
+.trailer .btn{margin-top:26px}
+
+/* Pedido */
+.pedido{padding-block:clamp(80px,14vw,160px);text-align:center}
+.pedido h2{font-size:clamp(3rem,11vw,6rem)}
+.pedido p{margin:16px auto 0;max-width:34ch;color:var(--creme-2);font-size:1.125rem}
+.numero{display:inline-block;margin-top:28px;font-family:var(--display);font-size:clamp(2.25rem,8vw,4rem);letter-spacing:.02em;color:var(--roxo-claro);text-decoration:none;font-variant-numeric:tabular-nums}
+.numero:hover{color:var(--lampada)}
+.pedido .acoes{justify-content:center}
+
+footer{padding-block:32px calc(32px + env(safe-area-inset-bottom));color:#9A8F84;font-size:.875rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media (min-width:860px){
+  .topo{align-items:center}
+  .topo picture img{object-position:70% 40%}
+  .topo::after{background:linear-gradient(90deg,var(--noite) 0%,rgba(14,11,18,.85) 32%,rgba(14,11,18,.1) 62%),linear-gradient(0deg,var(--noite) 0%,rgba(14,11,18,0) 25%)}
+  .topo .conteudo{padding-block:0}
+  .lanche .grade{grid-template-columns:1.05fr .95fr;gap:72px}
+  .trailer .grade{grid-template-columns:.9fr 1.1fr;gap:72px}
+  .trailer .foto{order:-1}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-pino" viewBox="0 0 24 24"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-estrela" viewBox="0 0 24 24"><path d="M11.5 2.3a.5.5 0 0 1 1 0l2.3 4.7a2.1 2.1 0 0 0 1.6 1.2l5.2.7a.5.5 0 0 1 .3.9l-3.7 3.7a2.1 2.1 0 0 0-.6 1.8l.9 5.2a.5.5 0 0 1-.8.5l-4.6-2.4a2.1 2.1 0 0 0-2 0L6.4 21a.5.5 0 0 1-.8-.5l.9-5.2a2.1 2.1 0 0 0-.6-1.8L2.2 9.8a.5.5 0 0 1 .3-.9l5.1-.7a2.1 2.1 0 0 0 1.6-1.2z"/></symbol>
+</svg>
+
+<header class="topo">
+  <picture>
+    <img src="img/saiyajin-640.webp" srcset="img/saiyajin-640.webp 640w, img/saiyajin-1200.webp 1086w" sizes="100vw" width="1086" height="1448" fetchpriority="high" alt="Lanche Super Saiyajin 3 do Bills Burguer, com duas carnes, queijo derretido e um Goku no palito, à noite na praça">
+  </picture>
+  <div class="wrap conteudo">
+    <h1 class="marca">Bills <span>Burguer Gourmet</span></h1>
+    <p class="chamada">Hambúrguer gourmet no trailer da Praça Tancredo Neves, em Ribeirão Preto.</p>
+    <div class="acoes">
+      <a class="btn btn-zap" href="https://wa.me/5516994217040?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido." target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>Pedir pelo WhatsApp</a>
+      <a class="btn btn-ir" href="#trailer"><svg class="i" aria-hidden="true"><use href="#i-pino"/></svg>Onde fica</a>
+    </div>
+    <p class="provas">
+      <span class="estrela"><svg class="i" aria-hidden="true"><use href="#i-estrela"/></svg>5,0 no Google</span>
+      <span>11 avaliações</span>
+    </p>
+  </div>
+</header>
+
+<main>
+  <section class="lanche" aria-labelledby="t-lanche">
+    <div class="wrap grade">
+      <div>
+        <h2 id="t-lanche">Lanche com <em>personagem</em> no palito</h2>
+        <p>Pão dourado na chapa, carne alta e queijo derretendo. Cada lanche da foto chegou com um herói de anime espetado em cima.</p>
+      </div>
+      <div class="foto">
+        <img src="img/lanche-duplo-640.webp" srcset="img/lanche-duplo-640.webp 640w, img/lanche-duplo-1200.webp 1122w" sizes="(min-width:860px) 520px, 100vw" width="1122" height="1402" loading="lazy" decoding="async" alt="Hambúrguer com rúcula, tomate e carne, com palito de Dragon Ball, servido na bandeja e segurado com luvas pretas">
+      </div>
+    </div>
+  </section>
+
+  <section class="trailer" id="trailer" aria-labelledby="t-trailer">
+    <div class="wrap grade">
+      <div>
+        <h2 id="t-trailer">O trailer fica na praça</h2>
+        <address>
+          <strong>Praça Tancredo Neves</strong>
+          Ribeirão Preto, SP, 14071-009
+        </address>
+        <a class="btn btn-ir" href="https://www.google.com/maps/place/?q=place_id:ChIJmdgVw1mVuZQRNB4iQXASs_0" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-pino"/></svg>Como chegar</a>
+      </div>
+      <div class="foto">
+        <img src="img/trailer-640.webp" srcset="img/trailer-640.webp 640w, img/trailer-1200.webp 1086w" sizes="(min-width:860px) 560px, 100vw" width="1086" height="1448" loading="lazy" decoding="async" alt="Trailer preto do Bills Burguer aberto à noite, com luzes penduradas e o desenho de um personagem roxo segurando um hambúrguer">
+      </div>
+    </div>
+  </section>
+
+  <section class="pedido" aria-labelledby="t-pedido">
+    <div class="wrap">
+      <h2 id="t-pedido">Bateu a fome?</h2>
+      <p>Horários, cardápio e pedidos direto com o Bills pelo WhatsApp.</p>
+      <a class="numero" href="https://wa.me/5516994217040?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido." target="_blank" rel="noopener">(16) 99421-7040</a>
+      <div class="acoes">
+        <a class="btn btn-zap" href="https://wa.me/5516994217040?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido." target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>Chamar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Bills Burguer Gourmet · Praça Tancredo Neves, Ribeirão Preto</span>
+    <span>Site de demonstração feito pela Lince Digital</span>
+  </div>
+</footer>
+</body>
+</html>
