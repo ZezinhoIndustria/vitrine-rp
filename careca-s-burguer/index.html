@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Careca's Burguer | Ribeirão Verde, Ribeirão Preto</title>
+<meta name="description" content="Hamburgueria no Ribeirão Verde, em Ribeirão Preto. Monte o pedido aqui e mande pronto no WhatsApp (16) 99314-6585.">
+<meta name="theme-color" content="#161412">
+<link rel="preload" href="fonts/baloo2-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/frango-crocante-640.webp" imagesrcset="img/frango-crocante-640.webp 640w, img/frango-crocante-1280.webp 1200w" imagesizes="(min-width:900px) 34vw, 78vw" fetchpriority="high">
+<link rel="icon" href="img/logo.webp">
+<style>
+@font-face{font-family:"Baloo 2";src:url(fonts/baloo2-700.woff2) format("woff2");font-weight:700;font-display:swap}
+:root{--carvao:#161412;--carvao-2:#221F1B;--carvao-3:#2F2A24;--amarelo:#F5B800;--amarelo-esc:#E0A800;--tinta-am:#1C1406;--creme:#F7F1E6;--creme-2:#CDC4B4;--disp:"Baloo 2",system-ui,sans-serif;--texto:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scrollbar-color:var(--amarelo) var(--carvao);overflow-x:hidden;overflow-x:clip}
+body{background:var(--carvao);color:var(--creme);font:400 1.0625rem/1.6 var(--texto);-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
+body.com-pedido{padding-bottom:92px}
+::selection{background:var(--amarelo);color:var(--tinta-am)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px;border-radius:10px}
+.wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+h1,h2,h3,h4{font-family:var(--disp);font-weight:700;line-height:1;letter-spacing:-.01em;text-wrap:balance}
+svg.i{width:1.2em;height:1.2em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border:0;border-radius:999px;font:700 1.0625rem var(--texto);text-decoration:none;cursor:pointer;transition:transform .2s var(--ease),background-color .2s}
+.btn:active{transform:scale(.97)}
+.btn-am{background:var(--amarelo);color:var(--tinta-am);box-shadow:0 14px 30px -14px rgba(245,184,0,.55)}
+.btn-am:hover{background:var(--amarelo-esc)}
+.btn-esc{background:var(--carvao-3);color:var(--creme)}
+.btn-esc:hover{background:#3B352E}
+
+/* Topo */
+.barra{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marca img{width:52px;height:auto;border-radius:12px}
+.final img{border-radius:18px}
+.marca span{font-family:var(--disp);font-size:1.35rem;line-height:1;color:var(--amarelo)}
+.barra .tel{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-variant-numeric:tabular-nums;min-height:44px}
+.abertura{display:grid;gap:44px;align-items:center;padding-block:clamp(20px,5vw,56px) clamp(72px,10vw,120px)}
+h1{font-size:clamp(3rem,12.5vw,5.6rem);line-height:.92}
+h1 em{font-style:normal;color:var(--amarelo)}
+.chamada{margin-top:22px;max-width:34ch;font-size:clamp(1.125rem,2.2vw,1.3rem);color:var(--creme-2)}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.fatos{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:28px;color:var(--creme-2);font-size:.95rem}
+.fatos span{display:inline-flex;align-items:center;gap:8px}
+.estrela svg,.nota svg{fill:var(--amarelo);stroke:var(--amarelo)}
+
+/* Momento assinatura: o prato chega no balcão amarelo */
+.palco{position:relative;justify-self:center;width:min(440px,86vw);aspect-ratio:1}
+.palco .bloco{position:absolute;inset:8% -30% 8% 34%;background:var(--amarelo);border-radius:28px;animation:varre 1s var(--ease) both}
+.palco .disco{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:var(--carvao-2);box-shadow:0 40px 60px -30px rgba(0,0,0,.85);animation:serve 1.2s .15s var(--ease) both}
+.palco .disco img{width:100%;height:100%;object-fit:cover;object-position:50% 58%}
+.palco .placa{position:absolute;left:-6px;bottom:4%;background:var(--creme);color:var(--tinta-am);border-radius:16px;padding:12px 16px;font-size:.9rem;line-height:1.3;box-shadow:0 20px 30px -18px rgba(0,0,0,.7);animation:sobe .8s .8s var(--ease) both}
+.palco .placa b{display:block;font-family:var(--disp);font-size:1.45rem;line-height:1.05}
+@keyframes varre{from{transform:translateX(40%);opacity:0}to{transform:none;opacity:1}}
+@keyframes serve{from{transform:translateY(30px) rotate(-14deg) scale(.86);opacity:0}to{transform:none;opacity:1}}
+@keyframes sobe{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* Pedido */
+.pedir{background:var(--creme);color:var(--tinta-am);padding-block:clamp(72px,10vw,120px)}
+.cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:14px 40px;margin-bottom:34px}
+.cab h2{font-size:clamp(2.4rem,6.5vw,3.8rem)}
+.cab p{max-width:40ch;font-size:1rem}
+.pedir .cab p{color:#5A4E3C}
+.destaque{display:grid;background:var(--carvao);color:var(--creme);border-radius:24px;overflow:hidden}
+.destaque img{width:100%;height:100%;max-height:520px;object-fit:cover}
+.destaque .corpo{padding:clamp(24px,4vw,48px);display:flex;flex-direction:column;justify-content:center;gap:14px}
+.rotulo{align-self:flex-start;background:var(--amarelo);color:var(--tinta-am);font-weight:800;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:5px 12px}
+.destaque h3{font-size:clamp(2.4rem,6vw,3.4rem)}
+.destaque p{color:var(--creme-2);max-width:36ch}
+.linha{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:6px}
+.preco{font-size:.95rem;color:var(--creme-2)}
+.grupo{margin-top:52px}
+.grupo h3{font-size:1.9rem;margin-bottom:16px}
+.grupo h3 small{font:600 .95rem var(--texto);color:#6E604B;margin-left:10px}
+.itens{display:grid;gap:12px;list-style:none;padding:0}
+.item{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;background:#FFFDF8;border-radius:16px;padding:16px 14px 16px 20px;box-shadow:0 12px 26px -22px rgba(40,28,8,.55);transition:background-color .2s}
+.item.tem{background:#FFF3CC}
+.item h4{font-size:1.4rem;line-height:1.1}
+.item p{font-size:.94rem;color:#5A4E3C;margin-top:3px}
+.qtd{display:flex;align-items:center;gap:6px}
+.qtd button{width:44px;height:44px;border-radius:50%;border:0;background:#EDE4D3;color:var(--tinta-am);font:700 1.3rem/1 var(--texto);cursor:pointer;display:grid;place-items:center;transition:background-color .2s,transform .15s}
+.qtd button.mais{background:var(--carvao);color:var(--amarelo)}
+.qtd button.mais:hover{background:#000}
+.qtd button:active{transform:scale(.92)}
+.qtd output{min-width:1.4em;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+.qtd button.menos,.qtd output{display:none}
+.tem .qtd button.menos{display:grid}
+.tem .qtd output{display:block}
+.destaque .qtd button.mais{background:var(--amarelo);color:var(--tinta-am)}
+.destaque .qtd button.menos{background:var(--carvao-3);color:var(--creme)}
+.outro{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;color:#5A4E3C}
+.outro .btn{background:var(--carvao);color:var(--creme)}
+
+/* Galeria */
+.fotos{padding-block:clamp(72px,10vw,120px) 0}
+.galeria{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,64vw);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 18px;scrollbar-width:thin}
+.galeria img{border-radius:18px;scroll-snap-align:center;width:100%;aspect-ratio:3/4;object-fit:cover}
+
+/* Onde e quando */
+.onde{padding-block:clamp(72px,10vw,120px)}
+.onde .grade{display:grid;gap:32px;background:var(--carvao-2);border-radius:24px;padding:clamp(28px,5vw,56px)}
+.onde h2{font-size:clamp(2.3rem,6vw,3.4rem)}
+.onde address{font-style:normal;margin-top:16px;font-size:1.1rem;color:var(--creme-2)}
+.onde address strong{display:block;color:var(--creme);font-size:1.2rem}
+.horas{list-style:none;padding:0;display:grid;gap:8px;font-variant-numeric:tabular-nums}
+.horas li{display:flex;justify-content:space-between;gap:16px;padding-block:6px;color:var(--creme-2)}
+.horas li b{color:var(--creme);font-weight:600}
+.horas li.folga b{color:#9C9283}
+.onde .links{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:22px}
+.nota{display:inline-flex;align-items:center;gap:8px;color:var(--creme-2);width:100%}
+
+/* Final */
+.final{padding-block:clamp(24px,6vw,70px) clamp(84px,12vw,140px);text-align:center}
+.final img{width:96px;margin:0 auto 18px;animation:balanca 5s -1.5s ease-in-out infinite}
+@keyframes balanca{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+.final h2{font-size:clamp(2.6rem,9vw,4.8rem)}
+.final p{margin:14px auto 0;max-width:32ch;color:var(--creme-2);font-size:1.125rem}
+.final .acoes{justify-content:center}
+footer{padding-block:26px calc(26px + env(safe-area-inset-bottom));color:#9C9283;font-size:.875rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+/* Sacola e revisão */
+.sacola{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:20;display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--amarelo);color:var(--tinta-am);border-radius:20px;padding:10px 10px 10px 20px;box-shadow:0 20px 40px -16px rgba(0,0,0,.6);transform:translateY(160%);transition:transform .45s var(--ease);max-width:640px;margin-inline:auto}
+.com-pedido .sacola{transform:none}
+.sacola .resumo{font-weight:600}
+.sacola .resumo b{font-family:var(--disp);font-size:1.3rem}
+.sacola .btn{background:var(--carvao);color:var(--creme)}
+dialog{margin:auto;border:0;padding:0;border-radius:24px;width:min(560px,100% - 24px);max-height:calc(100dvh - 24px);background:var(--carvao);color:var(--creme);box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+dialog::backdrop{background:rgba(8,6,4,.72);backdrop-filter:blur(3px)}
+dialog[open]{animation:abre .35s var(--ease)}
+@keyframes abre{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:none}}
+.revisao{padding:26px 24px 24px;display:flex;flex-direction:column;gap:18px}
+.revisao header{display:flex;justify-content:space-between;align-items:start;gap:12px}
+.revisao h2{font-size:2rem}
+.fechar{width:44px;height:44px;border-radius:50%;border:0;background:var(--carvao-3);color:var(--creme);cursor:pointer;display:grid;place-items:center;flex:none}
+.lista{list-style:none;padding:0;display:grid;gap:8px}
+.lista li{display:flex;justify-content:space-between;gap:12px;font-weight:600}
+.lista li span:last-child{font-variant-numeric:tabular-nums;color:var(--amarelo)}
+.lista:empty{display:none}
+.campo{display:grid;gap:6px}
+.campo label,.campo legend{font-weight:700;font-size:.95rem}
+.campo input,.campo textarea{font:1rem var(--texto);color:var(--creme);background:var(--carvao-2);border:1px solid #4A4339;border-radius:12px;padding:12px 14px;width:100%}
+.campo input::placeholder,.campo textarea::placeholder{color:#968C7D}
+.campo textarea{min-height:70px;resize:vertical}
+fieldset.campo{border:0;padding:0}
+.opcoes{display:flex;gap:10px;flex-wrap:wrap}
+.opcoes label{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;background:var(--carvao-2);border:1px solid #4A4339;border-radius:999px;padding:10px 16px;font-weight:600;cursor:pointer;min-height:44px}
+.opcoes input{accent-color:var(--amarelo)}
+.aviso{font-size:.88rem;color:var(--creme-2)}
+
+@media (min-width:900px){
+  .abertura{grid-template-columns:1.05fr .95fr;gap:64px;padding-block:24px 120px}
+  h1{font-size:clamp(3.6rem,5.6vw,5.6rem)}
+  .destaque{grid-template-columns:1fr 1fr;align-items:stretch}
+  .itens{grid-template-columns:1fr 1fr}
+  .galeria{grid-auto-flow:initial;grid-template-columns:repeat(3,1fr);overflow:visible;width:min(1160px,100% - 40px);margin-inline:auto;padding:0}
+  .onde .grade{grid-template-columns:1.1fr 1fr;align-items:start}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-pino" viewBox="0 0 24 24"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-estrela" viewBox="0 0 24 24"><path d="M11.5 2.3a.5.5 0 0 1 1 0l2.3 4.7a2.1 2.1 0 0 0 1.6 1.2l5.2.7a.5.5 0 0 1 .3.9l-3.7 3.7a2.1 2.1 0 0 0-.6 1.8l.9 5.2a.5.5 0 0 1-.8.5l-4.6-2.4a2.1 2.1 0 0 0-2 0L6.4 21a.5.5 0 0 1-.8-.5l.9-5.2a2.1 2.1 0 0 0-.6-1.8L2.2 9.8a.5.5 0 0 1 .3-.9l5.1-.7a2.1 2.1 0 0 0 1.6-1.2z"/></symbol>
+  <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-sacola" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-lapis" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap">
+    <nav class="barra" aria-label="Contato">
+      <a class="marca" href="#"><img src="img/logo.webp" width="223" height="264" alt="Logo do Careca's Burguer: o mascote careca segurando um hambúrguer"><span>Careca's<br>Burguer</span></a>
+      <a class="tel" href="https://wa.me/5516993146585" data-ev="whatsapp" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>(16) 99314-6585</a>
+    </nav>
+    <div class="abertura">
+      <div>
+        <h1>Lanche caprichado <em>no Ribeirão Verde</em></h1>
+        <p class="chamada">Pão brioche, carne na chapa e baguete recheada. Escolha seus lanches aqui e o pedido chega pronto no WhatsApp do Careca's.</p>
+        <div class="acoes">
+          <a class="btn btn-am" href="#pedido-lista">Fazer meu pedido</a>
+          <a class="btn btn-esc" href="https://wa.me/5516993146585" data-ev="whatsapp" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>Chamar no WhatsApp</a>
+        </div>
+        <p class="fatos">
+          <span class="estrela"><svg class="i" aria-hidden="true"><use href="#i-estrela"/></svg>5,0 no Google (4 avaliações)</span>
+          <span><svg class="i" aria-hidden="true"><use href="#i-relogio"/></svg>De terça a domingo, a partir das 19h</span>
+        </p>
+      </div>
+      <div class="palco">
+        <div class="bloco" aria-hidden="true"></div>
+        <div class="disco"><img src="img/frango-crocante-640.webp" srcset="img/frango-crocante-640.webp 640w, img/frango-crocante-1280.webp 1200w" sizes="(min-width:900px) 34vw, 78vw" width="1200" height="1600" fetchpriority="high" alt="Lanche Frango crocante do Careca's: pão brioche, frango empanado, bacon e cheddar derretido sobre tábua de madeira"></div>
+        <p class="placa"><b>Frango crocante</b>frango empanado, bacon e cheddar</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="pedir" id="pedido-lista" aria-labelledby="t-pedir">
+    <div class="wrap">
+      <div class="cab">
+        <h2 id="t-pedir">Monte seu pedido</h2>
+        <p>Toque no + nos lanches que você quer. Valores, entrega e tempo de preparo são confirmados no WhatsApp.</p>
+      </div>
+
+      <article class="destaque" data-item="Frango crocante">
+        <img src="img/frango-crocante-640.webp" srcset="img/frango-crocante-640.webp 640w, img/frango-crocante-1280.webp 1200w" sizes="(min-width:900px) 560px, 92vw" width="1200" height="1600" loading="lazy" decoding="async" alt="Frango crocante de perto, com o cheddar escorrendo pela lateral do frango empanado">
+        <div class="corpo">
+          <span class="rotulo">Destaque</span>
+          <h3>Frango crocante</h3>
+          <p>Pão brioche, frango empanado, bacon e cheddar.</p>
+          <div class="linha"><div class="qtd"></div><span class="preco">Valor confirmado no WhatsApp</span></div>
+        </div>
+      </article>
+
+      <div class="grupo">
+        <h3>No pão brioche</h3>
+        <ul class="itens">
+          <li class="item" data-item="Clássico"><div><h4>Clássico</h4><p>Carne de 120 g, mussarela, bacon, tomate e alface.</p></div><div class="qtd"></div></li>
+          <li class="item" data-item="Admirável"><div><h4>Admirável</h4><p>Carne de 150 g, bacon, queijo prato, alface e tomate.</p></div><div class="qtd"></div></li>
+          <li class="item" data-item="Cheeseburger"><div><h4>Cheeseburger</h4><p>Carne de 80 g e queijo mussarela.</p></div><div class="qtd"></div></li>
+          <li class="item" data-item="Duplo smash"><div><h4>Duplo smash</h4><p>Duas carnes de 80 g, cheddar e picles.</p></div><div class="qtd"></div></li>
+          <li class="item" data-item="Triplo smash"><div><h4>Triplo smash</h4><p>Três carnes de 80 g e cheddar.</p></div><div class="qtd"></div></li>
+          <li class="item" data-item="Carecaço"><div><h4>Carecaço</h4><p>Três carnes de 100 g, bacon e queijo prato.</p></div><div class="qtd"></div></li>
+          <li class="item" data-item="Carecão"><div><h4>Carecão</h4><p>Hambúrguer de costela de 180 g, mussarela, bacon, picles, alface americana, cebola roxa e barbecue.</p></div><div class="qtd"></div></li>
+        </ul>
+      </div>
+      <div class="grupo">
+        <h3>Na baguete</h3>
+        <ul class="itens">
+          <li class="item" data-item="Careca steak"><div><h4>Careca steak</h4><p>Carne de 250 g, cebola e queijo cheddar.</p></div><div class="qtd"></div></li>
+          <li class="item" data-item="Pullet pork"><div><h4>Pullet pork</h4><p>Porco defumado desfiado, barbecue, queijo prato e repolho.</p></div><div class="qtd"></div></li>
+        </ul>
+      </div>
+      <div class="grupo">
+        <h3>No pão de hambúrguer</h3>
+        <ul class="itens">
+          <li class="item" data-item="X-tudo"><div><h4>X-tudo</h4><p>Carne de 120 g, presunto, mussarela, salsicha, ovo, alface e tomate.</p></div><div class="qtd"></div></li>
+        </ul>
+      </div>
+      <p class="outro">Quer bebida, porção ou tirar algum ingrediente? <button class="btn" type="button" id="outro-lanche"><svg class="i" aria-hidden="true"><use href="#i-lapis"/></svg>Escrever no pedido</button></p>
+    </div>
+  </section>
+
+  <section class="fotos" aria-labelledby="t-fotos">
+    <div class="wrap">
+      <div class="cab">
+        <h2 id="t-fotos">Direto da chapa</h2>
+        <p>Fotos do próprio Careca's.</p>
+      </div>
+    </div>
+    <div class="galeria">
+      <img src="img/mesa-640.webp" srcset="img/mesa-640.webp 640w, img/mesa-1280.webp 1280w" sizes="(min-width:900px) 370px, 64vw" width="1280" height="1706" loading="lazy" decoding="async" alt="Dois hambúrgueres servidos em cestinhas na mesa, com molhos e refrigerante ao lado">
+      <img src="img/baguete-640.webp" srcset="img/baguete-640.webp 640w, img/baguete-1280.webp 1280w" sizes="(min-width:900px) 370px, 64vw" width="1280" height="1706" loading="lazy" decoding="async" alt="Baguete com gergelim recheada de carne desfiada e queijo">
+      <img src="img/fritas-640.webp" srcset="img/fritas-640.webp 640w, img/fritas-1280.webp 1280w" sizes="(min-width:900px) 370px, 64vw" width="1280" height="1706" loading="lazy" decoding="async" alt="Batata frita coberta de cheddar e carne na embalagem para viagem">
+      <img src="img/pulled-640.webp" srcset="img/pulled-640.webp 640w, img/pulled-1280.webp 1280w" sizes="(min-width:900px) 370px, 64vw" width="1280" height="1706" loading="lazy" decoding="async" alt="Lanche aberto com carne desfiada e repolho, embrulhado em papel">
+      <img src="img/balcao-640.webp" srcset="img/balcao-640.webp 640w, img/balcao-1280.webp 1280w" sizes="(min-width:900px) 370px, 64vw" width="1280" height="1706" loading="lazy" decoding="async" alt="Balcão do Careca's com parede amarela e geladeira de bebidas">
+      <img src="img/fachada-640.webp" srcset="img/fachada-640.webp 640w, img/fachada-1280.webp 1280w" sizes="(min-width:900px) 370px, 64vw" width="1280" height="1706" loading="lazy" decoding="async" alt="Salão amarelo do Careca's aberto à noite, com mesas na calçada">
+    </div>
+  </section>
+
+  <section class="onde" aria-labelledby="t-onde">
+    <div class="wrap">
+      <div class="grade">
+        <div>
+          <h2 id="t-onde">Onde fica</h2>
+          <address><strong>R. Eugênia Fortini Vasoin, 2572</strong>Ribeirão Verde, Ribeirão Preto, SP, 14079-327</address>
+          <div class="links">
+            <p class="nota"><svg class="i" aria-hidden="true"><use href="#i-estrela"/></svg>5,0 no Google, 4 avaliações</p>
+            <a class="btn btn-am" href="https://www.google.com/maps/place/?q=place_id:ChIJP_nAIuvBuZQRuq2_FGT-SGo" data-ev="rota" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-pino"/></svg>Como chegar</a>
+          </div>
+        </div>
+        <div>
+          <h2>Horários</h2>
+          <ul class="horas" style="margin-top:16px">
+            <li><span>Terça a sábado</span><b>19h às 0h</b></li>
+            <li><span>Domingo</span><b>19h às 23h</b></li>
+            <li class="folga"><span>Segunda</span><b>Fechado</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="t-final">
+    <div class="wrap">
+      <img src="img/logo.webp" width="223" height="264" loading="lazy" alt="" aria-hidden="true">
+      <h2 id="t-final">Bateu a fome?</h2>
+      <p>Monte o pedido ou chame o Careca's direto no WhatsApp.</p>
+      <div class="acoes">
+        <a class="btn btn-am" href="#pedido-lista">Fazer meu pedido</a>
+        <a class="btn btn-esc" href="https://wa.me/5516993146585" data-ev="whatsapp" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>(16) 99314-6585</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Careca's Burguer · Ribeirão Verde, Ribeirão Preto</span>
+    <span>Site de demonstração feito pela Lince Digital</span>
+  </div>
+</footer>
+
+<div class="sacola" role="region" aria-label="Seu pedido">
+  <span class="resumo" aria-live="polite"><b id="n-itens">0</b> <span id="t-itens">itens</span> no pedido</span>
+  <button class="btn" type="button" id="revisar"><svg class="i" aria-hidden="true"><use href="#i-sacola"/></svg>Revisar pedido</button>
+</div>
+
+<dialog id="pedido" aria-labelledby="t-revisao">
+  <form class="revisao" method="dialog" id="form-pedido">
+    <header><h2 id="t-revisao">Seu pedido</h2><button class="fechar" type="button" id="fechar" aria-label="Fechar"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button></header>
+    <ul class="lista" id="lista"></ul>
+    <div class="campo"><label for="f-outros">Bebidas, porções ou mudanças no lanche</label><textarea id="f-outros" name="outros" placeholder="Ex.: um refrigerante, Clássico sem tomate"></textarea></div>
+    <div class="campo"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" autocomplete="name" required></div>
+    <fieldset class="campo"><legend>Como prefere receber?</legend>
+      <div class="opcoes"><label><input type="radio" name="receber" value="Retirar no balcão" checked> Retirar no balcão</label><label><input type="radio" name="receber" value="Entrega"> Entrega</label></div>
+    </fieldset>
+    <div class="campo" id="campo-end" hidden><label for="f-end">Endereço de entrega</label><input id="f-end" name="endereco" autocomplete="street-address" placeholder="Rua, número e bairro"></div>
+    <div class="campo"><label for="f-obs">Observação (opcional)</label><textarea id="f-obs" name="obs" placeholder="Ex.: troco para 50"></textarea></div>
+    <button class="btn btn-am" type="submit"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>Enviar pedido no WhatsApp</button>
+    <p class="aviso">O pedido abre no WhatsApp do Careca's já escrito. Valor e entrega são confirmados por lá.</p>
+  </form>
+</dialog>
+
+<script>
+(function(){
+  var NUM = '5516993146585', SLUG = 'careca-s-burguer', LOJA = "Careca's Burguer";
+  var ev = function(e){ if (/github\.io$|\.com\.br$/.test(location.hostname)) { var i = new Image(); i.src = 'https://n8n-felc.srv2128402.hstgr.cloud/webhook/lince-sites-evento?s=' + SLUG + '&e=' + e + '&t=' + Date.now(); } };
+  ev('visita');
+  document.querySelectorAll('[data-ev]').forEach(function(a){ a.addEventListener('click', function(){ ev(a.dataset.ev); }); });
+  var pedido = {}, body = document.body, nEl = document.getElementById('n-itens'), tEl = document.getElementById('t-itens');
+  function atualiza(){
+    var total = 0; for (var k in pedido) total += pedido[k];
+    nEl.textContent = total; tEl.textContent = total === 1 ? 'item' : 'itens';
+    body.classList.toggle('com-pedido', total > 0);
+  }
+  document.querySelectorAll('[data-item]').forEach(function(card){
+    var nome = card.dataset.item, box = card.querySelector('.qtd');
+    box.innerHTML = '<button type="button" class="menos" aria-label="Tirar ' + nome + '">−</button><output aria-live="polite">0</output><button type="button" class="mais" aria-label="Adicionar ' + nome + '">+</button>';
+    var out = box.querySelector('output');
+    function muda(d){ var q = Math.max(0, (pedido[nome] || 0) + d); if (q) pedido[nome] = q; else delete pedido[nome]; out.textContent = q; card.classList.toggle('tem', q > 0); atualiza(); }
+    box.querySelector('.mais').addEventListener('click', function(){ muda(1); });
+    box.querySelector('.menos').addEventListener('click', function(){ muda(-1); });
+  });
+  var dlg = document.getElementById('pedido'), form = document.getElementById('form-pedido'), lista = document.getElementById('lista'), campoEnd = document.getElementById('campo-end');
+  function abrir(){
+    lista.textContent = '';
+    for (var k in pedido) { var li = document.createElement('li'); var a = document.createElement('span'); a.textContent = k; var b = document.createElement('span'); b.textContent = pedido[k] + 'x'; li.appendChild(a); li.appendChild(b); lista.appendChild(li); }
+    dlg.showModal();
+  }
+  document.getElementById('revisar').addEventListener('click', abrir);
+  document.getElementById('outro-lanche').addEventListener('click', function(){ abrir(); form.outros.focus(); });
+  document.getElementById('fechar').addEventListener('click', function(){ dlg.close(); });
+  dlg.addEventListener('click', function(e){ if (e.target === dlg) dlg.close(); });
+  form.addEventListener('change', function(){ campoEnd.hidden = form.receber.value !== 'Entrega'; });
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var temItem = false; for (var q in pedido) temItem = true;
+    if (!temItem && !form.outros.value.trim()) { form.outros.focus(); return; }
+    if (!form.nome.value.trim()) { form.nome.focus(); return; }
+    if (form.receber.value === 'Entrega' && !form.endereco.value.trim()) { form.endereco.focus(); return; }
+    var t = 'Olá, ' + LOJA + '! Quero fazer um pedido pelo site:\n';
+    for (var k in pedido) t += '\n' + pedido[k] + 'x ' + k;
+    if (form.outros.value.trim()) t += '\n' + form.outros.value.trim();
+    t += '\n\nNome: ' + form.nome.value.trim() + '\n' + form.receber.value;
+    if (form.receber.value === 'Entrega') t += ': ' + form.endereco.value.trim();
+    if (form.obs.value.trim()) t += '\nObservação: ' + form.obs.value.trim();
+    ev('pedido');
+    window.open('https://wa.me/' + NUM + '?text=' + encodeURIComponent(t), '_blank', 'noopener');
+    dlg.close();
+  });
+})();
+</script>
+</body>
+</html>
