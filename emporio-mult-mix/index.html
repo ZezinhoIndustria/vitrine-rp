@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Empório Mult-Mix | Boteco e almoço na Vila Seixas, Ribeirão Preto</title>
+<meta name="description" content="Porções de boteco, salgados da casa, almoço e cerveja gelada na Vila Seixas, em Ribeirão Preto. Monte o pedido e mande pronto.">
+<meta name="theme-color" content="#F5EFE3">
+<link rel="preload" href="fonts/fredoka-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/mix-da-casa-640.webp" imagesrcset="img/mix-da-casa-640.webp 640w, img/mix-da-casa-1280.webp 1080w" imagesizes="(min-width:900px) 44vw, 92vw" fetchpriority="high">
+<link rel="icon" href="img/logo.webp">
+<style>
+@font-face{font-family:"Fredoka";src:url(fonts/fredoka-700.woff2) format("woff2");font-weight:700;font-display:swap}
+:root{--papel:#F5EFE3;--papel-2:#ECE3D2;--branco:#FFFCF6;--verde:#1E7A3C;--verde-esc:#17632F;--garrafa:#103A24;--garrafa-2:#184A30;--tinta:#1E2A22;--tinta-2:#55604F;--chope:#E8A33A;--espuma:#FFF8EA;--disp:"Fredoka",system-ui,sans-serif;--texto:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scrollbar-color:var(--verde) var(--papel);overflow-x:hidden;overflow-x:clip}
+body{background:var(--papel);color:var(--tinta);font:400 1.0625rem/1.6 var(--texto);-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
+body.com-pedido{padding-bottom:92px}
+::selection{background:var(--verde);color:#fff}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--verde);outline-offset:3px;border-radius:10px}
+.wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+h1,h2,h3,h4{font-family:var(--disp);font-weight:700;line-height:1.02;letter-spacing:-.015em;text-wrap:balance}
+svg.i{width:1.2em;height:1.2em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border:0;border-radius:999px;font:700 1.0625rem var(--texto);text-decoration:none;cursor:pointer;transition:transform .2s var(--ease),background-color .2s}
+.btn:active{transform:scale(.97)}
+.btn-ver{background:var(--verde);color:#fff;box-shadow:0 14px 28px -14px rgba(30,122,60,.6)}
+.btn-ver:hover{background:var(--verde-esc)}
+.btn-cl{background:var(--branco);color:var(--tinta);box-shadow:0 10px 24px -18px rgba(30,42,34,.5)}
+.btn-cl:hover{background:#fff}
+
+/* Topo */
+.barra{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:16px}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marca img{width:58px;height:58px;border-radius:50%}
+.marca span{font-family:var(--disp);font-size:1.25rem;line-height:1.05;color:var(--garrafa)}
+.barra .tel{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-variant-numeric:tabular-nums;min-height:44px}
+.abertura{display:grid;gap:48px;align-items:center;padding-block:clamp(20px,5vw,56px) clamp(72px,10vw,110px)}
+h1{font-size:clamp(2.9rem,11.5vw,5.2rem);color:var(--garrafa)}
+h1 em{font-style:normal;color:var(--verde)}
+.chamada{margin-top:20px;max-width:36ch;font-size:clamp(1.125rem,2.2vw,1.28rem);color:var(--tinta-2)}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.fatos{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:28px;color:var(--tinta-2);font-size:.95rem}
+.fatos span{display:inline-flex;align-items:center;gap:8px}
+.estrela svg,.nota svg{fill:var(--chope);stroke:var(--chope)}
+
+/* Momento assinatura: o copo enche */
+.mesa{position:relative;padding:0 0 28px 28px}
+.mesa .foto{border-radius:28px;overflow:hidden;box-shadow:0 40px 60px -36px rgba(16,58,36,.55);animation:pousa 1s var(--ease) both}
+.mesa .foto img{width:100%;aspect-ratio:1;object-fit:cover}
+.copo{position:absolute;left:-6px;bottom:-6px;width:clamp(96px,26vw,150px);filter:drop-shadow(0 18px 20px rgba(16,58,36,.35))}
+.copo .vidro{fill:rgba(255,252,246,.55);stroke:var(--branco);stroke-width:3}
+.copo .chope{fill:var(--chope);transform:translateY(100%);animation:enche 2.2s .5s var(--ease) forwards}
+.copo .espuma{fill:var(--espuma);transform:translateY(160px);animation:espuma 2.2s .5s var(--ease) forwards}
+.copo .bolha{fill:#FFE3A8;opacity:0;animation:bolha 3.6s linear infinite}
+.copo .bolha:nth-of-type(2){animation-delay:-1.2s}
+.copo .bolha:nth-of-type(3){animation-delay:-2.4s}
+.copo .bolha:nth-of-type(4){animation-delay:-.6s}
+@keyframes pousa{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes enche{to{transform:translateY(24%)}}
+@keyframes espuma{to{transform:translateY(0)}}
+@keyframes bolha{0%{opacity:0;transform:translateY(0)}15%{opacity:.9}80%{opacity:.7}100%{opacity:0;transform:translateY(-120px)}}
+.mesa .selo{position:absolute;right:14px;bottom:44px;background:var(--garrafa);color:var(--espuma);border-radius:16px;padding:12px 16px;font-size:.9rem;line-height:1.3;max-width:220px;box-shadow:0 18px 30px -18px rgba(0,0,0,.6);animation:pousa .8s .9s var(--ease) both}
+.mesa .selo b{display:block;font-family:var(--disp);font-size:1.4rem;color:var(--chope)}
+
+/* Pedido */
+.pedir{background:var(--branco);padding-block:clamp(72px,10vw,120px)}
+.cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:14px 40px;margin-bottom:34px}
+.cab h2{font-size:clamp(2.3rem,6.2vw,3.6rem);color:var(--garrafa)}
+.cab p{max-width:42ch;color:var(--tinta-2)}
+.destaque{display:grid;background:var(--garrafa);color:var(--espuma);border-radius:26px;overflow:hidden}
+.destaque img{width:100%;height:100%;max-height:540px;object-fit:cover}
+.destaque .corpo{padding:clamp(24px,4vw,48px);display:flex;flex-direction:column;justify-content:center;gap:14px}
+.rotulo{align-self:flex-start;background:var(--chope);color:#2A1A04;font-weight:800;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:5px 12px}
+.destaque h3{font-size:clamp(2.4rem,6vw,3.4rem)}
+.destaque p{color:#CFDCCF;max-width:40ch}
+.destaque ul{columns:2;column-gap:20px;padding-left:18px;color:#E5EEE3;font-size:.98rem}
+.destaque li{break-inside:avoid;margin-bottom:4px}
+@media (max-width:560px){.destaque ul{columns:1}}
+h1,h2,h3,h4{word-spacing:.06em}
+.linha{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:6px}
+.preco{font-size:.95rem;color:#CFDCCF}
+.grupo{margin-top:56px}
+.grupo h3{font-size:1.9rem;color:var(--garrafa);margin-bottom:6px}
+.grupo>p{color:var(--tinta-2);margin-bottom:18px;max-width:60ch}
+.itens{display:grid;gap:12px;list-style:none;padding:0}
+.item{display:grid;grid-template-columns:84px 1fr auto;gap:16px;align-items:center;background:var(--papel);border-radius:18px;padding:10px 14px 10px 10px;transition:background-color .2s}
+.item.sem-foto{grid-template-columns:1fr auto;padding:16px 14px 16px 20px}
+.item.tem{background:#E3F0DF}
+.item img{width:84px;height:84px;object-fit:cover;border-radius:12px}
+.item h4{font-size:1.3rem;line-height:1.12;color:var(--garrafa)}
+.item p{font-size:.93rem;color:var(--tinta-2);margin-top:3px}
+.qtd{display:flex;align-items:center;gap:6px}
+.qtd button{width:44px;height:44px;border-radius:50%;border:0;background:var(--papel-2);color:var(--tinta);font:700 1.3rem/1 var(--texto);cursor:pointer;display:grid;place-items:center;transition:background-color .2s,transform .15s}
+.qtd button.mais{background:var(--verde);color:#fff}
+.qtd button.mais:hover{background:var(--verde-esc)}
+.qtd button:active{transform:scale(.92)}
+.qtd output{min-width:1.4em;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+.qtd button.menos,.qtd output{display:none}
+.tem .qtd button.menos{display:grid}
+.tem .qtd output{display:block}
+.destaque .qtd button.mais{background:var(--chope);color:#2A1A04}
+.destaque .qtd button.menos{background:var(--garrafa-2);color:var(--espuma)}
+.almoco{margin-top:56px;display:grid;gap:8px;background:var(--papel);border-radius:22px;padding:clamp(22px,4vw,36px)}
+.almoco h3{font-size:1.9rem;color:var(--garrafa)}
+.almoco p{color:var(--tinta-2);max-width:56ch}
+.outro{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;color:var(--tinta-2)}
+
+/* Galeria */
+.fotos{padding-block:clamp(72px,10vw,120px) 0}
+.galeria{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,66vw);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 18px;scrollbar-width:thin}
+.galeria figure{margin:0;scroll-snap-align:center}
+.galeria img{border-radius:18px;width:100%;aspect-ratio:1;object-fit:cover}
+.galeria figcaption{font-size:.9rem;color:var(--tinta-2);margin-top:8px}
+.galeria .larga img{aspect-ratio:auto;height:100%;max-height:none}
+
+/* Onde */
+.onde{padding-block:clamp(72px,10vw,120px)}
+.onde .grade{display:grid;gap:32px;background:var(--garrafa);color:var(--espuma);border-radius:26px;padding:clamp(28px,5vw,56px)}
+.onde h2{font-size:clamp(2.2rem,6vw,3.3rem)}
+.onde address{font-style:normal;margin-top:16px;font-size:1.1rem;color:#CFDCCF}
+.onde address strong{display:block;color:var(--espuma);font-size:1.2rem}
+.horas{list-style:none;padding:0;display:grid;gap:8px;margin-top:16px;font-variant-numeric:tabular-nums}
+.horas li{display:flex;justify-content:space-between;gap:16px;padding-block:6px;color:#CFDCCF}
+.horas li b{color:var(--espuma);font-weight:600}
+.horas li.folga b{color:#94AA98}
+.onde .links{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:22px}
+.onde .btn-cl{background:var(--garrafa-2);color:var(--espuma);box-shadow:none}
+.onde .btn-cl:hover{background:#1F5A3A}
+.nota{display:inline-flex;align-items:center;gap:8px;color:#CFDCCF;width:100%}
+
+/* Final */
+.final{padding-block:clamp(24px,6vw,60px) clamp(84px,12vw,140px);text-align:center}
+.final h2{font-size:clamp(2.5rem,8.5vw,4.6rem);color:var(--garrafa)}
+.final p{margin:14px auto 0;max-width:34ch;color:var(--tinta-2);font-size:1.125rem}
+.final .acoes{justify-content:center}
+footer{padding-block:26px calc(26px + env(safe-area-inset-bottom));color:#6C7468;font-size:.875rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+/* Sacola e revisão */
+.sacola{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:20;display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--garrafa);color:var(--espuma);border-radius:20px;padding:10px 10px 10px 20px;box-shadow:0 20px 40px -16px rgba(16,58,36,.6);transform:translateY(160%);transition:transform .45s var(--ease);max-width:640px;margin-inline:auto}
+.com-pedido .sacola{transform:none}
+.sacola .resumo{font-weight:600}
+.sacola .resumo b{font-family:var(--disp);font-size:1.3rem;color:var(--chope)}
+.sacola .btn{background:var(--chope);color:#2A1A04}
+dialog{margin:auto;border:0;padding:0;border-radius:24px;width:min(560px,100% - 24px);max-height:calc(100dvh - 24px);background:var(--branco);color:var(--tinta);box-shadow:0 40px 80px -30px rgba(16,58,36,.6)}
+dialog::backdrop{background:rgba(10,30,18,.6);backdrop-filter:blur(3px)}
+dialog[open]{animation:abre .35s var(--ease)}
+@keyframes abre{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:none}}
+.revisao{padding:26px 24px 24px;display:flex;flex-direction:column;gap:18px}
+.revisao header{display:flex;justify-content:space-between;align-items:start;gap:12px}
+.revisao h2{font-size:2rem;color:var(--garrafa)}
+.fechar{width:44px;height:44px;border-radius:50%;border:0;background:var(--papel-2);color:var(--tinta);cursor:pointer;display:grid;place-items:center;flex:none}
+.lista{list-style:none;padding:0;display:grid;gap:8px}
+.lista:empty{display:none}
+.lista li{display:flex;justify-content:space-between;gap:12px;font-weight:600}
+.lista li span:last-child{font-variant-numeric:tabular-nums;color:var(--verde)}
+.campo{display:grid;gap:6px}
+.campo label,.campo legend{font-weight:700;font-size:.95rem}
+.campo input,.campo textarea{font:1rem var(--texto);color:var(--tinta);background:var(--papel);border:1px solid #BFB5A2;border-radius:12px;padding:12px 14px;width:100%}
+.campo input::placeholder,.campo textarea::placeholder{color:#6F7769}
+.campo textarea{min-height:70px;resize:vertical}
+fieldset.campo{border:0;padding:0}
+.opcoes{display:flex;gap:10px;flex-wrap:wrap}
+.opcoes label{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;background:var(--papel);border:1px solid #BFB5A2;border-radius:999px;padding:10px 16px;font-weight:600;cursor:pointer;min-height:44px}
+.opcoes input{accent-color:var(--verde)}
+.envio{display:grid;gap:10px}
+.aviso{font-size:.88rem;color:var(--tinta-2)}
+
+@media (min-width:900px){
+  .abertura{grid-template-columns:1fr 1fr;gap:72px;padding-block:24px 110px}
+  h1{font-size:clamp(3.6rem,5.4vw,5.2rem)}
+  .destaque{grid-template-columns:1fr 1fr;align-items:stretch}
+  .itens{grid-template-columns:1fr 1fr}
+  .galeria{grid-auto-flow:initial;grid-template-columns:repeat(4,1fr);overflow:visible;width:min(1160px,100% - 40px);margin-inline:auto;padding:0}
+  .galeria .larga{grid-column:span 2}
+  .onde .grade{grid-template-columns:1.1fr 1fr;align-items:start}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.copo .chope{transform:translateY(24%)}.copo .espuma{transform:none}.copo .bolha{display:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-fone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></symbol>
+  <symbol id="i-pino" viewBox="0 0 24 24"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-estrela" viewBox="0 0 24 24"><path d="M11.5 2.3a.5.5 0 0 1 1 0l2.3 4.7a2.1 2.1 0 0 0 1.6 1.2l5.2.7a.5.5 0 0 1 .3.9l-3.7 3.7a2.1 2.1 0 0 0-.6 1.8l.9 5.2a.5.5 0 0 1-.8.5l-4.6-2.4a2.1 2.1 0 0 0-2 0L6.4 21a.5.5 0 0 1-.8-.5l.9-5.2a2.1 2.1 0 0 0-.6-1.8L2.2 9.8a.5.5 0 0 1 .3-.9l5.1-.7a2.1 2.1 0 0 0 1.6-1.2z"/></symbol>
+  <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><path d="M17.5 6.5h0"/></symbol>
+  <symbol id="i-sacola" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-lapis" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap">
+    <nav class="barra" aria-label="Contato">
+      <a class="marca" href="#"><img src="img/logo.webp" width="240" height="240" alt="Logo do Empório Mult-Mix"><span>Empório<br>Mult-Mix</span></a>
+      <a class="tel" href="tel:+551636328457" data-ev="whatsapp"><svg class="i" aria-hidden="true"><use href="#i-fone"/></svg>(16) 3632-8457</a>
+    </nav>
+    <div class="abertura">
+      <div>
+        <h1>Boteco, almoço e <em>cerveja gelada</em> na Vila Seixas</h1>
+        <p class="chamada">Porções de boteco, salgados feitos na casa e almoço de terça a sábado. Escolha o que você quer aqui e mande o pedido pronto para o Empório.</p>
+        <div class="acoes">
+          <a class="btn btn-ver" href="#pedido-lista">Fazer meu pedido</a>
+          <a class="btn btn-cl" href="https://wa.me/551636328457" data-ev="whatsapp" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>Chamar no WhatsApp</a>
+        </div>
+        <p class="fatos">
+          <span class="estrela"><svg class="i" aria-hidden="true"><use href="#i-estrela"/></svg>4,8 no Google (777 avaliações)</span>
+          <span><svg class="i" aria-hidden="true"><use href="#i-relogio"/></svg>Terça a sábado, das 10h à meia-noite</span>
+        </p>
+      </div>
+      <div class="mesa">
+        <div class="foto"><img src="img/mix-da-casa-640.webp" srcset="img/mix-da-casa-640.webp 640w, img/mix-da-casa-1280.webp 1080w" sizes="(min-width:900px) 44vw, 92vw" width="1080" height="1080" fetchpriority="high" alt="Porção Mix da casa: torresmo, mandioca frita, linguiça acebolada, pastéis, croquetes e kibes na travessa"></div>
+        <svg class="copo" viewBox="0 0 120 200" aria-hidden="true">
+          <defs><clipPath id="dentro"><path d="M14 10h92l-10 176a8 8 0 0 1-8 7H32a8 8 0 0 1-8-7Z"/></clipPath></defs>
+          <g clip-path="url(#dentro)">
+            <rect class="chope" x="0" y="10" width="120" height="190"/>
+            <g class="espuma"><rect x="0" y="40" width="120" height="22"/><circle cx="22" cy="40" r="13"/><circle cx="46" cy="36" r="15"/><circle cx="74" cy="38" r="14"/><circle cx="98" cy="40" r="13"/></g>
+            <circle class="bolha" cx="40" cy="180" r="2.4"/><circle class="bolha" cx="62" cy="185" r="2"/><circle class="bolha" cx="80" cy="178" r="2.6"/><circle class="bolha" cx="52" cy="186" r="1.8"/>
+          </g>
+          <path class="vidro" d="M14 10h92l-10 176a8 8 0 0 1-8 7H32a8 8 0 0 1-8-7Z" fill-opacity="0"/>
+        </svg>
+        <p class="selo"><b>Mix da casa</b>a porção para dividir com os amigos</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="pedir" id="pedido-lista" aria-labelledby="t-pedir">
+    <div class="wrap">
+      <div class="cab">
+        <h2 id="t-pedir">Monte seu pedido</h2>
+        <p>Toque no + no que você quer. Valores, tamanho das porções e forma de entrega são confirmados com o Empório.</p>
+      </div>
+
+      <article class="destaque" data-item="Mix da casa">
+        <img src="img/mix-da-casa-640.webp" srcset="img/mix-da-casa-640.webp 640w, img/mix-da-casa-1280.webp 1080w" sizes="(min-width:900px) 560px, 92vw" width="1080" height="1080" loading="lazy" decoding="async" alt="Mix da casa visto de cima, com limão e molho ao lado">
+        <div class="corpo">
+          <span class="rotulo">Para dividir</span>
+          <h3>Mix da casa</h3>
+          <ul>
+            <li>Kibinho recheado com coalhada seca</li>
+            <li>Pastéis de carne moída</li>
+            <li>Croquetinho com provolone</li>
+            <li>Barquinha de ragu de lagarto e catupiry</li>
+            <li>Linguiça de Dumont acebolada</li>
+            <li>Torresmo</li>
+            <li>Mandioca frita</li>
+            <li>Jiló frito</li>
+          </ul>
+          <div class="linha"><div class="qtd"></div><span class="preco">Valor confirmado no pedido</span></div>
+        </div>
+      </article>
+
+      <div class="grupo">
+        <h3>Porções de boteco</h3>
+        <p>Para acompanhar a gelada no happy hour.</p>
+        <ul class="itens">
+          <li class="item" data-item="Dupla mix"><img src="img/dupla-mix-640.webp" width="640" height="560" loading="lazy" decoding="async" alt="Kibinhos e barquinhas gratinadas com limão"><div><h4>Dupla mix</h4><p>Kibinhos recheados com coalhada seca e barquinhas com ragu de lagarto, catupiry e queijo.</p></div><div class="qtd"></div></li>
+          <li class="item sem-foto" data-item="Tábua caipira"><div><h4>Tábua caipira</h4><p>Torresmo, linguiça de Dumont frita acebolada e mandioca frita.</p></div><div class="qtd"></div></li>
+          <li class="item sem-foto" data-item="Linguiça na chapa completa"><div><h4>Linguiça na chapa completa</h4><p>Hambúrguer de 300 g de linguiça de Dumont com tomate, cebola e bastante queijo.</p></div><div class="qtd"></div></li>
+          <li class="item sem-foto" data-item="Picanha na chapa completa"><div><h4>Picanha na chapa completa</h4><p>Acompanha palmito, tomate, cebola e bastante catupiry.</p></div><div class="qtd"></div></li>
+        </ul>
+      </div>
+
+      <div class="grupo">
+        <h3>Salgados da casa</h3>
+        <p>As tradicionais empadinhas e o pãozinho de linguiça de Dumont.</p>
+        <ul class="itens">
+          <li class="item" data-item="Pãozinho de linguiça de Dumont"><img src="img/paozinho-640.webp" width="640" height="640" loading="lazy" decoding="async" alt="Pãozinho de linguiça aberto ao meio mostrando o recheio"><div><h4>Pãozinho de linguiça de Dumont</h4><p>O tradicional da casa.</p></div><div class="qtd"></div></li>
+          <li class="item" data-item="Empadinha de frango"><img src="img/empadinhas-640.webp" width="640" height="622" loading="lazy" decoding="async" alt="Empadinhas douradas enfileiradas na travessa"><div><h4>Empadinha de frango</h4></div><div class="qtd"></div></li>
+          <li class="item sem-foto" data-item="Empadinha de palmito"><div><h4>Empadinha de palmito</h4></div><div class="qtd"></div></li>
+          <li class="item sem-foto" data-item="Empadinha de carne seca"><div><h4>Empadinha de carne seca</h4></div><div class="qtd"></div></li>
+          <li class="item sem-foto" data-item="Empadinha de bacalhau"><div><h4>Empadinha de bacalhau</h4></div><div class="qtd"></div></li>
+          <li class="item sem-foto" data-item="Empadinha de camarão"><div><h4>Empadinha de camarão</h4></div><div class="qtd"></div></li>
+        </ul>
+      </div>
+
+      <div class="grupo">
+        <h3>Pratos e sobremesas</h3>
+        <p>Receitas da casa, e as sobremesas são de fabricação própria.</p>
+        <ul class="itens">
+          <li class="item" data-item="Berinjela à bolonhesa"><img src="img/berinjela-640.webp" width="640" height="640" loading="lazy" decoding="async" alt="Berinjela à milanesa recheada com carne moída e queijo gratinado"><div><h4>Berinjela à bolonhesa</h4><p>Berinjela à milanesa recheada com carne moída, molho de tomate e azeitonas pretas.</p></div><div class="qtd"></div></li>
+          <li class="item" data-item="Charuto na folha de repolho"><img src="img/charuto-640.webp" width="640" height="640" loading="lazy" decoding="async" alt="Charutos de repolho com molho de tomate e salsinha"><div><h4>Charuto na folha de repolho</h4></div><div class="qtd"></div></li>
+          <li class="item" data-item="Sobremesa da casa"><img src="img/sobremesas-640.webp" width="640" height="640" loading="lazy" decoding="async" alt="Pudim com calda e potes de sobremesa sobre a mesa"><div><h4>Sobremesa da casa</h4><p>Escreva no pedido qual você quer.</p></div><div class="qtd"></div></li>
+        </ul>
+      </div>
+
+      <div class="almoco">
+        <h3>Almoço</h3>
+        <p>De terça a sábado tem almoço self-service no salão e marmitex para viagem. O cardápio do dia é confirmado com a equipe.</p>
+      </div>
+
+      <p class="outro">Quer outra porção, bebida ou marmitex? <button class="btn btn-cl" type="button" id="outro-lanche"><svg class="i" aria-hidden="true"><use href="#i-lapis"/></svg>Escrever no pedido</button></p>
+    </div>
+  </section>
+
+  <section class="fotos" aria-labelledby="t-fotos">
+    <div class="wrap">
+      <div class="cab">
+        <h2 id="t-fotos">Do balcão para a mesa</h2>
+        <p>Fotos do próprio Empório.</p>
+      </div>
+    </div>
+    <div class="galeria">
+      <figure><img src="img/empadinhas-640.webp" srcset="img/empadinhas-640.webp 640w, img/empadinhas-1280.webp 1080w" sizes="(min-width:900px) 280px, 66vw" width="1080" height="1052" loading="lazy" decoding="async" alt="Empadinhas douradas com pimenta na travessa"><figcaption>Empadinhas</figcaption></figure>
+      <figure><img src="img/dupla-mix-640.webp" srcset="img/dupla-mix-640.webp 640w, img/dupla-mix-1280.webp 1080w" sizes="(min-width:900px) 280px, 66vw" width="1080" height="944" loading="lazy" decoding="async" alt="Kibinhos abertos com coalhada e barquinhas gratinadas"><figcaption>Dupla mix</figcaption></figure>
+      <figure><img src="img/berinjela-640.webp" srcset="img/berinjela-640.webp 640w, img/berinjela-1280.webp 1080w" sizes="(min-width:900px) 280px, 66vw" width="1080" height="1080" loading="lazy" decoding="async" alt="Berinjela recheada sobre folhas de alface"><figcaption>Berinjela à bolonhesa</figcaption></figure>
+      <figure><img src="img/sobremesas-640.webp" srcset="img/sobremesas-640.webp 640w, img/sobremesas-1280.webp 1080w" sizes="(min-width:900px) 280px, 66vw" width="1080" height="1080" loading="lazy" decoding="async" alt="Pudim de leite com calda e outros doces em potes"><figcaption>Sobremesas da casa</figcaption></figure>
+      <figure class="larga"><img src="img/equipe-640.webp" srcset="img/equipe-640.webp 640w, img/equipe-1280.webp 1080w" sizes="(min-width:900px) 580px, 66vw" width="1080" height="592" loading="lazy" decoding="async" alt="Equipe do Empório Mult-Mix reunida no salão com camisas do Brasil"><figcaption>A equipe no dia de jogo do Brasil</figcaption></figure>
+      <figure><img src="img/charuto-640.webp" srcset="img/charuto-640.webp 640w, img/charuto-1280.webp 1080w" sizes="(min-width:900px) 280px, 66vw" width="1080" height="1080" loading="lazy" decoding="async" alt="Charutos de repolho cortados ao meio com molho"><figcaption>Charuto de repolho</figcaption></figure>
+      <figure><img src="img/paozinho-640.webp" srcset="img/paozinho-640.webp 640w, img/paozinho-1280.webp 1080w" sizes="(min-width:900px) 280px, 66vw" width="1080" height="1080" loading="lazy" decoding="async" alt="Pãozinho de linguiça cortado mostrando o recheio"><figcaption>Pãozinho de linguiça</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="onde" aria-labelledby="t-onde">
+    <div class="wrap">
+      <div class="grade">
+        <div>
+          <h2 id="t-onde">Onde fica</h2>
+          <address><strong>R. Sir Alexander Fleming, 120</strong>Vila Seixas, Ribeirão Preto, SP, 14020-030</address>
+          <div class="links">
+            <p class="nota"><svg class="i" aria-hidden="true"><use href="#i-estrela"/></svg>4,8 no Google, 777 avaliações</p>
+            <a class="btn btn-ver" href="https://www.google.com/maps/place/Emp%C3%B3rio+Mult-Mix/@-21.1846834,-47.8020679,17z/data=!4m6!3m5!1s0x94b9bfbf74680a33:0x528e535fc12ed886" data-ev="rota" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-pino"/></svg>Como chegar</a>
+            <a class="btn btn-cl" href="https://www.instagram.com/emporiomultmix" data-ev="instagram" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-insta"/></svg>@emporiomultmix</a>
+          </div>
+        </div>
+        <div>
+          <h2>Horários</h2>
+          <ul class="horas">
+            <li><span>Terça a sábado</span><b>10h às 0h</b></li>
+            <li class="folga"><span>Domingo e segunda</span><b>Fechado</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="t-final">
+    <div class="wrap">
+      <h2 id="t-final">Bora tomar aquela gelada?</h2>
+      <p>Monte o pedido ou fale direto com o Empório.</p>
+      <div class="acoes">
+        <a class="btn btn-ver" href="#pedido-lista">Fazer meu pedido</a>
+        <a class="btn btn-cl" href="tel:+551636328457" data-ev="whatsapp"><svg class="i" aria-hidden="true"><use href="#i-fone"/></svg>(16) 3632-8457</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Empório Mult-Mix · Vila Seixas, Ribeirão Preto</span>
+    <span>Site de demonstração feito pela Lince Digital</span>
+  </div>
+</footer>
+
+<div class="sacola" role="region" aria-label="Seu pedido">
+  <span class="resumo" aria-live="polite"><b id="n-itens">0</b> <span id="t-itens">itens</span> no pedido</span>
+  <button class="btn" type="button" id="revisar"><svg class="i" aria-hidden="true"><use href="#i-sacola"/></svg>Revisar pedido</button>
+</div>
+
+<dialog id="pedido" aria-labelledby="t-revisao">
+  <form class="revisao" method="dialog" id="form-pedido">
+    <header><h2 id="t-revisao">Seu pedido</h2><button class="fechar" type="button" id="fechar" aria-label="Fechar"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button></header>
+    <ul class="lista" id="lista"></ul>
+    <div class="campo"><label for="f-outros">Bebidas, sobremesa ou outro pedido</label><textarea id="f-outros" name="outros" placeholder="Ex.: duas cervejas, um pudim"></textarea></div>
+    <div class="campo"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" autocomplete="name" required></div>
+    <fieldset class="campo"><legend>Como prefere?</legend>
+      <div class="opcoes"><label><input type="radio" name="receber" value="Retirar no Empório" checked> Retirar no Empório</label><label><input type="radio" name="receber" value="Entrega"> Entrega</label></div>
+    </fieldset>
+    <div class="campo" id="campo-end" hidden><label for="f-end">Endereço de entrega</label><input id="f-end" name="endereco" autocomplete="street-address" placeholder="Rua, número e bairro"></div>
+    <div class="campo"><label for="f-obs">Observação (opcional)</label><textarea id="f-obs" name="obs" placeholder="Ex.: horário que vai buscar"></textarea></div>
+    <div class="envio">
+      <button class="btn btn-ver" type="submit"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>Enviar pedido no WhatsApp</button>
+      <a class="btn btn-cl" href="tel:+551636328457" data-ev="whatsapp"><svg class="i" aria-hidden="true"><use href="#i-fone"/></svg>Prefiro ligar: (16) 3632-8457</a>
+    </div>
+    <p class="aviso">O pedido abre no WhatsApp do Empório já escrito. Valores e entrega são confirmados por lá.</p>
+  </form>
+</dialog>
+
+<script>
+(function(){
+  var NUM = '551636328457', SLUG = 'emporio-mult-mix', LOJA = 'Empório Mult-Mix';
+  var ev = function(e){ if (/github\.io$|\.com\.br$/.test(location.hostname)) { var i = new Image(); i.src = 'https://n8n-felc.srv2128402.hstgr.cloud/webhook/lince-sites-evento?s=' + SLUG + '&e=' + e + '&t=' + Date.now(); } };
+  ev('visita');
+  document.querySelectorAll('[data-ev]').forEach(function(a){ a.addEventListener('click', function(){ ev(a.dataset.ev); }); });
+  var pedido = {}, body = document.body, nEl = document.getElementById('n-itens'), tEl = document.getElementById('t-itens');
+  function atualiza(){
+    var total = 0; for (var k in pedido) total += pedido[k];
+    nEl.textContent = total; tEl.textContent = total === 1 ? 'item' : 'itens';
+    body.classList.toggle('com-pedido', total > 0);
+  }
+  document.querySelectorAll('[data-item]').forEach(function(card){
+    var nome = card.dataset.item, box = card.querySelector('.qtd');
+    box.innerHTML = '<button type="button" class="menos" aria-label="Tirar ' + nome + '">−</button><output aria-live="polite">0</output><button type="button" class="mais" aria-label="Adicionar ' + nome + '">+</button>';
+    var out = box.querySelector('output');
+    function muda(d){ var q = Math.max(0, (pedido[nome] || 0) + d); if (q) pedido[nome] = q; else delete pedido[nome]; out.textContent = q; card.classList.toggle('tem', q > 0); atualiza(); }
+    box.querySelector('.mais').addEventListener('click', function(){ muda(1); });
+    box.querySelector('.menos').addEventListener('click', function(){ muda(-1); });
+  });
+  var dlg = document.getElementById('pedido'), form = document.getElementById('form-pedido'), lista = document.getElementById('lista'), campoEnd = document.getElementById('campo-end');
+  function abrir(){
+    lista.textContent = '';
+    for (var k in pedido) { var li = document.createElement('li'); var a = document.createElement('span'); a.textContent = k; var b = document.createElement('span'); b.textContent = pedido[k] + 'x'; li.appendChild(a); li.appendChild(b); lista.appendChild(li); }
+    dlg.showModal();
+  }
+  document.getElementById('revisar').addEventListener('click', abrir);
+  document.getElementById('outro-lanche').addEventListener('click', function(){ abrir(); form.outros.focus(); });
+  document.getElementById('fechar').addEventListener('click', function(){ dlg.close(); });
+  dlg.addEventListener('click', function(e){ if (e.target === dlg) dlg.close(); });
+  form.addEventListener('change', function(){ campoEnd.hidden = form.receber.value !== 'Entrega'; });
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var temItem = false; for (var q in pedido) temItem = true;
+    if (!temItem && !form.outros.value.trim()) { form.outros.focus(); return; }
+    if (!form.nome.value.trim()) { form.nome.focus(); return; }
+    if (form.receber.value === 'Entrega' && !form.endereco.value.trim()) { form.endereco.focus(); return; }
+    var t = 'Olá, ' + LOJA + '! Quero fazer um pedido pelo site:\n';
+    for (var k in pedido) t += '\n' + pedido[k] + 'x ' + k;
+    if (form.outros.value.trim()) t += '\n' + form.outros.value.trim();
+    t += '\n\nNome: ' + form.nome.value.trim() + '\n' + form.receber.value;
+    if (form.receber.value === 'Entrega') t += ': ' + form.endereco.value.trim();
+    if (form.obs.value.trim()) t += '\nObservação: ' + form.obs.value.trim();
+    ev('pedido');
+    window.open('https://wa.me/' + NUM + '?text=' + encodeURIComponent(t), '_blank', 'noopener');
+    dlg.close();
+  });
+})();
+</script>
+</body>
+</html>
