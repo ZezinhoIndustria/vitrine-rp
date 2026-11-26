@@ -4,84 +4,598 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
-<title>Fernanda Fernandes | Psicóloga CRP 04/87624</title>
-<meta name="description" content="Psicoterapia com Fernanda Fernandes para ansiedade, luto e crises emocionais. Terapia Cognitivo-Comportamental, presencial e online.">
-<meta name="theme-color" content="#f3f4ec">
+<title>Fernanda Fernandes | Psicóloga em Prata/MG e online</title>
+<meta name="description" content="Psicoterapia com Fernanda Fernandes (CRP 04/87624) para ansiedade, luto e crises emocionais. Terapia Cognitivo-Comportamental na Clínica Mediclin, em Prata/MG, e online.">
+<meta name="theme-color" content="#f2f3ea">
 <meta property="og:title" content="Fernanda Fernandes | Psicóloga">
-<meta property="og:description" content="Um lugar seguro para falar do que pesa. Atendimento presencial e online.">
+<meta property="og:description" content="Um lugar seguro para falar do que pesa. Atendimento presencial em Prata/MG e online.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:url" content="https://sitesaprovar.lincedigital.com.br/fernanda-fernandes/">
-<meta property="og:image" content="https://sitesaprovar.lincedigital.com.br/fernanda-fernandes/og.jpg">
+<meta property="og:image" content="https://sitesaprovar.lincedigital.com.br/fernanda-fernandes/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="monograma.webp" type="image/webp">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="fernanda.webp" type="image/webp" fetchpriority="high">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Hanken+Grotesk:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="site.css">
+<link rel="icon" href="img/monograma.webp" type="image/webp">
+<link rel="preload" href="fonts/garamond-r.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hanken.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/retrato-640.webp" imagesrcset="img/retrato-420.webp 420w, img/retrato-640.webp 648w" imagesizes="(min-width: 900px) 440px, 82vw" fetchpriority="high">
+<style>
+@font-face{font-family:"EBG";src:url(fonts/garamond-r.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"EBG";src:url(fonts/garamond-i.woff2) format("woff2");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"Hanken";src:url(fonts/hanken.woff2) format("woff2");font-weight:400 600;font-style:normal;font-display:swap}
+:root{
+  --canvas:#f2f3ea;--paper:#fbfbf6;--sage:#e3e7d3;--sage-2:#cfd6b9;
+  --olive:#5f6a43;--olive-h:#4f5937;--deep:#353d26;--ink:#2a2f22;--ink-2:#565c4b;
+  --warm:#efe6d6;
+  --ease:cubic-bezier(.22,1,.36,1);--soft:cubic-bezier(.45,0,.2,1);
+  --serif:"EBG",Georgia,serif;--sans:"Hanken",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --wrap:min(1160px,100% - 2.5rem)
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:5.5rem;overflow-x:hidden;overflow-x:clip}
+body{margin:0;background:var(--canvas);color:var(--ink);font:400 1.0625rem/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+.wrap{width:var(--wrap);margin-inline:auto}
+.serif{font-family:var(--serif);font-weight:500;letter-spacing:-.015em;line-height:1.08}
+.kicker{font-size:.76rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--olive)}
+.h2{font-size:clamp(2.2rem,4.6vw,3.5rem);color:var(--deep);margin-top:.7rem}
+.lead{color:var(--ink-2);font-size:1.125rem;max-width:52ch}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;left:.75rem;top:-4rem;z-index:60;background:var(--paper);padding:.6rem 1rem;border-radius:99px;transition:top .3s var(--ease)}
+.skip:focus{top:.75rem}
+:focus-visible{outline:2.5px solid var(--olive);outline-offset:3px;border-radius:10px}
+.dark :focus-visible{outline-color:var(--paper)}
+.ambient{position:fixed;inset:-12%;z-index:-1;pointer-events:none;background:radial-gradient(40rem 32rem at 88% 6%,rgba(206,216,170,.55),transparent 70%),radial-gradient(34rem 28rem at 4% 58%,rgba(239,226,204,.6),transparent 70%);animation:drift 70s var(--soft) -20s infinite alternate}
+@keyframes drift{to{transform:scale(1.08) translate3d(-3%,2%,0)}}
+
+/* Botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:3.2rem;padding:0 1.5rem;border-radius:99px;font-weight:600;font-size:1rem;text-decoration:none;white-space:nowrap;cursor:pointer;border:0;font-family:inherit;transition:background-color .35s var(--ease),transform .35s var(--ease),box-shadow .35s var(--ease),color .35s var(--ease)}
+.btn svg{width:1.15rem;height:1.15rem;flex:none}
+.btn-p{background:var(--olive);color:#fbfbf6;box-shadow:0 12px 28px -16px rgba(53,61,38,.9)}
+.btn-p:hover{background:var(--olive-h);transform:translateY(-2px)}
+.btn-g{background:rgba(251,251,246,.7);color:var(--deep);box-shadow:inset 0 0 0 1.5px var(--sage-2)}
+.btn-g:hover{background:var(--paper);transform:translateY(-2px)}
+.btn-l{background:var(--paper);color:var(--deep)}
+.btn-l:hover{background:#eef0e4;transform:translateY(-2px)}
+.btn:active{transform:scale(.98)}
+
+/* Topo */
+.top{position:sticky;top:0;z-index:30;transition:background-color .4s var(--ease),box-shadow .4s var(--ease)}
+.top.on{background:rgba(242,243,234,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 10px 30px -24px rgba(53,61,38,.6)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.5rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.brand img{width:46px;height:40px;mix-blend-mode:multiply}
+.brand b{display:block;white-space:nowrap;font-family:var(--serif);font-weight:500;font-size:1.3rem;line-height:1;color:var(--deep)}
+.brand small{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-top:.2rem}
+.nav{display:none;gap:1.6rem;font-size:.95rem}
+.nav a{text-decoration:none;color:var(--ink-2);padding:.4rem 0;transition:color .3s var(--ease)}
+.nav a:hover{color:var(--deep)}
+.top .btn{min-height:2.75rem;padding:0 1.1rem;font-size:.92rem}
+.top .btn span{display:none}
+.top .btn{display:none}
+@media(max-width:419px){.brand small{display:none}.brand b{font-size:1.25rem}}
+@media(min-width:768px){.top .btn{display:inline-flex}}
+@media(min-width:960px){.nav{display:flex}.top .btn span{display:inline}}
+
+/* Hero */
+.hero{padding:2rem 0 4rem}
+.hero .wrap{display:grid;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(2.8rem,6.4vw,5rem);color:var(--deep);margin-top:1rem}
+.hero h1 em{color:var(--olive)}
+.hero .lead{margin-top:1.4rem}
+.ctas{display:flex;flex-direction:column;gap:.75rem;margin-top:2rem}
+@media(min-width:560px){.ctas{flex-direction:row;flex-wrap:wrap}}
+.creds{display:flex;flex-wrap:wrap;gap:.5rem;margin:2rem 0 0;padding:0;list-style:none}
+.creds li{display:flex;align-items:center;gap:.45rem;font-size:.88rem;padding:.45rem .85rem;border-radius:99px;background:rgba(251,251,246,.75);color:var(--deep)}
+.creds svg{width:1rem;height:1rem;color:var(--olive)}
+.arch-wrap{position:relative;isolation:isolate;width:min(100%,25rem);margin-inline:auto}
+.arch{aspect-ratio:4/5;border-radius:999px 999px 28px 28px;overflow:hidden;background:var(--sage);box-shadow:0 40px 80px -40px rgba(53,61,38,.6)}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;animation:settle 1.6s var(--ease) both}
+@keyframes settle{from{transform:scale(1.1);opacity:0}}
+.halo{position:absolute;top:-10%;right:-16%;width:78%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(200,210,160,.9),transparent 68%);z-index:-1;animation:breathe 9s var(--soft) -3s infinite alternate}
+@keyframes breathe{to{transform:scale(1.14);opacity:.6}}
+.badge{position:absolute;left:-.8rem;bottom:1.6rem;display:flex;align-items:center;gap:.7rem;padding:.75rem 1rem .75rem .8rem;border-radius:18px;background:rgba(251,251,246,.95);box-shadow:0 18px 40px -22px rgba(53,61,38,.7);font-size:.86rem;line-height:1.3;animation:rise 1s var(--ease) .7s both}
+.badge img{width:38px;height:33px;mix-blend-mode:multiply}
+.badge b{display:block;font-weight:600}
+.rise{animation:rise .9s var(--ease) both}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}}
+@media(min-width:900px){.hero{padding:3rem 0 6rem}.hero .wrap{grid-template-columns:1.1fr .9fr;gap:4.5rem}.arch-wrap{width:min(100%,27.5rem)}}
+
+/* Atalhos */
+.quick{display:grid;gap:.75rem;margin:0;padding:0;list-style:none}
+@media(min-width:620px){.quick{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.quick{grid-template-columns:repeat(4,1fr)}}
+.q{display:flex;align-items:center;gap:.9rem;height:100%;min-height:4.4rem;padding:.9rem 1.1rem;border-radius:20px;background:rgba(251,251,246,.8);box-shadow:inset 0 0 0 1px var(--sage);text-decoration:none;transition:transform .4s var(--ease),background-color .4s var(--ease),box-shadow .4s var(--ease)}
+.q:hover{transform:translateY(-3px);background:var(--paper);box-shadow:inset 0 0 0 1px var(--sage-2),0 18px 36px -24px rgba(53,61,38,.55)}
+.q i{display:grid;place-items:center;width:2.6rem;height:2.6rem;border-radius:14px;background:var(--sage);color:var(--deep);flex:none;transition:background-color .4s var(--ease),color .4s var(--ease)}
+.q:hover i{background:var(--olive);color:var(--paper)}
+.q svg{width:1.2rem;height:1.2rem}
+.q b{display:block;font-weight:600;line-height:1.3}
+.q small{display:block;font-size:.86rem;color:var(--ink-2);line-height:1.35}
+
+section{padding-top:6rem}
+@media(min-width:900px){section{padding-top:8rem}}
+
+/* Áreas */
+.care{display:grid;gap:1rem;margin-top:3rem}
+@media(min-width:820px){.care{grid-template-columns:1fr 1fr}.care .feat{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr auto;gap:2.5rem;align-items:center;padding:2.6rem 2.75rem}}
+.card{position:relative;padding:2rem 1.75rem 2.2rem;border-radius:28px;background:var(--paper);overflow:hidden;isolation:isolate}
+.card::before{content:"";position:absolute;right:-3rem;top:-3rem;width:11rem;height:11rem;border-radius:50%;background:radial-gradient(circle,var(--sage),transparent 70%);z-index:-1;transition:transform .9s var(--ease)}
+.card:hover::before{transform:scale(1.4)}
+.card .ic{display:grid;place-items:center;width:3rem;height:3rem;border-radius:50%;background:var(--sage);color:var(--deep)}
+.card .ic svg{width:1.3rem;height:1.3rem}
+.card h3{font-family:var(--serif);font-weight:500;font-size:2rem;line-height:1.08;margin-top:1.4rem;color:var(--deep)}
+.card p{margin-top:.8rem;color:var(--ink-2);max-width:46ch}
+.card ul{margin:1rem 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.4rem}
+.card li{font-size:.84rem;padding:.3rem .75rem;border-radius:99px;background:var(--canvas);color:var(--deep)}
+.feat{background:var(--deep);color:#eef0e3}
+.feat::before{background:radial-gradient(circle,rgba(95,106,67,.9),transparent 70%)}
+.feat .ic{background:var(--olive);color:var(--paper)}
+.feat h3{color:#fbfbf6}
+.feat p{color:#d9dccb;max-width:60ch}
+.feat .btn{margin-top:1.5rem}
+@media(min-width:820px){.feat h3{margin-top:0}.feat .btn{margin-top:0}}
+
+/* TCC */
+.tcc{display:grid;gap:3rem;align-items:center}
+@media(min-width:900px){.tcc{grid-template-columns:1fr 1fr;gap:5rem}}
+.cycle{position:relative;width:min(100%,26rem);aspect-ratio:1;margin-inline:auto}
+.cycle .orbit{position:absolute;inset:14%;border-radius:50%;background:radial-gradient(circle,rgba(207,214,185,.55),transparent 70%)}
+.node{position:absolute;display:grid;place-items:center;text-align:center;width:42%;aspect-ratio:1;border-radius:50%;background:var(--paper);box-shadow:0 24px 50px -30px rgba(53,61,38,.55);padding:1rem;transition:transform .6s var(--ease),background-color .6s var(--ease),color .6s var(--ease)}
+.node b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(1.4rem,4.4vw,1.8rem);line-height:1;color:var(--deep)}
+.node small{display:block;font-size:.8rem;color:var(--ink-2);margin-top:.35rem;line-height:1.3}
+.node.n1{left:29%;top:0}
+.node.n2{right:0;bottom:6%}
+.node.n3{left:0;bottom:6%}
+.node.on{background:var(--olive);transform:scale(1.06)}
+.node.on b,.node.on small{color:#fbfbf6}
+.cycle .center{position:absolute;left:50%;top:56%;transform:translate(-50%,-50%);width:16%;aspect-ratio:1;mix-blend-mode:multiply;opacity:.9}
+.quote{margin-top:2rem;padding:1.6rem 1.75rem;border-radius:24px;background:var(--warm)}
+.quote p{font-family:var(--serif);font-size:1.6rem;line-height:1.2;color:var(--deep)}
+.quote p em{color:var(--olive)}
+.quote small{display:block;margin-top:.7rem;font-size:.85rem;color:var(--ink-2)}
+
+/* Consultório */
+.place{display:grid;gap:3rem;align-items:center}
+@media(min-width:900px){.place{grid-template-columns:.9fr 1.1fr;gap:5rem}}
+.photo{border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:var(--sage);box-shadow:0 30px 60px -36px rgba(53,61,38,.6)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.modes{display:grid;gap:1rem;margin-top:2rem}
+@media(min-width:560px){.modes{grid-template-columns:1fr 1fr}}
+.mode{padding:1.4rem 1.4rem 1.5rem;border-radius:22px;background:var(--paper)}
+.mode b{display:flex;align-items:center;gap:.55rem;font-weight:600}
+.mode b svg{width:1.15rem;height:1.15rem;color:var(--olive)}
+.mode p{margin-top:.5rem;font-size:.95rem;color:var(--ink-2)}
+
+/* Passos */
+.steps{display:grid;gap:3rem}
+@media(min-width:900px){.steps{grid-template-columns:.8fr 1.2fr;gap:5rem}}
+.steps ol{margin:0;padding:0;list-style:none;display:grid;gap:2.2rem}
+.steps li{display:grid;grid-template-columns:3.4rem 1fr;gap:1.2rem}
+.steps .num{font-family:var(--serif);font-style:italic;font-size:3.4rem;line-height:.9;color:var(--olive)}
+.steps h3{font-size:1.2rem;font-weight:600}
+.steps p{margin-top:.4rem;color:var(--ink-2);max-width:48ch}
+
+/* Respiração */
+.dark{background:var(--deep);color:#fbfbf6;padding:5.5rem 0;margin-top:6rem}
+@media(min-width:900px){.dark{padding:7rem 0;margin-top:8rem}}
+.dark + section{padding-top:6rem}
+.breathe{display:grid;gap:3rem;align-items:center}
+@media(min-width:900px){.breathe{grid-template-columns:1fr 1fr}}
+.dark .kicker{color:#cbd5a8}
+.dark .h2{color:#fbfbf6}
+.dark .lead{color:#d9dccb}
+.stage{position:relative;display:grid;place-items:center;width:min(19rem,76vw);aspect-ratio:1;margin-inline:auto}
+.glow,.core{position:absolute;border-radius:50%;will-change:transform}
+.glow{inset:0;background:radial-gradient(circle,rgba(170,184,128,.55),transparent 66%);transform:scale(.62)}
+.core{inset:18%;background:radial-gradient(circle at 38% 32%,#8a966a,var(--olive) 55%,#3f4830);box-shadow:0 30px 60px -30px rgba(10,14,6,.9);transform:scale(.62)}
+.stage[data-phase=idle] .core{animation:idle 5s var(--soft) infinite alternate}
+@keyframes idle{to{transform:scale(.7)}}
+.stage:is([data-phase=in],[data-phase=hold],[data-phase=done]) .core{transform:scale(1)}
+.stage:is([data-phase=in],[data-phase=hold],[data-phase=done]) .glow{transform:scale(1.12)}
+.stage[data-phase=in] :is(.core,.glow){transition:transform 4s var(--soft)}
+.stage[data-phase=out] :is(.core,.glow){transition:transform 6s var(--soft)}
+.stage[data-phase=done] :is(.core,.glow){transition:transform 1.4s var(--ease)}
+.blabel{position:relative;z-index:1;text-align:center;font-family:var(--serif);font-size:1.75rem;line-height:1.1;padding-inline:1rem}
+.blabel small{display:block;margin-top:.35rem;font-family:var(--sans);font-size:.8rem;letter-spacing:.08em;opacity:.85}
+.brow{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.linkbtn{color:#fbfbf6;text-decoration:underline;text-underline-offset:4px;padding:0 .5rem}
+
+/* Sobre */
+.about{display:grid;gap:3rem;align-items:center}
+@media(min-width:900px){.about{grid-template-columns:.85fr 1.15fr;gap:5rem}}
+.about .photo{border-radius:999px 999px 28px 28px;width:min(100%,24rem);margin-inline:auto}
+.sign{display:flex;align-items:center;gap:1rem;margin-top:2rem}
+.sign img{width:72px;height:62px;mix-blend-mode:multiply}
+.sign b{display:block;font-family:var(--serif);font-weight:500;font-size:1.45rem;line-height:1.05;color:var(--deep)}
+.sign small{font-size:.86rem;color:var(--ink-2)}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem;margin:1.75rem 0 0;padding:0;list-style:none}
+.tags li{font-size:.88rem;font-weight:500;padding:.45rem .95rem;border-radius:99px;background:var(--paper);color:var(--deep)}
+
+/* Pense comigo */
+.posts{display:grid;gap:1rem;margin-top:3rem}
+@media(min-width:680px){.posts{grid-template-columns:1fr 1fr}.post{min-height:15rem}}
+@media(min-width:1020px){.posts{grid-template-columns:repeat(3,1fr)}}
+.post{display:flex;flex-direction:column;justify-content:space-between;gap:1.4rem;padding:1.75rem;border-radius:26px;background:var(--paper);text-decoration:none;transition:transform .45s var(--ease),box-shadow .45s var(--ease),background-color .45s var(--ease)}
+.post:hover{transform:translateY(-4px);box-shadow:0 26px 50px -32px rgba(53,61,38,.6)}
+.post .tag{font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--olive)}
+.post blockquote{margin:.9rem 0 0;font-family:var(--serif);font-weight:500;font-size:1.65rem;line-height:1.15;color:var(--deep)}
+.post .more{display:flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:600;color:var(--deep)}
+.post .more svg{width:1rem;height:1rem;transition:transform .45s var(--ease)}
+.post:hover .more svg{transform:translateX(4px)}
+.post.alt{background:var(--sage)}
+.post.alt2{background:var(--warm)}
+
+/* FAQ */
+.faq{width:min(820px,100% - 2.5rem);margin-inline:auto}
+.faq .list{display:grid;gap:.7rem;margin-top:2.5rem}
+details{border-radius:20px;background:rgba(251,251,246,.72);transition:background-color .4s var(--ease)}
+details[open]{background:var(--paper)}
+summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:3.8rem;padding:1rem 1.35rem;cursor:pointer;list-style:none;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary i{flex:none;display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--sage);color:var(--deep);font-style:normal;font-size:1.3rem;line-height:1;transition:transform .45s var(--ease)}
+details[open] summary i{transform:rotate(45deg)}
+details p{padding:0 1.35rem 1.3rem;color:var(--ink-2);max-width:64ch}
+details a{color:var(--deep);font-weight:600}
+
+/* Contato */
+.contact{display:grid;gap:1rem;margin-top:3rem}
+@media(min-width:900px){.contact{grid-template-columns:1.15fr .85fr}}
+.panel{padding:2.2rem 1.9rem;border-radius:30px;background:var(--paper)}
+.panel h3{font-family:var(--serif);font-weight:500;font-size:2.1rem;line-height:1.08;color:var(--deep)}
+.rows{display:grid;gap:1.1rem;margin:1.75rem 0 0;padding:0;list-style:none}
+.rows li{display:grid;grid-template-columns:2.6rem 1fr;gap:.9rem;align-items:start}
+.rows i{display:grid;place-items:center;width:2.6rem;height:2.6rem;border-radius:14px;background:var(--sage);color:var(--deep)}
+.rows svg{width:1.15rem;height:1.15rem}
+.rows small{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.rows a,.rows span{font-weight:600;text-decoration:none;overflow-wrap:anywhere}
+.rows a:hover{text-decoration:underline;text-underline-offset:3px}
+.panel .ctas{margin-top:2rem}
+.closing{display:flex;flex-direction:column;justify-content:space-between;gap:2rem;padding:2.2rem 1.9rem;border-radius:30px;background:var(--deep);color:#fbfbf6;position:relative;overflow:hidden;isolation:isolate}
+.closing::before{content:"";position:absolute;width:22rem;height:22rem;right:-8rem;bottom:-8rem;border-radius:50%;background:radial-gradient(circle,rgba(95,106,67,.95),transparent 70%);z-index:-1;animation:breathe 10s var(--soft) -4s infinite alternate}
+.closing p.serif{font-size:clamp(2rem,4vw,2.7rem);line-height:1.08}
+.closing small{color:#d9dccb;font-size:.95rem}
+.sos{margin-top:1rem;padding:1.1rem 1.25rem;border-radius:18px;background:rgba(251,251,246,.1);font-size:.92rem;color:#e5e8d8}
+.sos a{color:#fbfbf6;font-weight:600}
+
+footer{padding:3rem 0 7rem;font-size:.9rem;color:var(--ink-2)}
+footer .wrap{display:flex;flex-direction:column;gap:.6rem;align-items:center;text-align:center}
+footer b{color:var(--ink);font-weight:600}
+footer a{text-decoration:none}
+footer a:hover{text-decoration:underline}
+@media(min-width:768px){footer{padding-bottom:3rem}footer .wrap{flex-direction:row;justify-content:space-between;text-align:left}}
+
+/* Barra fixa no celular */
+.sticky{position:fixed;left:.75rem;right:.75rem;bottom:calc(.75rem + env(safe-area-inset-bottom));z-index:40;transform:translateY(150%);transition:transform .55s var(--ease)}
+.sticky.show{transform:none}
+.sticky .btn{width:100%;box-shadow:0 18px 40px -14px rgba(20,24,12,.75)}
+@media(min-width:768px){.sticky{display:none}}
+
+/* Entradas */
+.js .rv>*{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.in>*{opacity:1;transform:none}
+.js .rv.in>:nth-child(2){transition-delay:.08s}.js .rv.in>:nth-child(3){transition-delay:.16s}.js .rv.in>:nth-child(4){transition-delay:.24s}.js .rv.in>:nth-child(5){transition-delay:.32s}.js .rv.in>:nth-child(6){transition-delay:.4s}
+.js .rv.done>:nth-child(n){transition-delay:0s}
+body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused!important}
+@media(pointer:coarse){.btn,.q,summary{min-height:44px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important;transition-delay:0s!important}.js .rv>*{opacity:1;transform:none}}
+</style>
 </head>
 <body>
-<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-full focus:bg-[var(--ff-paper)] focus:px-4 focus:py-2">Pular para o conteúdo</a><div class="ff-ambient" aria-hidden="true"></div><main id="main" tabindex="-1" class="outline-none"><header class="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pt-6 pb-16 md:grid-cols-[1.08fr_0.92fr] md:gap-16 md:px-8 md:pt-10 md:pb-24"><div class="md:order-1"><img src="monograma.webp" alt="Fernanda Fernandes" width="120" height="104" class="ff-logo-blend ff-rise mb-8 h-16 w-auto md:h-20"/><p class="ff-kicker ff-rise" style="animation-delay:0.05s">Psicóloga · CRP 04/87624</p><h1 class="ff-display ff-rise mt-4 text-[2.9rem] text-[var(--ff-olive-deep)] sm:text-6xl md:text-[4.6rem]" style="animation-delay:0.12s">Um lugar seguro para falar do que <em class="text-[var(--ff-olive)]">pesa.</em></h1><p class="ff-rise mt-6 max-w-[46ch] text-lg leading-relaxed text-[var(--ff-ink-2)]" style="animation-delay:0.2s">Sou Fernanda Fernandes. Acompanho pessoas em ansiedade, luto e crises emocionais com a Terapia Cognitivo-Comportamental. Atendo presencialmente no Centro e online.</p><div class="ff-rise mt-8 flex flex-col gap-3 sm:flex-row" style="animation-delay:0.28s"><a class="ff-btn ff-btn-primary" href="https://wa.me/5534991473447?text=Ol%C3%A1%2C%20Fernanda!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." data-ev="whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.22-8.22 8.22Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"></path></svg>Agendar pelo WhatsApp</a><a class="ff-btn ff-btn-ghost" href="#como-ajudo">Ver como posso ajudar</a></div></div><div class="ff-arch-wrap ff-rise mx-auto w-full max-w-[22rem] md:order-2 md:max-w-[27rem]"><div class="ff-arch-halo" aria-hidden="true"></div><div class="ff-arch"><picture><source srcset="fernanda.webp" type="image/webp"/><img src="fernanda.jpg" alt="Retrato da psicóloga Fernanda Fernandes, sorrindo com a mão apoiada no rosto" width="900" height="1184" fetchPriority="high"/></picture></div><div class="ff-badge"><span class="ff-dot" aria-hidden="true"></span><span><strong class="block font-semibold">Atendimento</strong>presencial e online</span></div></div></header><section aria-label="Atalhos" class="mx-auto max-w-6xl px-5 md:px-8"><ul class="ff-reveal grid gap-3 sm:grid-cols-2 lg:grid-cols-4"><li><a class="ff-quick h-full" href="https://wa.me/5534991473447?text=Ol%C3%A1%2C%20Fernanda!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." data-ev="whatsapp" target="_blank" rel="noopener"><span class="ff-quick-icon"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.22-8.22 8.22Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"></path></svg></span><span class="min-w-0"><span class="block font-semibold">Agendar consulta</span><span class="block text-sm text-[var(--ff-ink-2)]">Resposta pelo WhatsApp</span></span></a></li><li><a class="ff-quick h-full" href="https://wa.me/5534991473447?text=Ol%C3%A1%2C%20Fernanda!%20Tenho%20interesse%20no%20atendimento%20online." data-ev="whatsapp" target="_blank" rel="noopener"><span class="ff-quick-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-video h-5 w-5" aria-hidden="true"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"></path><rect x="2" y="6" width="14" height="12" rx="2"></rect></svg></span><span class="min-w-0"><span class="block font-semibold">Terapia online</span><span class="block text-sm text-[var(--ff-ink-2)]">Por videochamada, de onde você estiver</span></span></a></li><li><a class="ff-quick h-full" href="#onde"><span class="ff-quick-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin h-5 w-5" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg></span><span class="min-w-0"><span class="block font-semibold">Consultório</span><span class="block text-sm text-[var(--ff-ink-2)]">Praça Juscelino Kubitschek, nº 123, Centro</span></span></a></li><li><a class="ff-quick h-full" href="https://www.instagram.com/fernandafernandesnasc/" data-ev="instagram" target="_blank" rel="noopener"><span class="ff-quick-icon"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"></circle></svg></span><span class="min-w-0"><span class="block font-semibold">Instagram</span><span class="block text-sm text-[var(--ff-ink-2)]">@fernandafernandesnasc</span></span></a></li></ul></section><section id="como-ajudo" class="mx-auto max-w-6xl px-5 pt-24 md:px-8 md:pt-32"><div class="ff-reveal max-w-2xl"><p class="ff-kicker">Como posso ajudar</p><h2 class="ff-display mt-3 text-4xl text-[var(--ff-olive-deep)] md:text-[3.4rem]">Cada pessoa chega com uma história. A terapia começa por ela.</h2></div><div class="ff-reveal mt-12 grid gap-4 md:grid-cols-6"><article class="ff-care md:col-span-3"><span class="ff-care-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud-rain h-5 w-5" aria-hidden="true"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path><path d="M16 14v6"></path><path d="M8 14v6"></path><path d="M12 16v6"></path></svg></span><h3 class="ff-display mt-6 text-[2rem]">Ansiedade e desafios emocionais</h3><p class="mt-3 max-w-[44ch] leading-relaxed text-[var(--ff-ink-2)]">Entender o que você sente, pensa e faz quando a ansiedade aperta, e construir recursos práticos para atravessar os dias difíceis.</p></article><article class="ff-care md:col-span-3"><span class="ff-care-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-handshake h-5 w-5" aria-hidden="true"><path d="M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762"></path></svg></span><h3 class="ff-display mt-6 text-[2rem]">Luto e perdas</h3><p class="mt-3 max-w-[44ch] leading-relaxed text-[var(--ff-ink-2)]">Luto vai muito além da morte. O fim de uma relação, uma mudança, um diagnóstico. Aqui a sua dor tem espaço e tempo.</p></article><article class="ff-care ff-care-feature md:col-span-6 md:grid md:grid-cols-[auto_1fr_auto] md:items-center md:gap-10 md:px-10 md:py-10"><span class="ff-care-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-life-buoy h-5 w-5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path><circle cx="12" cy="12" r="4"></circle></svg></span><div><h3 class="ff-display mt-6 text-[2rem] md:mt-0">Crises emocionais</h3><p class="mt-3 max-w-[58ch] leading-relaxed text-[oklch(0.88_0.015_110)]">Avaliação, acolhimento e manejo clínico de situações de crise, incluindo sofrimento intenso e ideação suicida. Um dos focos do meu trabalho.</p></div><a class="ff-btn ff-btn-light mt-6 md:mt-0" href="https://wa.me/5534991473447?text=Ol%C3%A1%2C%20Fernanda!%20Vim%20pelo%20seu%20site%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20atendimento." data-ev="whatsapp" target="_blank" rel="noopener">Conversar agora<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></article></div></section><section class="mx-auto max-w-6xl px-5 pt-24 md:px-8 md:pt-32"><div class="grid gap-12 md:grid-cols-[0.8fr_1.2fr] md:gap-20"><div class="ff-reveal "><p class="ff-kicker">Como começar</p><h2 class="ff-display mt-3 text-4xl text-[var(--ff-olive-deep)] md:text-[3.4rem]">Dar o primeiro passo é mais simples do que parece.</h2></div><ol class="ff-reveal grid gap-10"><li class="grid grid-cols-[3.5rem_1fr] gap-5"><span class="ff-step-num" aria-hidden="true">1</span><div><h3 class="text-xl font-semibold">Você manda uma mensagem</h3><p class="mt-2 max-w-[48ch] leading-relaxed text-[var(--ff-ink-2)]">Pelo WhatsApp, do jeito que conseguir. Pode ser só um oi.</p></div></li><li class="grid grid-cols-[3.5rem_1fr] gap-5"><span class="ff-step-num" aria-hidden="true">2</span><div><h3 class="text-xl font-semibold">A gente combina formato e horário</h3><p class="mt-2 max-w-[48ch] leading-relaxed text-[var(--ff-ink-2)]">Presencial no consultório, no Centro, ou online por videochamada.</p></div></li><li class="grid grid-cols-[3.5rem_1fr] gap-5"><span class="ff-step-num" aria-hidden="true">3</span><div><h3 class="text-xl font-semibold">Primeira sessão</h3><p class="mt-2 max-w-[48ch] leading-relaxed text-[var(--ff-ink-2)]">Você conta o que te trouxe, sem pressa e sem resposta certa. Daí definimos os próximos passos.</p></div></li></ol></div></section><section id="respire" class="ff-dark relative mt-24 overflow-hidden bg-[var(--ff-olive-deep)] px-5 py-20 text-[var(--ff-paper)] md:mt-32 md:py-28"><div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:px-8"><div class="ff-reveal "><p class="ff-kicker text-[oklch(0.85_0.05_118)]">Uma pausa antes de seguir</p><h2 class="ff-display mt-3 text-4xl md:text-[3.4rem]">Um minuto para o seu corpo desacelerar.</h2><p class="mt-5 max-w-[46ch] text-lg leading-relaxed text-[oklch(0.88_0.015_110)]">Três respirações guiadas: inspire em 4 tempos, segure em 2, solte em 6. Soltar o ar mais devagar do que puxou avisa o corpo de que ele pode baixar a guarda.</p><div class="mt-8 flex flex-wrap gap-3"><button type="button" class="ff-btn ff-btn-light" aria-describedby="respire-status">Começar</button></div></div><div class="ff-breath-stage" data-phase="idle"><div class="ff-breath-glow" aria-hidden="true"></div><div class="ff-breath-core" aria-hidden="true"></div><p id="respire-status" class="ff-breath-label" aria-live="polite">Respire comigo</p></div></div></section><section id="sobre" class="mx-auto max-w-6xl px-5 pt-24 md:px-8 md:pt-32"><div class="grid items-center gap-12 md:grid-cols-[0.9fr_1.1fr] md:gap-20"><div class="ff-reveal relative mx-auto w-full max-w-[24rem]"><img src="logo.webp" alt="Logotipo Fernanda Fernandes, monograma com ramo de folhas" width="900" height="516" loading="lazy" class="ff-logo-blend w-full"/></div><div class="ff-reveal "><p class="ff-kicker">Sobre mim</p><h2 class="ff-display mt-3 text-4xl text-[var(--ff-olive-deep)] md:text-[3.4rem]">Escuta qualificada, ciência e respeito à sua história.</h2><p class="mt-6 max-w-[56ch] text-lg leading-relaxed text-[var(--ff-ink-2)]">Sou psicóloga, registrada no CRP 04/87624. Trabalho com a Terapia Cognitivo-Comportamental e com práticas contextuais, abordagens com base científica que ajudam a entender pensamentos, emoções e comportamentos e a agir de um jeito que faça sentido para você.</p><p class="mt-4 max-w-[56ch] text-lg leading-relaxed text-[var(--ff-ink-2)]">No consultório, cada pessoa é única. Não existe roteiro pronto: o ritmo é o seu.</p><ul class="mt-8 flex flex-wrap gap-2" aria-label="Áreas e abordagens"><li class="rounded-full bg-[var(--ff-paper)] px-4 py-2 text-sm font-medium text-[var(--ff-olive-deep)]">Terapia Cognitivo-Comportamental</li><li class="rounded-full bg-[var(--ff-paper)] px-4 py-2 text-sm font-medium text-[var(--ff-olive-deep)]">Práticas contextuais</li><li class="rounded-full bg-[var(--ff-paper)] px-4 py-2 text-sm font-medium text-[var(--ff-olive-deep)]">Luto</li><li class="rounded-full bg-[var(--ff-paper)] px-4 py-2 text-sm font-medium text-[var(--ff-olive-deep)]">Manejo de crises suicidas</li></ul></div></div></section><section id="duvidas" class="mx-auto max-w-3xl px-5 pt-24 md:px-8 md:pt-32"><div class="ff-reveal text-center"><p class="ff-kicker">Dúvidas comuns</p><h2 class="ff-display mt-3 text-4xl text-[var(--ff-olive-deep)] md:text-[3.4rem]">Antes de marcar</h2></div><div class="ff-reveal ff-faq mt-10 grid gap-3"><details><summary>Você atende online?<span class="ff-plus" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus h-4 w-4" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary><p class="ff-answer leading-relaxed">Sim. As sessões online acontecem por videochamada, com o mesmo cuidado e sigilo do atendimento presencial. Basta ter um lugar reservado e conexão estável.</p></details><details><summary>Onde fica o consultório?<span class="ff-plus" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus h-4 w-4" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary><p class="ff-answer leading-relaxed">Praça Juscelino Kubitschek, nº 123, Centro. Na hora de agendar eu passo todas as orientações de como chegar.</p></details><details><summary>Como é a primeira sessão?<span class="ff-plus" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus h-4 w-4" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary><p class="ff-answer leading-relaxed">É uma conversa para você contar o que te trouxe. Não precisa preparar nada nem saber explicar direito. A partir dela a gente entende o que você precisa e combina como seguir.</p></details><details><summary>Quanto custa e como funciona o pagamento?<span class="ff-plus" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus h-4 w-4" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary><p class="ff-answer leading-relaxed">Valores, horários disponíveis e formas de pagamento eu passo pelo WhatsApp. Perguntar não gera compromisso.</p></details><details><summary>O que conversamos fica entre nós?<span class="ff-plus" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus h-4 w-4" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary><p class="ff-answer leading-relaxed">Sim. O sigilo é um dever ético da psicologia, previsto no Código de Ética Profissional do Psicólogo.</p></details><details><summary>E se eu estiver em crise agora?<span class="ff-plus" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus h-4 w-4" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary><p class="ff-answer leading-relaxed">Se existe risco à sua vida neste momento, não espere pelo agendamento: ligue <a class="font-semibold text-[var(--ff-olive-deep)] underline" href="tel:188">188</a> (CVV, gratuito, 24 horas) ou <a class="font-semibold text-[var(--ff-olive-deep)] underline" href="tel:192">192</a> (SAMU), ou vá ao pronto atendimento mais próximo. Depois, quando puder, me chame para continuarmos o cuidado.</p></details></div></section><section id="onde" class="mx-auto max-w-6xl px-5 pt-24 pb-10 md:px-8 md:pt-32"><div class="ff-reveal relative overflow-hidden rounded-[2rem] bg-[var(--ff-paper)] px-6 py-14 text-center md:px-16 md:py-20"><img src="monograma.webp" alt="" width="120" height="104" loading="lazy" class="ff-logo-blend mx-auto h-16 w-auto"/><h2 class="ff-display mx-auto mt-6 max-w-[20ch] text-4xl text-[var(--ff-olive-deep)] md:text-6xl">Quando você quiser, estou aqui para ouvir.</h2><p class="mx-auto mt-5 max-w-[46ch] text-lg leading-relaxed text-[var(--ff-ink-2)]">Atendimento presencial na Praça Juscelino Kubitschek, nº 123, Centro, e online para qualquer lugar.</p><div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><a class="ff-btn ff-btn-primary" href="https://wa.me/5534991473447?text=Ol%C3%A1%2C%20Fernanda!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." data-ev="whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.22-8.22 8.22Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"></path></svg>Agendar pelo WhatsApp</a><a class="ff-btn ff-btn-ghost" href="https://www.instagram.com/fernandafernandesnasc/" data-ev="instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"></circle></svg>Ver o Instagram</a></div></div></section></main><footer class="mx-auto max-w-6xl px-5 pt-6 pb-28 text-sm text-[var(--ff-ink-2)] md:px-8 md:pb-12"><div class="flex flex-col items-center justify-between gap-3 text-center md:flex-row md:text-left"><p><strong class="font-semibold text-[var(--ff-ink)]">Fernanda Fernandes</strong> · Psicóloga · CRP 04/87624</p><p>Este site não é um canal de emergência. Em risco, ligue 188 (CVV) ou 192 (SAMU).</p></div></footer><div class="ff-sticky " aria-hidden="true"><a class="ff-btn ff-btn-primary" href="https://wa.me/5534991473447?text=Ol%C3%A1%2C%20Fernanda!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." data-ev="whatsapp" target="_blank" rel="noopener" tabindex="-1"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.22-8.22 8.22Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"></path></svg>Agendar pelo WhatsApp</a></div><script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.22-8.22 8.22Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></g></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.2 3.1a.5.5 0 0 0 .8-.4V8.3a.5.5 0 0 0-.8-.4L16 11"/><rect x="2" y="6" width="14" height="12" rx="2"/></g></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></g></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.9A7 7 0 1 1 15.7 8h1.8a4.5 4.5 0 0 1 2.5 8.2"/><path d="M16 14v6M8 14v6M12 16v6"/></g></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></symbol>
+  <symbol id="i-buoy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="m4.9 4.9 4.3 4.3M14.8 14.8l4.3 4.3M14.8 9.2l4.3-4.3M4.9 19.1l4.3-4.3"/></g></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10Z"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.2-6"/></g></symbol>
+</svg>
+
+<a class="skip" href="#main">Pular para o conteúdo</a>
+<div class="ambient" aria-hidden="true"></div>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="#main" aria-label="Fernanda Fernandes, início">
+      <img src="img/monograma.webp" alt="" width="46" height="40">
+      <span><b>Fernanda Fernandes</b><small>Psicóloga · CRP 04/87624</small></span>
+    </a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#atendimento">Atendimento</a>
+      <a href="#consultorio">Consultório</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#pense-comigo">Pense comigo</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn-p" data-ev="whatsapp" href="https://wa.me/5534991473447?text=Ol%C3%A1%2C%20Fernanda!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Agendar<span>&nbsp;consulta</span></a>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="kicker rise">Psicoterapia em Prata/MG e online</p>
+        <h1 class="serif rise" style="animation-delay:.08s">Um lugar seguro para falar do que <em>pesa.</em></h1>
+        <p class="lead rise" style="animation-delay:.16s">Sou Fernanda Fernandes, psicóloga. Acompanho pessoas em momentos de ansiedade, luto e crise emocional, com a Terapia Cognitivo-Comportamental e escuta sem julgamento.</p>
+        <div class="ctas rise" style="animation-delay:.24s">
+          <a class="btn btn-p" data-ev="whatsapp" href="https://wa.me/5534991473447?text=Ol%C3%A1%2C%20Fernanda!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Agendar pelo WhatsApp</a>
+          <a class="btn btn-g" href="#atendimento">Como posso ajudar</a>
+        </div>
+        <ul class="creds rise" style="animation-delay:.32s" aria-label="Credenciais">
+          <li><svg aria-hidden="true"><use href="#i-shield"/></svg>CRP 04/87624</li>
+          <li><svg aria-hidden="true"><use href="#i-leaf"/></svg>Terapia Cognitivo-Comportamental</li>
+          <li><svg aria-hidden="true"><use href="#i-pin"/></svg>Clínica Mediclin, Centro</li>
+          <li><svg aria-hidden="true"><use href="#i-video"/></svg>Online</li>
+        </ul>
+      </div>
+      <div class="arch-wrap rise">
+        <div class="halo" aria-hidden="true"></div>
+        <div class="arch">
+          <img src="img/retrato-640.webp" srcset="img/retrato-420.webp 420w, img/retrato-640.webp 648w" sizes="(min-width: 900px) 440px, 82vw" width="648" height="810" alt="Retrato da psicóloga Fernanda Fernandes" fetchpriority="high">
+        </div>
+        <div class="badge">
+          <img src="img/monograma.webp" alt="" width="38" height="33">
+          <span><b>Presencial e online</b>Agenda pelo WhatsApp</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ul class="quick rv" aria-label="Atalhos">
+      <li><a class="q" data-ev="whatsapp" href="https://wa.me/5534991473447?text=Ol%C3%A1%2C%20Fernanda!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener"><i><svg aria-hidden="true"><use href="#i-wa"/></svg></i><span><b>Agendar consulta</b><small>(34) 99147-3447</small></span></a></li>
+      <li><a class="q" data-ev="whatsapp" href="https://wa.me/5534991473447?text=Ol%C3%A1%2C%20Fernanda!%20Tenho%20interesse%20no%20atendimento%20online." target="_blank" rel="noopener"><i><svg aria-hidden="true"><use href="#i-video"/></svg></i><span><b>Terapia online</b><small>Por videochamada, de onde você estiver</small></span></a></li>
+      <li><a class="q" data-ev="rota" href="https://www.google.com/maps/search/?api=1&amp;query=Cl%C3%ADnica%20Mediclin%2C%20Pra%C3%A7a%20Juscelino%20Kubitschek%20123%2C%20Prata%20MG" target="_blank" rel="noopener"><i><svg aria-hidden="true"><use href="#i-pin"/></svg></i><span><b>Como chegar</b><small>Clínica Mediclin, Centro de Prata/MG</small></span></a></li>
+      <li><a class="q" data-ev="instagram" href="https://www.instagram.com/fernandafernandesnasc/" target="_blank" rel="noopener"><i><svg aria-hidden="true"><use href="#i-ig"/></svg></i><span><b>Instagram</b><small>@fernandafernandesnasc</small></span></a></li>
+    </ul>
+  </div>
+
+  <section id="atendimento">
+    <div class="wrap">
+      <div class="rv">
+        <p class="kicker">Como posso ajudar</p>
+        <h2 class="serif h2">Cada pessoa chega com uma história. A terapia começa por ela.</h2>
+      </div>
+      <div class="care rv">
+        <article class="card">
+          <span class="ic"><svg aria-hidden="true"><use href="#i-cloud"/></svg></span>
+          <h3>Ansiedade e desafios emocionais</h3>
+          <p>Entender o que você sente, pensa e faz quando a ansiedade aperta, e construir recursos práticos para atravessar os dias difíceis.</p>
+          <ul><li>Ansiedade</li><li>Estresse</li><li>Autoconhecimento</li></ul>
+        </article>
+        <article class="card">
+          <span class="ic"><svg aria-hidden="true"><use href="#i-heart"/></svg></span>
+          <h3>Luto e perdas</h3>
+          <p>Luto vai muito além da morte. Acontece sempre que precisamos nos despedir de algo ou alguém que tinha um lugar importante na nossa vida.</p>
+          <ul><li>Perda de alguém</li><li>Fim de relação</li><li>Mudanças</li></ul>
+        </article>
+        <article class="card feat">
+          <span class="ic"><svg aria-hidden="true"><use href="#i-buoy"/></svg></span>
+          <div>
+            <h3>Crises emocionais</h3>
+            <p>Avaliação, acolhimento e manejo clínico de situações de crise, incluindo sofrimento intenso e pensamentos suicidas. Pensamentos suicidas são um sinal de dor, não de fraqueza, e falar sobre eles é o primeiro passo.</p>
+          </div>
+          <a class="btn btn-l" data-ev="whatsapp" href="https://wa.me/5534991473447?text=Ol%C3%A1%2C%20Fernanda!%20Vim%20pelo%20seu%20site%20e%20preciso%20conversar." target="_blank" rel="noopener">Conversar agora<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="tcc">
+    <div class="wrap tcc">
+      <div class="rv">
+        <p class="kicker">A abordagem</p>
+        <h2 class="serif h2">O que você pensa muda o que você sente. E o que você sente muda o que você faz.</h2>
+        <p class="lead" style="margin-top:1.4rem">A Terapia Cognitivo-Comportamental trabalha essa ligação. Na terapia você aprende a reconhecer seus pensamentos, respeitar seus limites e responder às situações de um jeito que faça sentido para você. Somo a ela práticas contextuais, sempre respeitando a sua história.</p>
+        <div class="quote">
+          <p>“Cuidar da mente não é uma opção para depois. <em>É uma necessidade de agora.”</em></p>
+          <small>Fernanda Fernandes, no Instagram</small>
+        </div>
+      </div>
+      <div class="cycle" aria-label="Pensamentos influenciam emoções, que influenciam atitudes" role="img">
+        <div class="orbit"></div>
+        <img class="center" src="img/monograma.webp" alt="" width="120" height="104" loading="lazy">
+        <div class="node n1 on" aria-hidden="true"><span><b>Pensamentos</b><small>o que passa na cabeça</small></span></div>
+        <div class="node n2" aria-hidden="true"><span><b>Emoções</b><small>o que o corpo sente</small></span></div>
+        <div class="node n3" aria-hidden="true"><span><b>Atitudes</b><small>o que você faz</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="consultorio">
+    <div class="wrap place">
+      <div class="photo rv"><img src="img/consultorio.webp" width="480" height="600" alt="Fernanda Fernandes no consultório" loading="lazy"></div>
+      <div class="rv">
+        <p class="kicker">Onde atendo</p>
+        <h2 class="serif h2">No consultório em Prata ou de onde você estiver.</h2>
+        <p class="lead" style="margin-top:1.4rem">Você escolhe o formato que cabe na sua rotina. O cuidado e o sigilo são os mesmos nos dois.</p>
+        <div class="modes">
+          <div class="mode"><b><svg aria-hidden="true"><use href="#i-pin"/></svg>Presencial</b><p>Clínica Mediclin, Praça Juscelino Kubitschek, nº 123, Centro, Prata/MG.</p></div>
+          <div class="mode"><b><svg aria-hidden="true"><use href="#i-video"/></svg>Online</b><p>Por videochamada. Basta um lugar reservado e uma conexão estável.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap steps">
+      <div class="rv">
+        <p class="kicker">Como começar</p>
+        <h2 class="serif h2">Dar o primeiro passo é mais simples do que parece.</h2>
+      </div>
+      <ol class="rv">
+        <li><span class="num" aria-hidden="true">1</span><div><h3>Você manda uma mensagem</h3><p>Pelo WhatsApp ou pelo telefone da clínica, do jeito que conseguir. Pode ser só um oi.</p></div></li>
+        <li><span class="num" aria-hidden="true">2</span><div><h3>A gente combina formato e horário</h3><p>Presencial na Clínica Mediclin ou online por videochamada.</p></div></li>
+        <li><span class="num" aria-hidden="true">3</span><div><h3>Primeira sessão</h3><p>Você conta o que te trouxe, sem pressa e sem resposta certa. A partir dela definimos os próximos passos.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="dark" id="respire">
+    <div class="wrap breathe">
+      <div class="rv">
+        <p class="kicker">Uma pausa antes de seguir</p>
+        <h2 class="serif h2">Um minuto para o seu corpo desacelerar.</h2>
+        <p class="lead" style="margin-top:1.3rem">Três respirações guiadas: inspire em 4 tempos, segure em 2, solte em 6. Soltar o ar mais devagar do que puxou avisa o corpo de que ele pode baixar a guarda.</p>
+        <div class="brow"><button type="button" class="btn btn-l" id="bstart" aria-describedby="bstatus">Começar</button></div>
+      </div>
+      <div class="stage" data-phase="idle">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="core" aria-hidden="true"></div>
+        <p class="blabel" id="bstatus" aria-live="polite">Respire comigo</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="sobre">
+    <div class="wrap about">
+      <div class="photo rv"><img src="img/fernanda.webp" width="500" height="625" alt="Fernanda Fernandes, psicóloga" loading="lazy"></div>
+      <div class="rv">
+        <p class="kicker">Sobre mim</p>
+        <h2 class="serif h2">Escuta qualificada, ciência e respeito à sua história.</h2>
+        <p class="lead" style="margin-top:1.4rem">Sou Fernanda Fernandes Nascimento, psicóloga registrada no CRP 04/87624. Trabalho com a Terapia Cognitivo-Comportamental e práticas contextuais, com foco em ansiedade, luto e manejo de crises suicidas.</p>
+        <p class="lead" style="margin-top:1rem">Acredito que falar exige coragem, e que terapia não é só para quem está no limite: é para quem quer se conhecer e viver com mais leveza. No consultório não existe roteiro pronto. O ritmo é o seu.</p>
+        <ul class="tags" aria-label="Áreas">
+          <li>TCC</li><li>Práticas contextuais</li><li>Luto</li><li>Manejo de crises suicidas</li><li>Ansiedade</li>
+        </ul>
+        <div class="sign">
+          <img src="img/monograma.webp" alt="" width="72" height="62" loading="lazy">
+          <span><b>Fernanda Fernandes</b><small>Psicóloga · CRP 04/87624</small></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pense-comigo">
+    <div class="wrap">
+      <div class="rv">
+        <p class="kicker">Pense comigo</p>
+        <h2 class="serif h2">Conversas sobre saúde mental no Instagram.</h2>
+      </div>
+      <div class="posts rv">
+        <a class="post" data-ev="instagram" href="https://www.instagram.com/p/DgDKnIiBkvs/" target="_blank" rel="noopener"><span><span class="tag">Luto</span><blockquote>Não é o tempo que cura. É o que você faz com ele.</blockquote></span><span class="more">Ver no Instagram<svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="post alt" data-ev="instagram" href="https://www.instagram.com/p/DfphuPeBMKY/" target="_blank" rel="noopener"><span><span class="tag">Ansiedade</span><blockquote>Vamos falar da ansiedade?</blockquote></span><span class="more">Assistir<svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="post alt2" data-ev="instagram" href="https://www.instagram.com/p/DfUz4GyB6ye/" target="_blank" rel="noopener"><span><span class="tag">Terapia</span><blockquote>Terapia não é coisa de “doido”. Os benefícios de cuidar da mente.</blockquote></span><span class="more">Assistir<svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="post alt2" data-ev="instagram" href="https://www.instagram.com/p/DeWhha0laou/" target="_blank" rel="noopener"><span><span class="tag">Crises</span><blockquote>Quando os pensamentos suicidas aparecem, também precisamos falar sobre isso.</blockquote></span><span class="more">Ver no Instagram<svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="post" data-ev="instagram" href="https://www.instagram.com/p/DdbyC78h8jH/" target="_blank" rel="noopener"><span><span class="tag">TCC</span><blockquote>Se conhecer é o começo. Como funciona a Terapia Cognitivo-Comportamental.</blockquote></span><span class="more">Assistir<svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="post alt" data-ev="instagram" href="https://www.instagram.com/p/Desq5R1lRp-/" target="_blank" rel="noopener"><span><span class="tag">Coragem</span><blockquote>Falar exige coragem. E falar é libertador.</blockquote></span><span class="more">Ver no Instagram<svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="duvidas">
+    <div class="faq">
+      <div class="rv" style="text-align:center">
+        <p class="kicker">Dúvidas comuns</p>
+        <h2 class="serif h2">Antes de marcar</h2>
+      </div>
+      <div class="list rv">
+        <details><summary>Você atende online?<i aria-hidden="true">+</i></summary><p>Sim. As sessões online acontecem por videochamada, com o mesmo cuidado e sigilo do atendimento presencial. Basta ter um lugar reservado e conexão estável.</p></details>
+        <details><summary>Onde fica o consultório?<i aria-hidden="true">+</i></summary><p>Na Clínica Mediclin, Praça Juscelino Kubitschek, nº 123, Centro, Prata/MG. <a data-ev="rota" href="https://www.google.com/maps/search/?api=1&amp;query=Cl%C3%ADnica%20Mediclin%2C%20Pra%C3%A7a%20Juscelino%20Kubitschek%20123%2C%20Prata%20MG" target="_blank" rel="noopener">Abrir no mapa</a>.</p></details>
+        <details><summary>Como é a primeira sessão?<i aria-hidden="true">+</i></summary><p>É uma conversa para você contar o que te trouxe. Não precisa preparar nada nem saber explicar direito. A partir dela a gente entende o que você precisa e combina como seguir.</p></details>
+        <details><summary>Quanto custa e como funciona o pagamento?<i aria-hidden="true">+</i></summary><p>Valores, horários disponíveis e formas de pagamento são passados pelo WhatsApp ou pelo telefone da clínica. Perguntar não gera compromisso.</p></details>
+        <details><summary>O que conversamos fica entre nós?<i aria-hidden="true">+</i></summary><p>Sim. O sigilo é um dever ético da psicologia, previsto no Código de Ética Profissional do Psicólogo.</p></details>
+        <details><summary>E se eu estiver em crise agora?<i aria-hidden="true">+</i></summary><p>Se existe risco à sua vida neste momento, não espere pelo agendamento: ligue <a href="tel:188">188</a> (CVV, gratuito, 24 horas) ou <a href="tel:192">192</a> (SAMU), ou vá ao pronto atendimento mais próximo. Depois, quando puder, me chame para continuarmos o cuidado.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="wrap">
+      <div class="rv">
+        <p class="kicker">Contato</p>
+        <h2 class="serif h2">Vamos conversar?</h2>
+      </div>
+      <div class="contact rv">
+        <div class="panel">
+          <h3>Clínica Mediclin</h3>
+          <ul class="rows">
+            <li><i><svg aria-hidden="true"><use href="#i-pin"/></svg></i><div><small>Endereço</small><a data-ev="rota" href="https://www.google.com/maps/search/?api=1&amp;query=Cl%C3%ADnica%20Mediclin%2C%20Pra%C3%A7a%20Juscelino%20Kubitschek%20123%2C%20Prata%20MG" target="_blank" rel="noopener">Praça Juscelino Kubitschek, nº 123, Centro, Prata/MG</a></div></li>
+            <li><i><svg aria-hidden="true"><use href="#i-wa"/></svg></i><div><small>WhatsApp</small><a data-ev="whatsapp" href="https://wa.me/5534991473447?text=Ol%C3%A1%2C%20Fernanda!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">(34) 99147-3447</a></div></li>
+            <li><i><svg aria-hidden="true"><use href="#i-phone"/></svg></i><div><small>Telefone da clínica</small><a data-ev="telefone" href="tel:+553434311581">(34) 3431-1581</a></div></li>
+            <li><i><svg aria-hidden="true"><use href="#i-mail"/></svg></i><div><small>E-mail</small><a data-ev="email" href="mailto:fernandafernandesnasc@hotmail.com">fernandafernandesnasc@hotmail.com</a></div></li>
+          </ul>
+          <div class="ctas">
+            <a class="btn btn-p" data-ev="whatsapp" href="https://wa.me/5534991473447?text=Ol%C3%A1%2C%20Fernanda!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Agendar pelo WhatsApp</a>
+            <a class="btn btn-g" data-ev="rota" href="https://www.google.com/maps/search/?api=1&amp;query=Cl%C3%ADnica%20Mediclin%2C%20Pra%C3%A7a%20Juscelino%20Kubitschek%20123%2C%20Prata%20MG" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Como chegar</a>
+          </div>
+        </div>
+        <div class="closing dark-card">
+          <div>
+            <p class="serif">Quando você quiser, estou aqui para ouvir.</p>
+            <small>Atendimento presencial em Prata/MG e online. Horários combinados pelo WhatsApp.</small>
+          </div>
+          <div>
+            <a class="btn btn-l" data-ev="instagram" href="https://www.instagram.com/fernandafernandesnasc/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>Seguir no Instagram</a>
+            <p class="sos">Este site não é um canal de emergência. Em risco, ligue <a href="tel:188">188</a> (CVV) ou <a href="tel:192">192</a> (SAMU).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Fernanda Fernandes Nascimento</b> · Psicóloga · CRP 04/87624</p>
+    <p><a href="https://www.instagram.com/fernandafernandesnasc/" data-ev="instagram" target="_blank" rel="noopener">@fernandafernandesnasc</a> · Prata/MG</p>
+  </div>
+</footer>
+
+<div class="sticky" aria-hidden="true">
+  <a class="btn btn-p" data-ev="whatsapp" tabindex="-1" href="https://wa.me/5534991473447?text=Ol%C3%A1%2C%20Fernanda!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Agendar pelo WhatsApp</a>
+</div>
+
+<script>
 (function(){
-  var SLUG = 'fernanda-fernandes';
-  var ev = function(e){ if (/github\.io$|\.com\.br$/.test(location.hostname)) { var i = new Image(); i.src = 'https://n8n-felc.srv2128402.hstgr.cloud/webhook/lince-sites-evento?s=' + SLUG + '&e=' + e + '&t=' + Date.now(); } };
+  var SLUG='fernanda-fernandes';
+  var ev=function(e){if(/github\.io$|\.com\.br$/.test(location.hostname)){var i=new Image();i.src='https://n8n-felc.srv2128402.hstgr.cloud/webhook/lince-sites-evento?s='+SLUG+'&e='+e+'&t='+Date.now();}};
   ev('visita');
-  document.querySelectorAll('[data-ev]').forEach(function(a){ a.addEventListener('click', function(){ ev(a.dataset.ev); }); });
+  document.addEventListener('click',function(e){var a=e.target.closest('[data-ev]');if(a)ev(a.dataset.ev);});
 
-  document.documentElement.classList.add('ff-js');
-  document.addEventListener('visibilitychange', function(){ document.body.classList.toggle('ff-paused', document.hidden); });
+  var root=document.documentElement;root.classList.add('js');
+  document.addEventListener('visibilitychange',function(){document.body.classList.toggle('paused',document.hidden);});
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)');
 
-  // Entradas por rolagem
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if (!en.isIntersecting) return;
-      var el = en.target; el.classList.add('in');
-      setTimeout(function(){ el.classList.add('done'); }, 1400);
-      io.unobserve(el);
-    });
-  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.ff-reveal').forEach(function(el){ io.observe(el); });
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;var el=en.target;el.classList.add('in');setTimeout(function(){el.classList.add('done');},1400);io.unobserve(el);});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 
-  // Barra fixa no celular
-  var bar = document.querySelector('.ff-sticky'), barLink = bar && bar.querySelector('a'), raf = 0;
-  function onScroll(){
-    cancelAnimationFrame(raf);
-    raf = requestAnimationFrame(function(){
-      var y = scrollY, nearEnd = innerHeight + y > document.body.scrollHeight - 520, show = y > 560 && !nearEnd;
-      if (!bar) return;
-      bar.classList.toggle('show', show);
-      bar.setAttribute('aria-hidden', show ? 'false' : 'true');
-      barLink.tabIndex = show ? 0 : -1;
-    });
-  }
-  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  var top=document.getElementById('top'),bar=document.querySelector('.sticky'),barA=bar.querySelector('a'),raf=0;
+  function onScroll(){cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){
+    var y=scrollY;top.classList.toggle('on',y>12);
+    var show=y>620&&innerHeight+y<document.body.scrollHeight-560;
+    bar.classList.toggle('show',show);bar.setAttribute('aria-hidden',show?'false':'true');barA.tabIndex=show?0:-1;
+  });}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  // Ciclo da TCC: o destaque passa de um nó para o outro enquanto a seção está na tela
+  var nodes=document.querySelectorAll('.node'),ni=0,cyc=null;
+  var cio=new IntersectionObserver(function(es){es.forEach(function(en){
+    if(en.isIntersecting&&!reduce.matches&&!cyc){cyc=setInterval(function(){nodes[ni].classList.remove('on');ni=(ni+1)%nodes.length;nodes[ni].classList.add('on');},2200);}
+    else if(!en.isIntersecting&&cyc){clearInterval(cyc);cyc=null;}
+  });});
+  cio.observe(document.querySelector('.cycle'));
 
   // Respiração guiada
-  var stage = document.querySelector('.ff-breath-stage'), status = document.getElementById('respire-status');
-  var btn = document.querySelector('#respire button'), extra = null, timer = null;
-  var PH = [['in', 4000, 'Inspire'], ['hold', 2000, 'Segure'], ['out', 6000, 'Solte devagar']], CYCLES = 3;
-  function setLabel(t, small){ status.innerHTML = ''; status.appendChild(document.createTextNode(t)); if (small) { var s = document.createElement('small'); s.textContent = small; status.appendChild(s); } }
-  function run(c, i){
-    if (c >= CYCLES) {
-      stage.dataset.phase = 'done'; setLabel('Um pouco mais leve'); btn.textContent = 'Fazer de novo';
-      if (!extra) {
-        extra = document.createElement('a');
-        extra.className = 'ff-btn text-[var(--ff-paper)] underline-offset-4 hover:underline';
-        extra.style.color = 'var(--ff-paper)';
-        extra.href = document.querySelector('a[href^="https://wa.me/"]').href;
-        extra.target = '_blank'; extra.rel = 'noopener'; extra.dataset.ev = 'whatsapp';
-        extra.textContent = 'Quero conversar com a Fernanda';
-        extra.addEventListener('click', function(){ ev('whatsapp'); });
-        btn.parentNode.appendChild(extra);
-      }
-      return;
-    }
-    var p = PH[i];
-    stage.dataset.phase = p[0]; setLabel(p[2], 'respiração ' + (c + 1) + ' de ' + CYCLES);
-    timer = setTimeout(function(){ if (i + 1 < PH.length) run(c, i + 1); else run(c + 1, 0); }, p[1]);
+  var stage=document.querySelector('.stage'),st=document.getElementById('bstatus'),btn=document.getElementById('bstart'),extra=null,timer=null;
+  var PH=[['in',4000,'Inspire'],['hold',2000,'Segure'],['out',6000,'Solte devagar']],N=3;
+  function label(t,s){st.textContent=t;if(s){var x=document.createElement('small');x.textContent=s;st.appendChild(x);}}
+  function run(c,i){
+    if(c>=N){stage.dataset.phase='done';label('Um pouco mais leve');btn.textContent='Fazer de novo';
+      if(!extra){extra=document.createElement('a');extra.className='btn linkbtn';extra.href=document.querySelector('a[href^="https://wa.me/"]').href;extra.target='_blank';extra.rel='noopener';extra.dataset.ev='whatsapp';extra.textContent='Quero conversar com a Fernanda';btn.parentNode.appendChild(extra);}
+      return;}
+    var p=PH[i];stage.dataset.phase=p[0];label(p[2],'respiração '+(c+1)+' de '+N);
+    timer=setTimeout(function(){if(i+1<PH.length)run(c,i+1);else run(c+1,0);},p[1]);
   }
-  if (btn) btn.addEventListener('click', function(){ clearTimeout(timer); btn.textContent = 'Recomeçar'; run(0, 0); });
+  btn.addEventListener('click',function(){clearTimeout(timer);btn.textContent='Recomeçar';run(0,0);});
 })();
 </script>
 </body>
