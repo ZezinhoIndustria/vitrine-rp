@@ -76,6 +76,7 @@ h1 span{color:var(--preto)}
 .oferta.grande .qtd button.mais{background:#fff;color:var(--verm-2)}
 .trio{display:grid;gap:10px;margin-top:4px}
 .trio div{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--preto-3);border-radius:14px;padding:10px 10px 10px 16px;font-weight:700}
+.trio .qtd button.menos{background:var(--preto)}
 
 /* Cardápio */
 .cardapio{padding-block:clamp(40px,8vw,96px) clamp(72px,11vw,128px);background:var(--preto-2)}
@@ -86,14 +87,13 @@ h1 span{color:var(--preto)}
 .grupo{margin-top:40px;scroll-margin-top:72px}
 .grupo h3.titulo{font-size:2.2rem;margin-bottom:16px;color:var(--verm-claro)}
 .itens{display:grid;gap:12px}
-.item{display:grid;grid-template-columns:72px 1fr;gap:6px 14px;align-items:center;background:var(--preto);border-radius:16px;padding:12px}
-.item .qtd{grid-column:2;justify-self:end}
-.item.sem-foto{grid-template-columns:1fr auto;padding:16px 14px 16px 18px}
-.item.sem-foto .qtd{grid-column:auto}
-.item img{width:72px;height:72px;object-fit:cover;border-radius:12px;align-self:start}
+.item{display:grid;grid-template-columns:72px 1fr;gap:4px 14px;align-items:start;background:var(--preto);border-radius:16px;padding:12px}
+.item.sem-foto{grid-template-columns:1fr;padding:16px 14px 14px 18px}
+.item .pe{grid-column:-2/-1;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:44px}
+.item img{width:72px;height:72px;object-fit:cover;border-radius:12px;grid-row:span 2}
 .item h4{font-size:1.45rem}
 .item p{font-size:.9rem;color:var(--cinza);margin-top:2px;line-height:1.45}
-.item .v{display:block;font-weight:700;color:#FF8A84;font-size:.9rem;margin-top:4px}
+.item .v{font-weight:700;color:#FF8A84;font-size:.9rem;margin-top:4px}
 .qtd{display:flex;align-items:center;gap:6px}
 .qtd button{width:42px;height:42px;border-radius:50%;border:0;background:var(--preto-3);color:#fff;font:700 1.25rem/1 var(--texto);cursor:pointer;display:grid;place-items:center;transition:background-color .2s,transform .15s}
 .qtd button.mais{background:var(--verm-claro)}
@@ -163,8 +163,6 @@ fieldset.campo{border:0;padding:0}
   h1{font-size:clamp(4rem,6.4vw,6.4rem)}
   .promos{grid-template-columns:1.2fr 1fr}
   .itens{grid-template-columns:1fr 1fr}
-  .item{grid-template-columns:72px 1fr auto}
-  .item .qtd{grid-column:auto}
   .galeria{grid-auto-flow:initial;grid-template-columns:repeat(4,1fr);overflow:visible;width:min(1160px,100% - 40px);margin-inline:auto;padding:0}
   .onde .grade{grid-template-columns:1.2fr 1fr;align-items:end}
   .onde .links{justify-content:flex-end}
@@ -191,7 +189,7 @@ fieldset.campo{border:0;padding:0}
     </nav>
     <div class="abertura">
       <div>
-        <span class="selo-topo">Restaurante japonês no Planalto Verde</span>
+        <span class="selo-topo">Japonês no Planalto Verde</span>
         <h1>Aqui o combinado <span>nunca sai caro</span></h1>
         <p class="chamada">Combinados, temakis, hot e pokes do Rakki Sushi. Monte o pedido aqui e ele chega pronto no nosso WhatsApp, para entrega ou retirada.</p>
         <div class="acoes">
@@ -250,45 +248,45 @@ fieldset.campo{border:0;padding:0}
       <div class="grupo" id="g-combinados">
         <h3 class="titulo">Combinados</h3>
         <div class="itens">
-          <div class="item sem-foto" data-item="Combo Rakki III (100 peças)"><div><h4>Combo Rakki III (100 peças)</h4><p>É peça que não acaba mais.</p><span class="v">Promoção: R$ 89,99</span></div><div class="qtd"></div></div>
-          <div class="item sem-foto" data-item="Combo Rakki II (70 peças)"><div><h4>Combo Rakki II (70 peças)</h4><p>Combinado da promoção de segunda a quinta.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
-          <div class="item sem-foto" data-item="Combo Rakki I (42 peças)"><div><h4>Combo Rakki I (42 peças)</h4><p>Combinado da promoção de segunda a quinta.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
-          <div class="item" data-item="Combinado Premium (66 peças)"><img src="img/t-premium.webp" width="200" height="200" loading="lazy" decoding="async" alt="Combinado Premium (66 peças)"><div><h4>Combinado Premium (66 peças)</h4><p>Uma seleção especial da casa.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
-          <div class="item sem-foto" data-item="Rakki Hot (50 peças)"><div><h4>Rakki Hot (50 peças)</h4><p>10 hot skin, 10 hot com couve, 10 hot com alho poró, 10 hot de salmão e 10 fry cheese.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
-          <div class="item" data-item="Rakki Low Carb (35 peças e 1 mini temaki)"><img src="img/t-lowcarb.webp" width="200" height="200" loading="lazy" decoding="async" alt="Rakki Low Carb (35 peças e 1 mini temaki)"><div><h4>Rakki Low Carb (35 peças e 1 mini temaki)</h4><p>Zero arroz. Salmão, peixe branco e acompanhamentos.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
-          <div class="item" data-item="Combinado Califórnia"><img src="img/t-california.webp" width="200" height="200" loading="lazy" decoding="async" alt="Combinado Califórnia"><div><h4>Combinado Califórnia</h4><p>Combinado feito só com califórnia.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
-          <div class="item sem-foto" data-item="Barca de sushi"><div><h4>Barca de sushi</h4><p>Salmão, hot roll, sashimi e uramaki.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Combo Rakki III (100 peças)"><div><h4>Combo Rakki III (100 peças)</h4><p>É peça que não acaba mais.</p></div><div class="pe"><span class="v">Promoção: R$ 89,99</span><div class="qtd"></div></div></div>
+          <div class="item sem-foto" data-item="Combo Rakki II (70 peças)"><div><h4>Combo Rakki II (70 peças)</h4><p>Combinado da promoção de segunda a quinta.</p></div><div class="pe"><span class="v">Valor no WhatsApp</span><div class="qtd"></div></div></div>
+          <div class="item sem-foto" data-item="Combo Rakki I (42 peças)"><div><h4>Combo Rakki I (42 peças)</h4><p>Combinado da promoção de segunda a quinta.</p></div><div class="pe"><span class="v">Valor no WhatsApp</span><div class="qtd"></div></div></div>
+          <div class="item" data-item="Combinado Premium (66 peças)"><img src="img/t-premium.webp" width="200" height="200" loading="lazy" decoding="async" alt="Combinado Premium (66 peças)"><div><h4>Combinado Premium (66 peças)</h4><p>Uma seleção especial da casa.</p></div><div class="pe"><span class="v">Valor no WhatsApp</span><div class="qtd"></div></div></div>
+          <div class="item sem-foto" data-item="Rakki Hot (50 peças)"><div><h4>Rakki Hot (50 peças)</h4><p>10 hot skin, 10 hot com couve, 10 hot com alho poró, 10 hot de salmão e 10 fry cheese.</p></div><div class="pe"><span class="v">Valor no WhatsApp</span><div class="qtd"></div></div></div>
+          <div class="item" data-item="Rakki Low Carb (35 peças e 1 mini temaki)"><img src="img/t-lowcarb.webp" width="200" height="200" loading="lazy" decoding="async" alt="Rakki Low Carb (35 peças e 1 mini temaki)"><div><h4>Rakki Low Carb (35 peças e 1 mini temaki)</h4><p>Zero arroz. Salmão, peixe branco e acompanhamentos.</p></div><div class="pe"><span class="v">Valor no WhatsApp</span><div class="qtd"></div></div></div>
+          <div class="item" data-item="Combinado Califórnia"><img src="img/t-california.webp" width="200" height="200" loading="lazy" decoding="async" alt="Combinado Califórnia"><div><h4>Combinado Califórnia</h4><p>Combinado feito só com califórnia.</p></div><div class="pe"><span class="v">Valor no WhatsApp</span><div class="qtd"></div></div></div>
+          <div class="item sem-foto" data-item="Barca de sushi"><div><h4>Barca de sushi</h4><p>Salmão, hot roll, sashimi e uramaki.</p></div><div class="pe"><span class="v">Valor no WhatsApp</span><div class="qtd"></div></div></div>
         </div>
       </div>
 
       <div class="grupo" id="g-pecas">
         <h3 class="titulo">Peças</h3>
         <div class="itens">
-          <div class="item" data-item="Shake Negui Especial"><img src="img/t-shake.webp" width="200" height="200" loading="lazy" decoding="async" alt="Shake Negui Especial"><div><h4>Shake Negui Especial</h4><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
-          <div class="item" data-item="Joe Salmão"><img src="img/t-joe.webp" width="200" height="200" loading="lazy" decoding="async" alt="Joe Salmão"><div><h4>Joe Salmão</h4><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
-          <div class="item" data-item="Tomato Roll"><img src="img/t-tomato.webp" width="200" height="200" loading="lazy" decoding="async" alt="Tomato Roll"><div><h4>Tomato Roll</h4><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+          <div class="item" data-item="Shake Negui Especial"><img src="img/t-shake.webp" width="200" height="200" loading="lazy" decoding="async" alt="Shake Negui Especial"><div><h4>Shake Negui Especial</h4></div><div class="pe"><span class="v">Valor no WhatsApp</span><div class="qtd"></div></div></div>
+          <div class="item" data-item="Joe Salmão"><img src="img/t-joe.webp" width="200" height="200" loading="lazy" decoding="async" alt="Joe Salmão"><div><h4>Joe Salmão</h4></div><div class="pe"><span class="v">Valor no WhatsApp</span><div class="qtd"></div></div></div>
+          <div class="item" data-item="Tomato Roll"><img src="img/t-tomato.webp" width="200" height="200" loading="lazy" decoding="async" alt="Tomato Roll"><div><h4>Tomato Roll</h4></div><div class="pe"><span class="v">Valor no WhatsApp</span><div class="qtd"></div></div></div>
         </div>
       </div>
 
       <div class="grupo" id="g-temaki">
         <h3 class="titulo">Temaki e poke</h3>
         <div class="itens">
-          <div class="item sem-foto" data-item="Temaki"><div><h4>Temaki</h4><p>De segunda a quarta, R$ 19,90.</p><span class="v">Promoção: R$ 19,90</span></div><div class="qtd"></div></div>
-          <div class="item sem-foto" data-item="Poke"><div><h4>Poke</h4><p>Todos os dias.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Temaki"><div><h4>Temaki</h4><p>De segunda a quarta, R$ 19,90.</p></div><div class="pe"><span class="v">Promoção: R$ 19,90</span><div class="qtd"></div></div></div>
+          <div class="item sem-foto" data-item="Poke"><div><h4>Poke</h4><p>Todos os dias.</p></div><div class="pe"><span class="v">Valor no WhatsApp</span><div class="qtd"></div></div></div>
         </div>
       </div>
 
       <div class="grupo" id="g-quentes">
         <h3 class="titulo">Quentes e entradas</h3>
         <div class="itens">
-          <div class="item sem-foto" data-item="Hot Skin"><div><h4>Hot Skin</h4><p>De segunda a quarta, R$ 19,90.</p><span class="v">Promoção: R$ 19,90</span></div><div class="qtd"></div></div>
-          <div class="item sem-foto" data-item="Yakisoba de frango"><div><h4>Yakisoba de frango</h4><p>De segunda a quarta, R$ 19,90.</p><span class="v">Promoção: R$ 19,90</span></div><div class="qtd"></div></div>
-          <div class="item sem-foto" data-item="Yakissoba de camarão"><div><h4>Yakissoba de camarão</h4><p>Camarão, legumes e molho.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
-          <div class="item sem-foto" data-item="Shimeji"><div><h4>Shimeji</h4><p>Servido quentinho, direto da chapa.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
-          <div class="item sem-foto" data-item="Guioza"><div><h4>Guioza</h4><p>Levemente grelhado.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
-          <div class="item sem-foto" data-item="Isca de tilápia"><div><h4>Isca de tilápia</h4><p>Dourada e crocante.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
-          <div class="item" data-item="Carpaccio de salmão"><img src="img/t-carpaccio.webp" width="200" height="200" loading="lazy" decoding="async" alt="Carpaccio de salmão"><div><h4>Carpaccio de salmão</h4><p>Lâminas de salmão com o toque da casa.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
-          <div class="item" data-item="Ceviche"><img src="img/t-ceviche.webp" width="200" height="200" loading="lazy" decoding="async" alt="Ceviche"><div><h4>Ceviche</h4><p>Peixe, toque cítrico, cebola roxa e pimenta.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Hot Skin"><div><h4>Hot Skin</h4><p>De segunda a quarta, R$ 19,90.</p></div><div class="pe"><span class="v">Promoção: R$ 19,90</span><div class="qtd"></div></div></div>
+          <div class="item sem-foto" data-item="Yakisoba de frango"><div><h4>Yakisoba de frango</h4><p>De segunda a quarta, R$ 19,90.</p></div><div class="pe"><span class="v">Promoção: R$ 19,90</span><div class="qtd"></div></div></div>
+          <div class="item sem-foto" data-item="Yakissoba de camarão"><div><h4>Yakissoba de camarão</h4><p>Camarão, legumes e molho.</p></div><div class="pe"><span class="v">Valor no WhatsApp</span><div class="qtd"></div></div></div>
+          <div class="item sem-foto" data-item="Shimeji"><div><h4>Shimeji</h4><p>Servido quentinho, direto da chapa.</p></div><div class="pe"><span class="v">Valor no WhatsApp</span><div class="qtd"></div></div></div>
+          <div class="item sem-foto" data-item="Guioza"><div><h4>Guioza</h4><p>Levemente grelhado.</p></div><div class="pe"><span class="v">Valor no WhatsApp</span><div class="qtd"></div></div></div>
+          <div class="item sem-foto" data-item="Isca de tilápia"><div><h4>Isca de tilápia</h4><p>Dourada e crocante.</p></div><div class="pe"><span class="v">Valor no WhatsApp</span><div class="qtd"></div></div></div>
+          <div class="item" data-item="Carpaccio de salmão"><img src="img/t-carpaccio.webp" width="200" height="200" loading="lazy" decoding="async" alt="Carpaccio de salmão"><div><h4>Carpaccio de salmão</h4><p>Lâminas de salmão com o toque da casa.</p></div><div class="pe"><span class="v">Valor no WhatsApp</span><div class="qtd"></div></div></div>
+          <div class="item" data-item="Ceviche"><img src="img/t-ceviche.webp" width="200" height="200" loading="lazy" decoding="async" alt="Ceviche"><div><h4>Ceviche</h4><p>Peixe, toque cítrico, cebola roxa e pimenta.</p></div><div class="pe"><span class="v">Valor no WhatsApp</span><div class="qtd"></div></div></div>
         </div>
       </div>
 
