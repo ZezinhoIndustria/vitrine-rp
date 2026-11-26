@@ -36,7 +36,7 @@ svg.i{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-
 .barra a.tel{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-variant-numeric:tabular-nums}
 .abertura{display:grid;gap:36px;align-items:center;padding-block:clamp(16px,5vw,56px) clamp(64px,10vw,112px)}
 .sobre{display:inline-block;background:var(--fundo-3);color:var(--queijo);font-weight:700;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:6px 14px}
-h1{font-size:clamp(2.6rem,11vw,7.5rem);margin-top:18px;line-height:.92;overflow-wrap:anywhere}
+h1{font-size:clamp(2.6rem,13vw,7.5rem);margin-top:18px;line-height:.92}
 h1 span{color:var(--queijo);display:block}
 .chamada{margin-top:20px;max-width:34ch;font-size:clamp(1.125rem,2.2vw,1.3rem);color:var(--creme-2)}
 .chamada q{color:var(--creme);quotes:"“" "”"}
@@ -63,7 +63,8 @@ h1 span{color:var(--queijo);display:block}
 .destaques .cab p{color:#4A3B05}
 .cards{display:grid;gap:18px}
 .card{background:var(--fundo);color:var(--creme);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
-.card img{width:100%;aspect-ratio:1;object-fit:cover}
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+@media (min-width:900px){.card img{aspect-ratio:1}}
 .card .corpo{padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
 .card .tag{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--queijo)}
 .card h3{font-size:2rem}
@@ -82,9 +83,11 @@ h1 span{color:var(--queijo);display:block}
 .grupo h3.titulo{font-size:2rem;margin-bottom:16px;color:var(--queijo)}
 .grupo .obs{color:var(--creme-2);font-size:.9rem;margin:-8px 0 16px}
 .itens{display:grid;gap:12px}
-.item{display:grid;grid-template-columns:88px 1fr auto;gap:14px;align-items:center;background:var(--fundo-2);border-radius:16px;padding:12px}
+.item{display:grid;grid-template-columns:80px 1fr;gap:6px 14px;align-items:center;background:var(--fundo-2);border-radius:16px;padding:12px}
+.item .qtd{grid-column:2;justify-self:end}
 .item.sem-foto{grid-template-columns:1fr auto;padding:16px 14px 16px 18px}
-.item img{width:88px;height:66px;object-fit:cover;border-radius:10px}
+.item.sem-foto .qtd{grid-column:auto}
+.item img{width:80px;height:60px;object-fit:cover;border-radius:10px;align-self:start}
 .item h4{font-size:1.3rem;letter-spacing:.02em}
 .item p{font-size:.9rem;color:var(--creme-2);margin-top:2px;line-height:1.45}
 .item .v{display:block;font-weight:700;color:var(--queijo);font-size:.92rem;margin-top:4px;font-variant-numeric:tabular-nums}
@@ -99,7 +102,8 @@ h1 span{color:var(--queijo);display:block}
 .tem .qtd output{display:block}
 
 /* Galeria */
-.galeria{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,64vw);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 18px;scrollbar-width:thin}
+.galeria{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,64vw);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 18px;scrollbar-width:none}
+.galeria::-webkit-scrollbar{display:none}
 .galeria img{border-radius:18px;scroll-snap-align:center;width:100%;aspect-ratio:4/5;object-fit:cover}
 
 /* Onde */
@@ -125,7 +129,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 /* Sacola e revisão */
 .sacola{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:20;display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--queijo);color:#1A1405;border-radius:18px;padding:10px 10px 10px 20px;box-shadow:0 20px 40px -16px rgba(0,0,0,.7);transform:translateY(160%);transition:transform .45s var(--ease);max-width:640px;margin-inline:auto}
 .com-pedido .sacola{transform:none}
-.sacola .resumo{font-weight:700}
+.sacola .resumo,.sacola .btn{font-weight:700;white-space:nowrap}
+.sacola .btn{padding:0 18px}
+@media (max-width:420px){.so-largo{display:none}}
 .sacola .resumo b{font-family:var(--titulo);font-weight:400;font-size:1.3rem}
 .sacola .btn{background:var(--fundo);color:var(--creme)}
 dialog{margin:auto;border:0;padding:0;border-radius:22px;width:min(560px,100% - 24px);max-height:calc(100dvh - 24px);background:var(--fundo-2);color:var(--creme);box-shadow:0 40px 80px -30px rgba(0,0,0,.8)}
@@ -151,9 +157,11 @@ fieldset.campo{border:0;padding:0}
 
 @media (min-width:900px){
   .abertura{grid-template-columns:1fr 1.05fr;gap:64px;padding-block:20px 104px}
-  h1{font-size:clamp(5rem,7.4vw,7.2rem)}
+  h1{font-size:clamp(3.6rem,5.6vw,6.4rem)}
   .cards{grid-template-columns:repeat(3,1fr)}
   .itens{grid-template-columns:1fr 1fr}
+  .item{grid-template-columns:80px 1fr auto}
+  .item .qtd{grid-column:auto}
   .galeria{grid-auto-flow:initial;grid-template-columns:repeat(5,1fr);overflow:visible;width:min(1160px,100% - 40px);margin-inline:auto;padding:0}
   .onde .grade{grid-template-columns:1.2fr 1fr;align-items:end}
   .onde .links{justify-content:flex-end}
@@ -367,7 +375,7 @@ fieldset.campo{border:0;padding:0}
 </footer>
 
 <div class="sacola" role="region" aria-label="Seu pedido">
-  <span class="resumo" aria-live="polite"><b id="n-itens">0</b> <span id="t-itens">itens</span> no pedido</span>
+  <span class="resumo" aria-live="polite"><b id="n-itens">0</b> <span id="t-itens">itens</span><span class="so-largo"> no pedido</span></span>
   <button class="btn" type="button" id="revisar"><svg class="i" aria-hidden="true"><use href="#i-sacola"/></svg>Revisar pedido</button>
 </div>
 
