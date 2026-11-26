@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Rakki Sushi | Restaurante japonês no Planalto Verde</title>
+<meta name="description" content="Combinados, temakis, hot e pokes do Rakki Sushi, na Av. Alceu Paiva Arantes, 85, Planalto Verde, Ribeirão Preto. Monte o pedido e mande pronto no WhatsApp (16) 99121-1212.">
+<meta name="theme-color" content="#B5121B">
+<link rel="preload" href="fonts/barlow-cond-800i.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/premium-640.webp" imagesrcset="img/premium-640.webp 640w, img/premium-1080.webp 1080w" imagesizes="(min-width:900px) 46vw, 92vw" fetchpriority="high">
+<style>
+@font-face{font-family:"Barlow C";src:url(fonts/barlow-cond-800i.woff2) format("woff2");font-weight:800;font-style:italic;font-display:swap}
+:root{--verm:#B5121B;--verm-2:#9A0E16;--verm-claro:#E2333B;--preto:#121112;--preto-2:#1C1B1C;--preto-3:#2A2829;--branco:#FBF6F2;--cinza:#B8B0AC;--titulo:"Barlow C","Arial Narrow",Impact,sans-serif;--texto:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:16px;scrollbar-color:var(--verm-claro) var(--preto)}
+body{background:var(--preto);color:var(--branco);font:400 1.0625rem/1.6 var(--texto);-webkit-font-smoothing:antialiased}
+body.com-pedido{padding-bottom:88px}
+::selection{background:var(--verm-claro);color:#fff}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid #fff;outline-offset:3px;border-radius:8px}
+.wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+h1,h2,h3,h4{font-family:var(--titulo);font-weight:800;font-style:italic;line-height:.95;letter-spacing:-.01em;text-transform:uppercase;text-wrap:balance}
+svg.i{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border:0;border-radius:12px;font:700 1.0625rem var(--texto);text-decoration:none;cursor:pointer;white-space:nowrap;transition:transform .2s var(--ease),background-color .2s}
+.btn:active{transform:scale(.97)}
+.btn-b{background:#fff;color:var(--verm-2)}
+.btn-b:hover{background:#F1E6E0}
+.btn-p{background:var(--preto);color:#fff}
+.btn-p:hover{background:#000}
+.btn-v{background:var(--verm);color:#fff}
+.btn-v:hover{background:var(--verm-2)}
+
+/* Topo vermelho */
+header{background:var(--verm);overflow:hidden}
+.barra{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px}
+.barra .nome{font-family:var(--titulo);font-weight:800;font-style:italic;font-size:1.7rem;text-decoration:none;text-transform:uppercase;letter-spacing:.02em}
+.barra a.tel{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-variant-numeric:tabular-nums}
+.abertura{display:grid;gap:36px;align-items:center;padding-block:clamp(16px,5vw,48px) clamp(56px,9vw,96px)}
+.selo-topo{display:inline-block;background:var(--preto);color:#fff;font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:6px 14px}
+h1{font-size:clamp(3.2rem,15vw,6.6rem);margin-top:16px}
+h1 span{color:var(--preto)}
+.chamada{margin-top:18px;max-width:36ch;font-size:clamp(1.1rem,2.2vw,1.28rem);color:#FFE3E0}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.fatos{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px;color:#FFE3E0;font-size:.95rem}
+.fatos span{display:inline-flex;align-items:center;gap:8px}
+.estrela svg{fill:#FFD166;stroke:#FFD166}
+/* Assinatura: o prato chega girando, como quem serve a mesa */
+.prato{position:relative}
+.prato img{width:100%;aspect-ratio:6/5;object-fit:cover;border-radius:24px;box-shadow:0 40px 70px -34px rgba(0,0,0,.75);animation:serve 1.3s var(--ease) both}
+@keyframes serve{from{opacity:0;transform:translateX(18%) rotate(10deg) scale(.9)}to{opacity:1;transform:none}}
+.prato .ticket{position:absolute;left:14px;bottom:-18px;background:var(--preto);color:#fff;border-radius:14px;padding:12px 16px;line-height:1.25;box-shadow:0 18px 30px -16px rgba(0,0,0,.8);animation:cai .8s 1s var(--ease) both}
+.prato .ticket b{display:block;font-family:var(--titulo);font-style:italic;font-weight:800;font-size:1.5rem;text-transform:uppercase}
+.prato .ticket small{color:var(--cinza);font-size:.85rem}
+@keyframes cai{from{opacity:0;transform:translateY(-24px) rotate(-4deg)}to{opacity:1;transform:none}}
+
+/* Promoções */
+.promo{padding-block:clamp(72px,10vw,120px)}
+.cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:14px 40px;margin-bottom:34px}
+.cab h2{font-size:clamp(2.8rem,9vw,5rem)}
+.cab p{max-width:44ch;font-size:.98rem;color:var(--cinza)}
+.promos{display:grid;gap:16px}
+.oferta{position:relative;background:var(--preto-2);border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:8px;overflow:hidden;isolation:isolate}
+.oferta.grande{background:var(--verm)}
+.oferta .num{font-family:var(--titulo);font-style:italic;font-weight:800;font-size:clamp(5rem,22vw,8rem);line-height:.8;color:rgba(255,255,255,.08);position:absolute;right:10px;bottom:4px;z-index:-1}
+.oferta .dia{font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:#FFB3B0}
+.oferta.grande .dia{color:#FFE3E0}
+.oferta h3{font-size:2.2rem}
+.oferta p{color:var(--cinza);font-size:.95rem}
+.oferta.grande p{color:#FFE3E0}
+.oferta .linha{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto;padding-top:14px}
+.preco{font-family:var(--titulo);font-style:italic;font-weight:800;font-size:2.4rem;line-height:1;font-variant-numeric:tabular-nums}
+.preco s{display:block;font:600 .85rem var(--texto);color:#FFC9C5;text-decoration:line-through}
+.oferta.grande .qtd button{background:var(--verm-2)}
+.oferta.grande .qtd button.mais{background:#fff;color:var(--verm-2)}
+.trio{display:grid;gap:10px;margin-top:4px}
+.trio div{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--preto-3);border-radius:14px;padding:10px 10px 10px 16px;font-weight:700}
+
+/* Cardápio */
+.cardapio{padding-block:clamp(40px,8vw,96px) clamp(72px,11vw,128px);background:var(--preto-2)}
+.abas{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow-x:auto;padding:12px 0;margin-bottom:6px;background:var(--preto-2);scrollbar-width:none}
+.abas::-webkit-scrollbar{display:none}
+.abas a{flex:none;text-decoration:none;font-weight:700;font-size:.92rem;background:var(--preto-3);border-radius:999px;padding:10px 16px;white-space:nowrap}
+.abas a:hover{background:#3A3738}
+.grupo{margin-top:40px;scroll-margin-top:72px}
+.grupo h3.titulo{font-size:2.2rem;margin-bottom:16px;color:var(--verm-claro)}
+.itens{display:grid;gap:12px}
+.item{display:grid;grid-template-columns:72px 1fr;gap:6px 14px;align-items:center;background:var(--preto);border-radius:16px;padding:12px}
+.item .qtd{grid-column:2;justify-self:end}
+.item.sem-foto{grid-template-columns:1fr auto;padding:16px 14px 16px 18px}
+.item.sem-foto .qtd{grid-column:auto}
+.item img{width:72px;height:72px;object-fit:cover;border-radius:12px;align-self:start}
+.item h4{font-size:1.45rem}
+.item p{font-size:.9rem;color:var(--cinza);margin-top:2px;line-height:1.45}
+.item .v{display:block;font-weight:700;color:#FF8A84;font-size:.9rem;margin-top:4px}
+.qtd{display:flex;align-items:center;gap:6px}
+.qtd button{width:42px;height:42px;border-radius:50%;border:0;background:var(--preto-3);color:#fff;font:700 1.25rem/1 var(--texto);cursor:pointer;display:grid;place-items:center;transition:background-color .2s,transform .15s}
+.qtd button.mais{background:var(--verm-claro)}
+.qtd button.mais:hover{background:var(--verm)}
+.qtd button:active{transform:scale(.92)}
+.qtd output{min-width:1.4em;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+.qtd button.menos,.qtd output{display:none}
+.tem .qtd button.menos{display:grid}
+.tem .qtd output{display:block}
+
+/* Galeria */
+.fotos{padding-top:clamp(64px,9vw,104px)}
+.galeria{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,64vw);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 8px;scrollbar-width:none}
+.galeria::-webkit-scrollbar{display:none}
+.galeria img{border-radius:20px;scroll-snap-align:center;width:100%;aspect-ratio:4/5;object-fit:cover}
+
+/* Onde */
+.onde{padding-block:clamp(64px,10vw,112px)}
+.onde .grade{display:grid;gap:28px;background:var(--preto-2);border-radius:24px;padding:clamp(28px,5vw,56px)}
+.onde h2{font-size:clamp(2.8rem,8vw,4.4rem)}
+.onde address{font-style:normal;margin-top:16px;font-size:1.125rem;color:var(--cinza)}
+.onde address strong{display:block;color:#fff;font-size:1.2rem}
+.info{display:grid;gap:12px;margin-top:18px;color:var(--cinza)}
+.info strong{display:block;color:#fff}
+.onde .links{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.nota{display:inline-flex;align-items:center;gap:8px;color:var(--cinza);width:100%}
+
+/* Final */
+.final{background:var(--verm);padding-block:clamp(64px,10vw,112px);text-align:center}
+.final h2{font-size:clamp(3rem,11vw,6rem)}
+.final h2 span{color:var(--preto)}
+.final p{margin:14px auto 0;max-width:34ch;color:#FFE3E0;font-size:1.125rem}
+.final .acoes{justify-content:center}
+footer{padding-block:26px calc(26px + env(safe-area-inset-bottom));color:#8E8784;font-size:.875rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+/* Sacola e revisão */
+.sacola{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:20;display:flex;justify-content:space-between;align-items:center;gap:12px;background:#fff;color:var(--preto);border-radius:16px;padding:8px 8px 8px 20px;box-shadow:0 20px 40px -16px rgba(0,0,0,.7);transform:translateY(160%);transition:transform .45s var(--ease);max-width:640px;margin-inline:auto}
+.com-pedido .sacola{transform:none}
+.sacola .resumo{font-weight:700;white-space:nowrap}
+.sacola .resumo b{font-family:var(--titulo);font-style:italic;font-size:1.5rem}
+.sacola .btn{padding:0 18px}
+@media (max-width:420px){.so-largo{display:none}}
+dialog{margin:auto;border:0;padding:0;border-radius:22px;width:min(560px,100% - 24px);max-height:calc(100dvh - 24px);background:var(--preto-2);color:#fff;box-shadow:0 40px 80px -30px rgba(0,0,0,.8)}
+dialog::backdrop{background:rgba(8,6,6,.7);backdrop-filter:blur(3px)}
+dialog[open]{animation:abre .35s var(--ease)}
+@keyframes abre{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:none}}
+.revisao{padding:26px 24px 24px;display:flex;flex-direction:column;gap:18px}
+.revisao header{background:none;overflow:visible;display:flex;justify-content:space-between;align-items:start;gap:12px}
+.revisao h2{font-size:2.4rem}
+.fechar{width:42px;height:42px;border-radius:50%;border:0;background:var(--preto-3);color:#fff;cursor:pointer;display:grid;place-items:center;flex:none}
+.lista{list-style:none;padding:0;display:grid;gap:8px}
+.lista li{display:flex;justify-content:space-between;gap:12px;font-weight:600}
+.lista li span:last-child{font-variant-numeric:tabular-nums;color:#FF8A84}
+.campo{display:grid;gap:6px}
+.campo label,.campo legend{font-weight:700;font-size:.95rem}
+.campo input,.campo textarea{font:1rem var(--texto);color:#fff;background:var(--preto);border:1px solid #474344;border-radius:12px;padding:12px 14px;width:100%}
+.campo textarea{min-height:70px;resize:vertical}
+fieldset.campo{border:0;padding:0}
+.opcoes{display:flex;gap:10px;flex-wrap:wrap}
+.opcoes label{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;background:var(--preto);border:1px solid #474344;border-radius:999px;padding:10px 16px;font-weight:600;cursor:pointer}
+.opcoes input{accent-color:var(--verm-claro)}
+.aviso{font-size:.88rem;color:var(--cinza)}
+
+@media (min-width:900px){
+  .abertura{grid-template-columns:1fr 1.05fr;gap:64px;padding-block:16px 104px}
+  h1{font-size:clamp(4rem,6.4vw,6.4rem)}
+  .promos{grid-template-columns:1.2fr 1fr}
+  .itens{grid-template-columns:1fr 1fr}
+  .item{grid-template-columns:72px 1fr auto}
+  .item .qtd{grid-column:auto}
+  .galeria{grid-auto-flow:initial;grid-template-columns:repeat(4,1fr);overflow:visible;width:min(1160px,100% - 40px);margin-inline:auto;padding:0}
+  .onde .grade{grid-template-columns:1.2fr 1fr;align-items:end}
+  .onde .links{justify-content:flex-end}
+  .nota{justify-content:flex-end}
+}
+@media (prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-pino" viewBox="0 0 24 24"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-estrela" viewBox="0 0 24 24"><path d="M11.5 2.3a.5.5 0 0 1 1 0l2.3 4.7a2.1 2.1 0 0 0 1.6 1.2l5.2.7a.5.5 0 0 1 .3.9l-3.7 3.7a2.1 2.1 0 0 0-.6 1.8l.9 5.2a.5.5 0 0 1-.8.5l-4.6-2.4a2.1 2.1 0 0 0-2 0L6.4 21a.5.5 0 0 1-.8-.5l.9-5.2a2.1 2.1 0 0 0-.6-1.8L2.2 9.8a.5.5 0 0 1 .3-.9l5.1-.7a2.1 2.1 0 0 0 1.6-1.2z"/></symbol>
+  <symbol id="i-sacola" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap">
+    <nav class="barra" aria-label="Contato">
+      <a class="nome" href="#">Rakki</a>
+      <a class="tel" href="https://wa.me/5516991211212" data-ev="whatsapp" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>(16) 99121-1212</a>
+    </nav>
+    <div class="abertura">
+      <div>
+        <span class="selo-topo">Restaurante japonês no Planalto Verde</span>
+        <h1>Aqui o combinado <span>nunca sai caro</span></h1>
+        <p class="chamada">Combinados, temakis, hot e pokes do Rakki Sushi. Monte o pedido aqui e ele chega pronto no nosso WhatsApp, para entrega ou retirada.</p>
+        <div class="acoes">
+          <a class="btn btn-b" href="#cardapio">Fazer meu pedido</a>
+          <a class="btn btn-p" href="https://wa.me/5516991211212" data-ev="whatsapp" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>Chamar no WhatsApp</a>
+        </div>
+        <p class="fatos">
+          <span class="estrela"><svg class="i" aria-hidden="true"><use href="#i-estrela"/></svg>4,4 no Google (701 avaliações)</span>
+          <span>Delivery até 22h45</span>
+        </p>
+      </div>
+      <div class="prato">
+        <img src="img/premium-640.webp" srcset="img/premium-640.webp 640w, img/premium-1080.webp 1080w" sizes="(min-width:900px) 46vw, 92vw" width="1080" height="900" fetchpriority="high" alt="Combinado Premium do Rakki num prato redondo com rosa de sashimi, uramakis, joes e hot roll">
+        <p class="ticket"><b>Combinado Premium</b><small>66 peças</small></p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="promo" aria-labelledby="t-promo">
+    <div class="wrap">
+      <div class="cab">
+        <h2 id="t-promo">Promoções do Rakki</h2>
+        <p>Valores divulgados pelo Rakki no Instagram em outubro e novembro de 2026. O preço do dia é confirmado no WhatsApp.</p>
+      </div>
+      <div class="promos">
+        <article class="oferta grande" data-item="Combo Rakki III (100 peças)">
+          <span class="num" aria-hidden="true">100</span>
+          <span class="dia">Promoção de 23/11/2026</span>
+          <h3>Combo Rakki III</h3>
+          <p>100 peças. É peça que não acaba mais.</p>
+          <div class="linha"><span class="preco"><s>de R$ 99,99</s>R$ 89,99</span><div class="qtd"></div></div>
+        </article>
+        <article class="oferta">
+          <span class="dia">Segunda a quarta</span>
+          <h3>Cada um por R$ 19,90</h3>
+          <div class="trio">
+            <div data-item="Temaki">Temaki<span class="qtd"></span></div>
+            <div data-item="Hot Skin">Hot Skin<span class="qtd"></span></div>
+            <div data-item="Yakisoba de frango">Yakisoba de frango<span class="qtd"></span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cardapio" id="cardapio" aria-labelledby="t-cardapio">
+    <div class="wrap">
+      <div class="cab">
+        <h2 id="t-cardapio">Monte seu pedido</h2>
+        <p>Pratos que o Rakki publicou no Instagram. Toque no + para adicionar; disponibilidade e valores são confirmados no WhatsApp.</p>
+      </div>
+      <nav class="abas" aria-label="Categorias do cardápio"><a href="#g-combinados">Combinados</a><a href="#g-pecas">Peças</a><a href="#g-temaki">Temaki e poke</a><a href="#g-quentes">Quentes e entradas</a></nav>
+
+      <div class="grupo" id="g-combinados">
+        <h3 class="titulo">Combinados</h3>
+        <div class="itens">
+          <div class="item sem-foto" data-item="Combo Rakki III (100 peças)"><div><h4>Combo Rakki III (100 peças)</h4><p>É peça que não acaba mais.</p><span class="v">Promoção: R$ 89,99</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Combo Rakki II (70 peças)"><div><h4>Combo Rakki II (70 peças)</h4><p>Combinado da promoção de segunda a quinta.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Combo Rakki I (42 peças)"><div><h4>Combo Rakki I (42 peças)</h4><p>Combinado da promoção de segunda a quinta.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+          <div class="item" data-item="Combinado Premium (66 peças)"><img src="img/t-premium.webp" width="200" height="200" loading="lazy" decoding="async" alt="Combinado Premium (66 peças)"><div><h4>Combinado Premium (66 peças)</h4><p>Uma seleção especial da casa.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Rakki Hot (50 peças)"><div><h4>Rakki Hot (50 peças)</h4><p>10 hot skin, 10 hot com couve, 10 hot com alho poró, 10 hot de salmão e 10 fry cheese.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+          <div class="item" data-item="Rakki Low Carb (35 peças e 1 mini temaki)"><img src="img/t-lowcarb.webp" width="200" height="200" loading="lazy" decoding="async" alt="Rakki Low Carb (35 peças e 1 mini temaki)"><div><h4>Rakki Low Carb (35 peças e 1 mini temaki)</h4><p>Zero arroz. Salmão, peixe branco e acompanhamentos.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+          <div class="item" data-item="Combinado Califórnia"><img src="img/t-california.webp" width="200" height="200" loading="lazy" decoding="async" alt="Combinado Califórnia"><div><h4>Combinado Califórnia</h4><p>Combinado feito só com califórnia.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Barca de sushi"><div><h4>Barca de sushi</h4><p>Salmão, hot roll, sashimi e uramaki.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+        </div>
+      </div>
+
+      <div class="grupo" id="g-pecas">
+        <h3 class="titulo">Peças</h3>
+        <div class="itens">
+          <div class="item" data-item="Shake Negui Especial"><img src="img/t-shake.webp" width="200" height="200" loading="lazy" decoding="async" alt="Shake Negui Especial"><div><h4>Shake Negui Especial</h4><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+          <div class="item" data-item="Joe Salmão"><img src="img/t-joe.webp" width="200" height="200" loading="lazy" decoding="async" alt="Joe Salmão"><div><h4>Joe Salmão</h4><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+          <div class="item" data-item="Tomato Roll"><img src="img/t-tomato.webp" width="200" height="200" loading="lazy" decoding="async" alt="Tomato Roll"><div><h4>Tomato Roll</h4><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+        </div>
+      </div>
+
+      <div class="grupo" id="g-temaki">
+        <h3 class="titulo">Temaki e poke</h3>
+        <div class="itens">
+          <div class="item sem-foto" data-item="Temaki"><div><h4>Temaki</h4><p>De segunda a quarta, R$ 19,90.</p><span class="v">Promoção: R$ 19,90</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Poke"><div><h4>Poke</h4><p>Todos os dias.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+        </div>
+      </div>
+
+      <div class="grupo" id="g-quentes">
+        <h3 class="titulo">Quentes e entradas</h3>
+        <div class="itens">
+          <div class="item sem-foto" data-item="Hot Skin"><div><h4>Hot Skin</h4><p>De segunda a quarta, R$ 19,90.</p><span class="v">Promoção: R$ 19,90</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Yakisoba de frango"><div><h4>Yakisoba de frango</h4><p>De segunda a quarta, R$ 19,90.</p><span class="v">Promoção: R$ 19,90</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Yakissoba de camarão"><div><h4>Yakissoba de camarão</h4><p>Camarão, legumes e molho.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Shimeji"><div><h4>Shimeji</h4><p>Servido quentinho, direto da chapa.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Guioza"><div><h4>Guioza</h4><p>Levemente grelhado.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Isca de tilápia"><div><h4>Isca de tilápia</h4><p>Dourada e crocante.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+          <div class="item" data-item="Carpaccio de salmão"><img src="img/t-carpaccio.webp" width="200" height="200" loading="lazy" decoding="async" alt="Carpaccio de salmão"><div><h4>Carpaccio de salmão</h4><p>Lâminas de salmão com o toque da casa.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+          <div class="item" data-item="Ceviche"><img src="img/t-ceviche.webp" width="200" height="200" loading="lazy" decoding="async" alt="Ceviche"><div><h4>Ceviche</h4><p>Peixe, toque cítrico, cebola roxa e pimenta.</p><span class="v">Valor no WhatsApp</span></div><div class="qtd"></div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="fotos" aria-label="Fotos do Rakki">
+    <div class="galeria">
+      <img src="img/tomato-480.webp" width="480" height="600" loading="lazy" decoding="async" alt="Tomato roll em prato verde">
+      <img src="img/shake-480.webp" width="480" height="600" loading="lazy" decoding="async" alt="Shake negui especial em volta de lâminas de pepino">
+      <img src="img/ceviche-480.webp" width="480" height="600" loading="lazy" decoding="async" alt="Ceviche sobre folhas de alface">
+      <img src="img/lowcarb-480.webp" width="480" height="600" loading="lazy" decoding="async" alt="Combinado low carb com sashimi, joes e peças empanadas">
+    </div>
+  </section>
+
+  <section class="onde" aria-labelledby="t-onde">
+    <div class="wrap">
+      <div class="grade">
+        <div>
+          <h2 id="t-onde">Onde fica</h2>
+          <address><strong>Av. Alceu Paiva Arantes, 85</strong>Planalto Verde, Ribeirão Preto, SP, 14056-395</address>
+          <div class="info">
+            <p><strong>No local</strong>Segunda a sábado, das 18h às 22h.</p>
+            <p><strong>Retirada e delivery</strong>Das 18h às 22h45.</p>
+            <p><strong>Telefones</strong>WhatsApp (16) 99121-1212 e (16) 99396-1001. Fixo (16) 3102-2130.</p>
+          </div>
+        </div>
+        <div class="links">
+          <p class="nota estrela"><svg class="i" aria-hidden="true"><use href="#i-estrela"/></svg>4,4 no Google (701 avaliações)</p>
+          <a class="btn btn-v" href="https://www.google.com/maps/place/?q=place_id:ChIJrXoQFbm_uZQRVHg72Mhm_8c" data-ev="rota" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-pino"/></svg>Como chegar</a>
+          <a class="btn btn-p" href="https://www.instagram.com/rakkisushirp/" data-ev="instagram" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-insta"/></svg>@rakkisushirp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="t-final">
+    <div class="wrap">
+      <h2 id="t-final">Não fique só <span>na vontade</span></h2>
+      <p>Monte o pedido ou chame direto no WhatsApp.</p>
+      <div class="acoes">
+        <a class="btn btn-b" href="#cardapio">Fazer meu pedido</a>
+        <a class="btn btn-p" href="https://wa.me/5516991211212" data-ev="whatsapp" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>(16) 99121-1212</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Rakki Sushi · Planalto Verde, Ribeirão Preto</span>
+    <span>Site de demonstração feito pela Lince Digital</span>
+  </div>
+</footer>
+
+<div class="sacola" role="region" aria-label="Seu pedido">
+  <span class="resumo" aria-live="polite"><b id="n-itens">0</b> <span id="t-itens">itens</span><span class="so-largo"> no pedido</span></span>
+  <button class="btn btn-v" type="button" id="revisar"><svg class="i" aria-hidden="true"><use href="#i-sacola"/></svg>Revisar pedido</button>
+</div>
+
+<dialog id="pedido" aria-labelledby="t-revisao">
+  <form class="revisao" method="dialog" id="form-pedido">
+    <header><h2 id="t-revisao">Seu pedido</h2><button class="fechar" type="button" id="fechar" aria-label="Fechar"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button></header>
+    <ul class="lista" id="lista"></ul>
+    <div class="campo"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" autocomplete="name" required></div>
+    <fieldset class="campo"><legend>Como prefere receber?</legend>
+      <div class="opcoes"><label><input type="radio" name="receber" value="Entrega" checked> Entrega</label><label><input type="radio" name="receber" value="Retirada no local"> Retirar no local</label></div>
+    </fieldset>
+    <div class="campo" id="campo-end"><label for="f-end">Endereço de entrega</label><input id="f-end" name="endereco" autocomplete="street-address" placeholder="Rua, número e bairro"></div>
+    <div class="campo"><label for="f-obs">Observação (opcional)</label><textarea id="f-obs" name="obs" placeholder="Ex.: sabor do temaki, troco para 100"></textarea></div>
+    <button class="btn btn-v" type="submit"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>Enviar pedido no WhatsApp</button>
+    <p class="aviso">O pedido abre no WhatsApp do Rakki já escrito. Valor, taxa e prazo são confirmados por lá.</p>
+  </form>
+</dialog>
+
+<script>
+(function(){
+  var NUM = '5516991211212', SLUG = 'rakki-sushi-unidade-iii', LOJA = 'Rakki';
+  var ev = function(e){ if (/github\.io$|\.com\.br$/.test(location.hostname)) { var i = new Image(); i.src = 'https://n8n-felc.srv2128402.hstgr.cloud/webhook/lince-sites-evento?s=' + SLUG + '&e=' + e + '&t=' + Date.now(); } };
+  ev('visita');
+  document.querySelectorAll('[data-ev]').forEach(function(a){ a.addEventListener('click', function(){ ev(a.dataset.ev); }); });
+  var pedido = {}, cards = {}, body = document.body, nEl = document.getElementById('n-itens'), tEl = document.getElementById('t-itens');
+  function atualiza(){
+    var total = 0; for (var k in pedido) total += pedido[k];
+    nEl.textContent = total; tEl.textContent = total === 1 ? 'item' : 'itens';
+    body.classList.toggle('com-pedido', total > 0);
+  }
+  document.querySelectorAll('[data-item]').forEach(function(card){
+    var nome = card.dataset.item, box = card.querySelector('.qtd');
+    box.innerHTML = '<button type="button" class="menos" aria-label="Tirar ' + nome + '">−</button><output aria-live="polite">0</output><button type="button" class="mais" aria-label="Adicionar ' + nome + '">+</button>';
+    (cards[nome] = cards[nome] || []).push(card);
+    function muda(d){
+      var q = Math.max(0, (pedido[nome] || 0) + d); if (q) pedido[nome] = q; else delete pedido[nome];
+      cards[nome].forEach(function(c){ c.querySelector('output').textContent = q; c.classList.toggle('tem', q > 0); });
+      atualiza();
+    }
+    box.querySelector('.mais').addEventListener('click', function(){ muda(1); });
+    box.querySelector('.menos').addEventListener('click', function(){ muda(-1); });
+  });
+  var dlg = document.getElementById('pedido'), form = document.getElementById('form-pedido'), lista = document.getElementById('lista'), campoEnd = document.getElementById('campo-end');
+  document.getElementById('revisar').addEventListener('click', function(){
+    lista.textContent = '';
+    for (var k in pedido) { var li = document.createElement('li'); var a = document.createElement('span'); a.textContent = pedido[k] + 'x'; var b = document.createElement('span'); b.textContent = k; li.appendChild(b); li.appendChild(a); lista.appendChild(li); }
+    dlg.showModal();
+  });
+  document.getElementById('fechar').addEventListener('click', function(){ dlg.close(); });
+  dlg.addEventListener('click', function(e){ if (e.target === dlg) dlg.close(); });
+  form.addEventListener('change', function(){ campoEnd.style.display = form.receber.value === 'Entrega' ? '' : 'none'; });
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!form.nome.value.trim()) { form.nome.focus(); return; }
+    if (form.receber.value === 'Entrega' && !form.endereco.value.trim()) { form.endereco.focus(); return; }
+    var t = 'Olá, ' + LOJA + '! Quero fazer um pedido pelo site:\n';
+    for (var k in pedido) t += '\n' + pedido[k] + 'x ' + k;
+    t += '\n\nNome: ' + form.nome.value.trim() + '\n' + form.receber.value;
+    if (form.receber.value === 'Entrega') t += ': ' + form.endereco.value.trim();
+    if (form.obs.value.trim()) t += '\nObservação: ' + form.obs.value.trim();
+    ev('pedido');
+    window.open('https://wa.me/' + NUM + '?text=' + encodeURIComponent(t), '_blank', 'noopener');
+    dlg.close();
+  });
+})();
+</script>
+</body>
+</html>
