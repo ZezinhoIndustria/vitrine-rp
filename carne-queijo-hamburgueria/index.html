@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Carne &amp; Queijo Hamburgueria | Simioni, Ribeirão Preto</title>
+<meta name="description" content="Hamburgueria sem frescura no Simioni, Ribeirão Preto. Monte o pedido com Suculento, Australiano, Prensadão e batata rústica e mande pronto no WhatsApp (16) 98198-8909.">
+<meta name="theme-color" content="#151210">
+<link rel="preload" href="fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/suculentos-640.webp" imagesrcset="img/suculentos-640.webp 640w, img/suculentos-1080.webp 1080w" imagesizes="(min-width:900px) 46vw, 92vw" fetchpriority="high">
+<style>
+@font-face{font-family:"Anton";src:url(fonts/anton.woff2) format("woff2");font-weight:400;font-display:swap}
+:root{--fundo:#151210;--fundo-2:#1F1A16;--fundo-3:#2A231D;--creme:#F6EEDD;--creme-2:#C9BCA6;--queijo:#F5C518;--queijo-esc:#E0AE00;--brasa:#D9481F;--titulo:"Anton",Impact,"Arial Narrow",sans-serif;--texto:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:16px;scrollbar-color:var(--queijo) var(--fundo)}
+body{background:var(--fundo);color:var(--creme);font:400 1.0625rem/1.6 var(--texto);-webkit-font-smoothing:antialiased}
+body.com-pedido{padding-bottom:88px}
+::selection{background:var(--queijo);color:var(--fundo)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--queijo);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+h1,h2,h3,h4{font-family:var(--titulo);font-weight:400;line-height:1;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance}
+svg.i{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border:0;border-radius:14px;font:700 1.0625rem var(--texto);text-decoration:none;cursor:pointer;transition:transform .2s var(--ease),background-color .2s}
+.btn:active{transform:scale(.97)}
+.btn-q{background:var(--queijo);color:#1A1405}
+.btn-q:hover{background:var(--queijo-esc)}
+.btn-e{background:var(--fundo-3);color:var(--creme)}
+.btn-e:hover{background:#372E26}
+
+/* Topo */
+.barra{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px}
+.barra .nome{font-family:var(--titulo);font-size:1.35rem;letter-spacing:.03em;color:var(--queijo);text-decoration:none;text-transform:uppercase}
+.barra a.tel{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-variant-numeric:tabular-nums}
+.abertura{display:grid;gap:36px;align-items:center;padding-block:clamp(16px,5vw,56px) clamp(64px,10vw,112px)}
+.sobre{display:inline-block;background:var(--fundo-3);color:var(--queijo);font-weight:700;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:6px 14px}
+h1{font-size:clamp(2.6rem,11vw,7.5rem);margin-top:18px;line-height:.92;overflow-wrap:anywhere}
+h1 span{color:var(--queijo);display:block}
+.chamada{margin-top:20px;max-width:34ch;font-size:clamp(1.125rem,2.2vw,1.3rem);color:var(--creme-2)}
+.chamada q{color:var(--creme);quotes:"“" "”"}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.fatos{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;color:var(--creme-2);font-size:.95rem}
+.fatos span{display:inline-flex;align-items:center;gap:8px}
+.estrela svg{fill:var(--queijo);stroke:var(--queijo)}
+.burger{position:relative;isolation:isolate}
+.burger img{border-radius:22px;width:100%;aspect-ratio:4/3;object-fit:cover;box-shadow:0 40px 80px -40px rgba(0,0,0,.9)}
+/* Assinatura: o queijo derrete por cima da foto */
+.queijo{position:absolute;left:0;right:0;top:-2px;height:38%;z-index:1;pointer-events:none;transform-origin:top;animation:derrete 1.6s .35s var(--ease) both}
+.queijo path{fill:var(--queijo)}
+@keyframes derrete{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.burger img{animation:chega 1s var(--ease) both}
+@keyframes chega{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:none}}
+.selo{position:absolute;right:14px;bottom:14px;z-index:2;background:var(--fundo);color:var(--creme);border-radius:14px;padding:10px 14px;font-size:.9rem;line-height:1.3;animation:chega .9s .9s var(--ease) both}
+.selo b{display:block;font-family:var(--titulo);font-weight:400;font-size:1.2rem;color:var(--queijo);text-transform:uppercase;letter-spacing:.02em}
+
+/* Destaques */
+.destaques{background:var(--queijo);color:#1A1405;padding-block:clamp(64px,10vw,112px)}
+.cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:14px 40px;margin-bottom:34px}
+.cab h2{font-size:clamp(2.6rem,8vw,4.6rem)}
+.cab p{max-width:42ch;font-size:.98rem}
+.destaques .cab p{color:#4A3B05}
+.cards{display:grid;gap:18px}
+.card{background:var(--fundo);color:var(--creme);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;aspect-ratio:1;object-fit:cover}
+.card .corpo{padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card .tag{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--queijo)}
+.card h3{font-size:2rem}
+.card p{color:var(--creme-2);font-size:.95rem}
+.card .linha{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto;padding-top:12px}
+.preco{font-family:var(--titulo);font-size:1.6rem;color:var(--queijo);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.preco small{font:600 .75rem var(--texto);color:var(--creme-2);display:block;text-transform:none;letter-spacing:0}
+
+/* Cardápio */
+.cardapio{padding-block:clamp(72px,11vw,128px)}
+.cardapio .cab p{color:var(--creme-2)}
+.abas{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:10px;scrollbar-width:none}
+.abas a{flex:none;text-decoration:none;font-weight:700;font-size:.92rem;background:var(--fundo-2);border-radius:999px;padding:10px 16px;white-space:nowrap}
+.abas a:hover{background:var(--fundo-3)}
+.grupo{margin-top:44px;scroll-margin-top:16px}
+.grupo h3.titulo{font-size:2rem;margin-bottom:16px;color:var(--queijo)}
+.grupo .obs{color:var(--creme-2);font-size:.9rem;margin:-8px 0 16px}
+.itens{display:grid;gap:12px}
+.item{display:grid;grid-template-columns:88px 1fr auto;gap:14px;align-items:center;background:var(--fundo-2);border-radius:16px;padding:12px}
+.item.sem-foto{grid-template-columns:1fr auto;padding:16px 14px 16px 18px}
+.item img{width:88px;height:66px;object-fit:cover;border-radius:10px}
+.item h4{font-size:1.3rem;letter-spacing:.02em}
+.item p{font-size:.9rem;color:var(--creme-2);margin-top:2px;line-height:1.45}
+.item .v{display:block;font-weight:700;color:var(--queijo);font-size:.92rem;margin-top:4px;font-variant-numeric:tabular-nums}
+.qtd{display:flex;align-items:center;gap:6px}
+.qtd button{width:42px;height:42px;border-radius:50%;border:0;background:var(--fundo-3);color:var(--creme);font:700 1.25rem/1 var(--texto);cursor:pointer;display:grid;place-items:center;transition:background-color .2s,transform .15s}
+.qtd button.mais{background:var(--queijo);color:#1A1405}
+.qtd button.mais:hover{background:var(--queijo-esc)}
+.qtd button:active{transform:scale(.92)}
+.qtd output{min-width:1.4em;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+.qtd button.menos,.qtd output{display:none}
+.tem .qtd button.menos{display:grid}
+.tem .qtd output{display:block}
+
+/* Galeria */
+.galeria{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,64vw);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 18px;scrollbar-width:thin}
+.galeria img{border-radius:18px;scroll-snap-align:center;width:100%;aspect-ratio:4/5;object-fit:cover}
+
+/* Onde */
+.onde{padding-block:clamp(64px,10vw,112px)}
+.onde .grade{display:grid;gap:28px;background:var(--fundo-2);border-radius:24px;padding:clamp(28px,5vw,56px)}
+.onde h2{font-size:clamp(2.6rem,7vw,4rem)}
+.onde address{font-style:normal;margin-top:16px;font-size:1.125rem;color:var(--creme-2)}
+.onde address strong{display:block;color:var(--creme);font-size:1.25rem}
+.info{display:grid;gap:12px;margin-top:18px;color:var(--creme-2)}
+.info strong{display:block;color:var(--creme)}
+.onde .links{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.nota{display:inline-flex;align-items:center;gap:8px;color:var(--creme-2);width:100%}
+
+/* Final */
+.final{padding-block:clamp(40px,8vw,90px) clamp(80px,12vw,140px);text-align:center}
+.final h2{font-size:clamp(3rem,11vw,6rem)}
+.final h2 span{color:var(--queijo)}
+.final p{margin:14px auto 0;max-width:34ch;color:var(--creme-2);font-size:1.125rem}
+.final .acoes{justify-content:center}
+footer{padding-block:26px calc(26px + env(safe-area-inset-bottom));color:#8D8170;font-size:.875rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+/* Sacola e revisão */
+.sacola{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:20;display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--queijo);color:#1A1405;border-radius:18px;padding:10px 10px 10px 20px;box-shadow:0 20px 40px -16px rgba(0,0,0,.7);transform:translateY(160%);transition:transform .45s var(--ease);max-width:640px;margin-inline:auto}
+.com-pedido .sacola{transform:none}
+.sacola .resumo{font-weight:700}
+.sacola .resumo b{font-family:var(--titulo);font-weight:400;font-size:1.3rem}
+.sacola .btn{background:var(--fundo);color:var(--creme)}
+dialog{margin:auto;border:0;padding:0;border-radius:22px;width:min(560px,100% - 24px);max-height:calc(100dvh - 24px);background:var(--fundo-2);color:var(--creme);box-shadow:0 40px 80px -30px rgba(0,0,0,.8)}
+dialog::backdrop{background:rgba(10,8,6,.7);backdrop-filter:blur(3px)}
+dialog[open]{animation:abre .35s var(--ease)}
+@keyframes abre{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:none}}
+.revisao{padding:26px 24px 24px;display:flex;flex-direction:column;gap:18px}
+.revisao header{display:flex;justify-content:space-between;align-items:start;gap:12px}
+.revisao h2{font-size:2.2rem}
+.fechar{width:42px;height:42px;border-radius:50%;border:0;background:var(--fundo-3);color:var(--creme);cursor:pointer;display:grid;place-items:center;flex:none}
+.lista{list-style:none;padding:0;display:grid;gap:8px}
+.lista li{display:flex;justify-content:space-between;gap:12px;font-weight:600}
+.lista li span:last-child{font-variant-numeric:tabular-nums;color:var(--queijo)}
+.campo{display:grid;gap:6px}
+.campo label,.campo legend{font-weight:700;font-size:.95rem}
+.campo input,.campo textarea{font:1rem var(--texto);color:var(--creme);background:var(--fundo);border:1px solid #4A4036;border-radius:12px;padding:12px 14px;width:100%}
+.campo textarea{min-height:70px;resize:vertical}
+fieldset.campo{border:0;padding:0}
+.opcoes{display:flex;gap:10px;flex-wrap:wrap}
+.opcoes label{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;background:var(--fundo);border:1px solid #4A4036;border-radius:999px;padding:10px 16px;font-weight:600;cursor:pointer}
+.opcoes input{accent-color:var(--queijo)}
+.aviso{font-size:.88rem;color:var(--creme-2)}
+
+@media (min-width:900px){
+  .abertura{grid-template-columns:1fr 1.05fr;gap:64px;padding-block:20px 104px}
+  h1{font-size:clamp(5rem,7.4vw,7.2rem)}
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .itens{grid-template-columns:1fr 1fr}
+  .galeria{grid-auto-flow:initial;grid-template-columns:repeat(5,1fr);overflow:visible;width:min(1160px,100% - 40px);margin-inline:auto;padding:0}
+  .onde .grade{grid-template-columns:1.2fr 1fr;align-items:end}
+  .onde .links{justify-content:flex-end}
+  .nota{justify-content:flex-end}
+}
+@media (prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-pino" viewBox="0 0 24 24"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-estrela" viewBox="0 0 24 24"><path d="M11.5 2.3a.5.5 0 0 1 1 0l2.3 4.7a2.1 2.1 0 0 0 1.6 1.2l5.2.7a.5.5 0 0 1 .3.9l-3.7 3.7a2.1 2.1 0 0 0-.6 1.8l.9 5.2a.5.5 0 0 1-.8.5l-4.6-2.4a2.1 2.1 0 0 0-2 0L6.4 21a.5.5 0 0 1-.8-.5l.9-5.2a2.1 2.1 0 0 0-.6-1.8L2.2 9.8a.5.5 0 0 1 .3-.9l5.1-.7a2.1 2.1 0 0 0 1.6-1.2z"/></symbol>
+  <symbol id="i-sacola" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap">
+    <nav class="barra" aria-label="Contato">
+      <a class="nome" href="#">Carne &amp; Queijo</a>
+      <a class="tel" href="https://wa.me/5516981988909" data-ev="whatsapp" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>(16) 98198-8909</a>
+    </nav>
+    <div class="abertura">
+      <div>
+        <span class="sobre">Made in Simioni desde 2018</span>
+        <h1>Carne &amp; Queijo <span>Hamburgueria</span></h1>
+        <p class="chamada"><q>Uma hamburgueria descolada, sem frescura.</q> Monte o seu pedido aqui e ele chega pronto no nosso WhatsApp.</p>
+        <div class="acoes">
+          <a class="btn btn-q" href="#cardapio">Fazer meu pedido</a>
+          <a class="btn btn-e" href="https://wa.me/5516981988909" data-ev="whatsapp" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>Chamar no WhatsApp</a>
+        </div>
+        <p class="fatos">
+          <span class="estrela"><svg class="i" aria-hidden="true"><use href="#i-estrela"/></svg>4,8 no Google (214 avaliações)</span>
+          <span>Delivery e retirada</span>
+          <span>Todo dia a partir das 18h</span>
+        </p>
+      </div>
+      <div class="burger">
+        <svg class="queijo" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0h400v34c-10 0-14 10-16 26-2 18-6 30-16 30s-13-12-14-28c-1-14-6-22-16-22-12 0-14 14-15 34-1 26-6 44-18 44s-15-20-16-42c-1-18-6-28-17-28s-15 10-16 22c-1 10-5 16-12 16s-11-8-12-20c-1-10-6-16-14-16-10 0-14 10-15 26-1 20-6 34-17 34s-15-14-16-34c-1-16-6-24-16-24s-14 8-15 18c-1 8-5 12-11 12s-10-6-11-16c-1-8-6-12-12-12-8 0-12 8-13 22-1 14-5 24-13 24S6 84 5 70C4 56 3 40 0 34Z"/></svg>
+        <img src="img/suculentos-640.webp" srcset="img/suculentos-640.webp 640w, img/suculentos-1080.webp 1080w" sizes="(min-width:900px) 46vw, 92vw" width="1080" height="810" fetchpriority="high" alt="Dois hambúrgueres Suculento com queijo, alface e bacon sobre o papel com a logo da Carne e Queijo">
+        <p class="selo"><b>Dois Suculentos</b>Burger, 2 queijos, cebola caramelizada e bacon</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="destaques" aria-labelledby="t-dest">
+    <div class="wrap">
+      <div class="cab">
+        <h2 id="t-dest">Os que a casa mais mostra</h2>
+        <p>Preços do cardápio on-line da Carne &amp; Queijo em 26/11/2026. O valor do dia é confirmado no WhatsApp.</p>
+      </div>
+      <div class="cards">
+        <article class="card" data-item="Australiano">
+          <img src="img/australiano-576.webp" width="576" height="1024" loading="lazy" decoding="async" alt="Australiano na mão: pão australiano, burger, queijo empanado, cheddar e bacon">
+          <div class="corpo"><span class="tag">Exclusivo da casa</span><h3>Australiano</h3><p>Pão australiano, maionese da casa, cebola caramelizada, queijo empanado, geleia de pimenta, burger 140g, cheddar e bacon.</p><div class="linha"><span class="preco"><small>a partir de</small>R$ 42,00</span><div class="qtd"></div></div></div>
+        </article>
+        <article class="card" data-item="Batata com cheddar e bacon (500g)">
+          <img src="img/batata-640.webp" width="640" height="706" loading="lazy" decoding="async" alt="Batata frita palito coberta de cheddar e bacon, com molhos ao lado">
+          <div class="corpo"><span class="tag">Para dividir</span><h3>Batata cheddar e bacon</h3><p>Batata palito 500g in natura com cheddar e bacon. Acompanha molho da casa. Serve até 2 pessoas.</p><div class="linha"><span class="preco">R$ 47,00</span><div class="qtd"></div></div></div>
+        </article>
+        <article class="card" data-item="Prensadão">
+          <img src="img/prensadao-640.webp" width="640" height="640" loading="lazy" decoding="async" alt="Prensadão com burger, queijo, catupiry e bacon">
+          <div class="corpo"><span class="tag">Burger 180g</span><h3>Prensadão</h3><p>Pão, maionese da casa, burger 180g, 2 queijos, tomate, bacon e catupiry.</p><div class="linha"><span class="preco"><small>a partir de</small>R$ 37,00</span><div class="qtd"></div></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cardapio" id="cardapio" aria-labelledby="t-cardapio">
+    <div class="wrap">
+      <div class="cab">
+        <h2 id="t-cardapio">Monte seu pedido</h2>
+        <p>Cardápio completo da casa. Toque no + para adicionar e revise no fim. Pedido mínimo de R$ 20,00 para entrega.</p>
+      </div>
+      <nav class="abas" aria-label="Categorias do cardápio">
+        <a href="#g-burgers">Burgers</a><a href="#g-premium">Premium</a><a href="#g-combos">Combos</a><a href="#g-dividir">Para dividir</a><a href="#g-entradas">Individuais</a><a href="#g-doces">Sobremesas</a><a href="#g-bebidas">Bebidas</a>
+      </nav>
+
+      <div class="grupo" id="g-burgers">
+        <h3 class="titulo">Escolha seu burger</h3>
+        <p class="obs">Valores a partir de; as opções de tamanho são combinadas no WhatsApp.</p>
+        <div class="itens">
+          <div class="item" data-item="Suculento"><img src="img/t-suculento.webp" width="240" height="180" loading="lazy" decoding="async" alt="Suculento"><div><h4>Suculento</h4><p>Pão, maionese da casa, burger, 2 queijos, cebola caramelizada, alface e bacon.</p><span class="v">a partir de R$ 32,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Carne Queijo"><div><h4>Carne Queijo</h4><p>Pão, maionese da casa, burger, 2 queijos, ketchup e pickles.</p><span class="v">a partir de R$ 24,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Smashed (Esmagadinho)"><div><h4>Smashed (Esmagadinho)</h4><p>Pão, maionese da casa, burger 90g, 2 queijos, ovo e bacon.</p><span class="v">a partir de R$ 26,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Filé"><div><h4>Filé</h4><p>Pão, maionese da casa, burger de frango 140g, cream cheese, alface americana, tomate e bacon.</p><span class="v">a partir de R$ 27,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Dumont"><div><h4>Dumont</h4><p>Pão, maionese da casa, burger de linguiça, 2 queijos, rúcula e farofa de bacon.</p><span class="v">a partir de R$ 29,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="BBQ"><div><h4>BBQ</h4><p>Pão, molho barbecue, burger, 2 queijos, anéis de cebola e bacon.</p><span class="v">a partir de R$ 32,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Recheado"><div><h4>Recheado</h4><p>Pão, maionese da casa, burger recheado de cheddar, 2 queijos, alface americana, tomate, pickles e bacon.</p><span class="v">a partir de R$ 34,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Veggie"><div><h4>Veggie</h4><p>Pão, burger vegetariano, 2 queijos, cebola, alface, tomate e molho da casa.</p><span class="v">a partir de R$ 34,00</span></div><div class="qtd"></div></div>
+          <div class="item" data-item="Prensadão"><img src="img/t-prensadao.webp" width="240" height="180" loading="lazy" decoding="async" alt="Prensadão"><div><h4>Prensadão</h4><p>Pão, maionese da casa, burger 180g, 2 queijos, tomate, bacon e catupiry.</p><span class="v">a partir de R$ 37,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Duplo"><div><h4>Duplo</h4><p>Pão, maionese da casa, 2 burgers, 4 queijos, tomate, alface americana, pickles e bacon.</p><span class="v">a partir de R$ 43,00</span></div><div class="qtd"></div></div>
+        </div>
+      </div>
+
+      <div class="grupo" id="g-premium">
+        <h3 class="titulo">Burgers premium</h3>
+        <div class="itens">
+          <div class="item" data-item="Australiano"><img src="img/t-australiano.webp" width="240" height="180" loading="lazy" decoding="async" alt="Australiano"><div><h4>Australiano</h4><p>Pão australiano, maionese da casa, cebola caramelizada, queijo empanado, geleia de pimenta, burger 140g, cheddar e bacon.</p><span class="v">a partir de R$ 42,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Brie"><div><h4>Brie</h4><p>Pão australiano, maionese da casa, burger 140g, queijo brie, gergelim moído, geleia de damasco, rúcula e bacon.</p><span class="v">a partir de R$ 38,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Quatro Queijos"><div><h4>Quatro Queijos</h4><p>Pão, maionese da casa, burger 200g, creme de quatro queijos (mussarela, requeijão, provolone e gorgonzola), bacon e pimenta jalapeño.</p><span class="v">a partir de R$ 38,00</span></div><div class="qtd"></div></div>
+        </div>
+      </div>
+
+      <div class="grupo" id="g-combos">
+        <h3 class="titulo">Combos com batata e refri</h3>
+        <p class="obs">A casa não troca itens dos combos.</p>
+        <div class="itens">
+          <div class="item sem-foto" data-item="Combo Carne Queijo"><div><h4>Combo Carne Queijo</h4><p>1 Carne Queijo, batata individual 70g e refrigerante lata 350ml.</p><span class="v">R$ 40,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Smashed Combo"><div><h4>Smashed Combo</h4><p>1 Smashed, batata individual 70g e refrigerante 350ml.</p><span class="v">R$ 42,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Combo Filé"><div><h4>Combo Filé</h4><p>1 Filé, batata individual 70g e refrigerante 350ml.</p><span class="v">R$ 43,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Trio Suculento"><div><h4>Trio Suculento</h4><p>3 Suculentos, 3 batatas individuais 70g e refrigerante 2 litros.</p><span class="v">R$ 135,00</span></div><div class="qtd"></div></div>
+        </div>
+      </div>
+
+      <div class="grupo" id="g-dividir">
+        <h3 class="titulo">Para compartilhar</h3>
+        <div class="itens">
+          <div class="item sem-foto" data-item="Batata Rústica (500g)"><div><h4>Batata Rústica</h4><p>Campeã de vendas. 500g in natura, cheddar, bacon, cebolinha e molho da casa. Serve até 2 pessoas.</p><span class="v">R$ 49,00</span></div><div class="qtd"></div></div>
+          <div class="item" data-item="Batata com cheddar e bacon (500g)"><img src="img/t-batata-cb.webp" width="240" height="180" loading="lazy" decoding="async" alt="Batata com cheddar e bacon"><div><h4>Batata com cheddar e bacon</h4><p>Palito 500g in natura com cheddar e bacon. Acompanha molho da casa. Serve até 2 pessoas.</p><span class="v">R$ 47,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Batata tradicional (500g)"><div><h4>Batata tradicional</h4><p>Palito 500g in natura. Acompanha molho da casa. Serve até 2 pessoas.</p><span class="v">R$ 32,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Onion rings (21 unidades)"><div><h4>Onion rings</h4><p>21 anéis de cebola empanada, 300g. Serve até 2 pessoas.</p><span class="v">R$ 30,00</span></div><div class="qtd"></div></div>
+        </div>
+      </div>
+
+      <div class="grupo" id="g-entradas">
+        <h3 class="titulo">Porções individuais</h3>
+        <div class="itens">
+          <div class="item sem-foto" data-item="Batata rústica individual (300g)"><div><h4>Batata rústica individual</h4><p>300g in natura, cheddar, bacon, cebolinha e molho da casa.</p><span class="v">R$ 33,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Batata frita individual (100g)"><div><h4>Batata frita individual</h4><p>Palito 100g in natura, com molho especial.</p><span class="v">R$ 11,90</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Onion rings individual (6 unidades)"><div><h4>Onion rings individual</h4><p>6 anéis de cebola.</p><span class="v">R$ 11,90</span></div><div class="qtd"></div></div>
+        </div>
+      </div>
+
+      <div class="grupo" id="g-doces">
+        <h3 class="titulo">Sobremesas</h3>
+        <div class="itens">
+          <div class="item sem-foto" data-item="Milkshake de morango (400ml)"><div><h4>Milkshake de morango</h4><p>Com pedaços e calda de morango. 400ml.</p><span class="v">R$ 19,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Milkshake Ovomaltine (400ml)"><div><h4>Milkshake Ovomaltine</h4><p>400ml.</p><span class="v">R$ 20,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Milkshake Nutella (400ml)"><div><h4>Milkshake Nutella</h4><p>400ml.</p><span class="v">R$ 24,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Petit gâteau"><div><h4>Petit gâteau</h4><p>De chocolate, com sorvete de creme. Porção individual.</p><span class="v">R$ 16,00</span></div><div class="qtd"></div></div>
+        </div>
+      </div>
+
+      <div class="grupo" id="g-bebidas">
+        <h3 class="titulo">Bebidas</h3>
+        <div class="itens">
+          <div class="item sem-foto" data-item="Coca-Cola lata 350ml"><div><h4>Coca-Cola lata</h4><span class="v">R$ 6,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Coca-Cola Zero lata 350ml"><div><h4>Coca-Cola Zero lata</h4><span class="v">R$ 6,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Guaraná lata 350ml"><div><h4>Guaraná lata</h4><span class="v">R$ 6,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Fanta Laranja lata 350ml"><div><h4>Fanta Laranja lata</h4><span class="v">R$ 6,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Fanta Uva lata 350ml"><div><h4>Fanta Uva lata</h4><span class="v">R$ 6,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Sprite lata 350ml"><div><h4>Sprite lata</h4><span class="v">R$ 6,00</span></div><div class="qtd"></div></div>
+          <div class="item sem-foto" data-item="Coca-Cola 2 litros"><div><h4>Coca-Cola 2 litros</h4><span class="v">R$ 15,90</span></div><div class="qtd"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Fotos da Carne e Queijo">
+    <div class="galeria">
+      <img src="img/na-mao-480.webp" width="480" height="600" loading="lazy" decoding="async" alt="Burger com alface, tomate e cheddar segurado na mão">
+      <img src="img/smash-mao-480.webp" width="480" height="600" loading="lazy" decoding="async" alt="Burger com queijo empanado, cheddar e bacon na mão">
+      <img src="img/cheddar-bacon-480.webp" width="480" height="600" loading="lazy" decoding="async" alt="Burger aberto com molho de queijo e farofa de bacon">
+      <img src="img/balcao-480.webp" width="480" height="600" loading="lazy" decoding="async" alt="Burgers no balcão na frente das sacolas da casa">
+      <img src="img/smash-close-480.webp" width="480" height="600" loading="lazy" decoding="async" alt="Close de burger com cheddar derretido">
+    </div>
+  </section>
+
+  <section class="onde" aria-labelledby="t-onde">
+    <div class="wrap">
+      <div class="grade">
+        <div>
+          <h2 id="t-onde">Onde fica</h2>
+          <address><strong>R. Ema Bordon Vechi, 73</strong>Adelino Simioni, Ribeirão Preto, SP, 14071-489</address>
+          <div class="info">
+            <p><strong>Horário</strong>Domingo a quinta, das 18h às 23h. Sexta e sábado, das 18h às 23h30.</p>
+            <p><strong>Pedido</strong>Delivery ou retirada no local. Entrega em 35 a 55 minutos. Dinheiro, débito ou crédito.</p>
+          </div>
+        </div>
+        <div class="links">
+          <p class="nota estrela"><svg class="i" aria-hidden="true"><use href="#i-estrela"/></svg>4,8 no Google (214 avaliações)</p>
+          <a class="btn btn-q" href="https://www.google.com/maps/place/?q=place_id:ChIJ6_zo98GVuZQR_9mA42gEz_A" data-ev="rota" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-pino"/></svg>Como chegar</a>
+          <a class="btn btn-e" href="https://www.instagram.com/carnequeijohamburgueria/" data-ev="instagram" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-insta"/></svg>@carnequeijohamburgueria</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="t-final">
+    <div class="wrap">
+      <h2 id="t-final">Bateu a fome? <span>Pede um CQ.</span></h2>
+      <p>Monte o pedido ou chame direto no WhatsApp a partir das 18h.</p>
+      <div class="acoes">
+        <a class="btn btn-q" href="#cardapio">Fazer meu pedido</a>
+        <a class="btn btn-e" href="https://wa.me/5516981988909" data-ev="whatsapp" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>(16) 98198-8909</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Carne &amp; Queijo Hamburgueria · Simioni, Ribeirão Preto</span>
+    <span>Site de demonstração feito pela Lince Digital</span>
+  </div>
+</footer>
+
+<div class="sacola" role="region" aria-label="Seu pedido">
+  <span class="resumo" aria-live="polite"><b id="n-itens">0</b> <span id="t-itens">itens</span> no pedido</span>
+  <button class="btn" type="button" id="revisar"><svg class="i" aria-hidden="true"><use href="#i-sacola"/></svg>Revisar pedido</button>
+</div>
+
+<dialog id="pedido" aria-labelledby="t-revisao">
+  <form class="revisao" method="dialog" id="form-pedido">
+    <header><h2 id="t-revisao">Seu pedido</h2><button class="fechar" type="button" id="fechar" aria-label="Fechar"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button></header>
+    <ul class="lista" id="lista"></ul>
+    <div class="campo"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" autocomplete="name" required></div>
+    <fieldset class="campo"><legend>Como prefere receber?</legend>
+      <div class="opcoes"><label><input type="radio" name="receber" value="Entrega" checked> Entrega</label><label><input type="radio" name="receber" value="Retirada no local"> Retirar no local</label></div>
+    </fieldset>
+    <div class="campo" id="campo-end"><label for="f-end">Endereço de entrega</label><input id="f-end" name="endereco" autocomplete="street-address" placeholder="Rua, número e bairro"></div>
+    <div class="campo"><label for="f-obs">Observação (opcional)</label><textarea id="f-obs" name="obs" placeholder="Ex.: sem cebola, troco para 100"></textarea></div>
+    <button class="btn btn-q" type="submit"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>Enviar pedido no WhatsApp</button>
+    <p class="aviso">O pedido abre no WhatsApp da Carne &amp; Queijo já escrito. Valor, taxa e prazo são confirmados por lá.</p>
+  </form>
+</dialog>
+
+<script>
+(function(){
+  var NUM = '5516981988909', SLUG = 'carne-queijo-hamburgueria', LOJA = 'Carne & Queijo';
+  var ev = function(e){ if (/github\.io$|\.com\.br$/.test(location.hostname)) { var i = new Image(); i.src = 'https://n8n-felc.srv2128402.hstgr.cloud/webhook/lince-sites-evento?s=' + SLUG + '&e=' + e + '&t=' + Date.now(); } };
+  ev('visita');
+  document.querySelectorAll('[data-ev]').forEach(function(a){ a.addEventListener('click', function(){ ev(a.dataset.ev); }); });
+  var pedido = {}, body = document.body, nEl = document.getElementById('n-itens'), tEl = document.getElementById('t-itens');
+  var outs = {};
+  function atualiza(){
+    var total = 0; for (var k in pedido) total += pedido[k];
+    nEl.textContent = total; tEl.textContent = total === 1 ? 'item' : 'itens';
+    body.classList.toggle('com-pedido', total > 0);
+  }
+  document.querySelectorAll('[data-item]').forEach(function(card){
+    var nome = card.dataset.item, box = card.querySelector('.qtd');
+    box.innerHTML = '<button type="button" class="menos" aria-label="Tirar ' + nome + '">−</button><output aria-live="polite">0</output><button type="button" class="mais" aria-label="Adicionar ' + nome + '">+</button>';
+    (outs[nome] = outs[nome] || []).push(card);
+    function muda(d){
+      var q = Math.max(0, (pedido[nome] || 0) + d); if (q) pedido[nome] = q; else delete pedido[nome];
+      outs[nome].forEach(function(c){ c.querySelector('output').textContent = q; c.classList.toggle('tem', q > 0); });
+      atualiza();
+    }
+    box.querySelector('.mais').addEventListener('click', function(){ muda(1); });
+    box.querySelector('.menos').addEventListener('click', function(){ muda(-1); });
+  });
+  var dlg = document.getElementById('pedido'), form = document.getElementById('form-pedido'), lista = document.getElementById('lista'), campoEnd = document.getElementById('campo-end');
+  document.getElementById('revisar').addEventListener('click', function(){
+    lista.textContent = '';
+    for (var k in pedido) { var li = document.createElement('li'); var a = document.createElement('span'); a.textContent = pedido[k] + 'x'; var b = document.createElement('span'); b.textContent = k; li.appendChild(b); li.appendChild(a); lista.appendChild(li); }
+    dlg.showModal();
+  });
+  document.getElementById('fechar').addEventListener('click', function(){ dlg.close(); });
+  dlg.addEventListener('click', function(e){ if (e.target === dlg) dlg.close(); });
+  form.addEventListener('change', function(){ campoEnd.style.display = form.receber.value === 'Entrega' ? '' : 'none'; });
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!form.nome.value.trim()) { form.nome.focus(); return; }
+    if (form.receber.value === 'Entrega' && !form.endereco.value.trim()) { form.endereco.focus(); return; }
+    var t = 'Olá, ' + LOJA + '! Quero fazer um pedido pelo site:\n';
+    for (var k in pedido) t += '\n' + pedido[k] + 'x ' + k;
+    t += '\n\nNome: ' + form.nome.value.trim() + '\n' + form.receber.value;
+    if (form.receber.value === 'Entrega') t += ': ' + form.endereco.value.trim();
+    if (form.obs.value.trim()) t += '\nObservação: ' + form.obs.value.trim();
+    ev('pedido');
+    window.open('https://wa.me/' + NUM + '?text=' + encodeURIComponent(t), '_blank', 'noopener');
+    dlg.close();
+  });
+})();
+</script>
+</body>
+</html>
